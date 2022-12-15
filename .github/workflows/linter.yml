@@ -1,0 +1,29 @@
+name: Compile, Build and Linter
+
+on:
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  linter:
+    name: Compile, Build and Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+      - name: Download Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable' # or: 'beta', 'dev' or 'master'
+      - name: Compile
+        run: flutter pub get
+      - name: Build
+        working-directory: ./example
+        run: flutter build web --release
+      - name: Format
+        run: flutter format .
+      - name: Linter
+        run: flutter analyze
+
+      

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Discussions
+    url: https://github.com/romanjrdykyj/select2dot1/discussions
+    about: "For questions on how to use Select2dot1, prefer a Q&A discussion over issues"

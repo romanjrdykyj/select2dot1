@@ -44,7 +44,7 @@ dart_code_metrics:
     - long-method
     - long-parameter-list
   metrics-exclude:
-    - test/**
+    - lib/**.g.dart
   rules:
     - avoid-global-state
     - avoid-ignoring-return-values
