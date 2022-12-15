@@ -1,0 +1,23 @@
+name: example
+description: This project demonstrates how to use Select2dot1 widget
+version: 1.0.0+1
+publish_to: 'none' 
+
+environment:
+  sdk: '>=2.18.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  select2dot1:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter: 
+  assets: 
+    - assets/images/
+  uses-material-design: true

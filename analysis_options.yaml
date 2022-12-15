@@ -1,0 +1,108 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude: 
+    - lib/**.g.dart
+  language:
+    strict-raw-types: true
+  plugins:
+    - dart_code_metrics
+
+linter:
+  rules:
+    # Error rules:
+    always_use_package_imports: true
+    avoid_returning_null_for_future: true
+    discarded_futures: true
+    unnecessary_statements: true
+    use_key_in_widget_constructors: true
+
+    # Style Rules:
+    always_declare_return_types: true
+    avoid_multiple_declarations_per_line: true
+    avoid_redundant_argument_values: true
+    avoid_unused_constructor_parameters: true
+    avoid_void_async: true
+    constant_identifier_names: false
+    directives_ordering: true
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    unnecessary_lambdas: true
+    unnecessary_parenthesis: true
+    unnecessary_to_list_in_spreads: true
+    use_string_in_part_of_directives: true
+    prefer_const_constructors: true
+
+    # Pub Rules:
+    sort_pub_dependencies: true
+    
+    # File Rules:
+    file_names: true
+
+dart_code_metrics:
+  anti-patterns:
+    - long-method
+    - long-parameter-list
+  metrics-exclude:
+    - test/**
+  rules:
+    - avoid-global-state
+    - avoid-ignoring-return-values
+    - avoid-late-keyword
+    - avoid-missing-enum-constant-in-map
+    - avoid-nested-conditional-expressions:
+        acceptable-level: 3   
+    - avoid-non-null-assertion
+    - avoid-passing-async-when-sync-expected
+    - avoid-redundant-async
+    - avoid-throw-in-catch-block
+    - avoid-top-level-members-in-tests
+    - avoid-unnecessary-type-assertions
+    - avoid-unnecessary-type-casts
+    - avoid-unrelated-type-assertions
+    - avoid-unused-parameters
+    - binary-expression-operand-order
+    - double-literal-format
+    - format-comment
+    - member-ordering-extended
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block
+    - no-equal-arguments
+    - no-equal-then-else
+    - no-magic-number
+    - no-object-declaration
+    - prefer-async-await
+    - prefer-commenting-analyzer-ignores
+    - prefer-correct-identifier-length:
+        max-identifier-length: 30
+        min-identifier-length: 4
+    - prefer-correct-test-file-name
+    - prefer-correct-type-name:
+        min-length: 3
+        max-length: 40
+    - prefer-enums-by-name
+    - prefer-first
+    - prefer-immediate-return
+    - prefer-iterable-of
+    - prefer-last
+    - prefer-match-file-name 
+    - prefer-moving-to-variable:
+        allowed-duplicated-chains: 5
+    - prefer-trailing-comma
+    - tag-name
+    - always-remove-listener
+    - avoid-returning-widgets
+    - avoid-shrink-wrap-in-lists
+    - avoid-unnecessary-setstate
+    - avoid-use-expanded-as-spacer
+    - avoid-wrapping-in-padding
+    - check-for-equals-in-render-object-setters
+    - consistent-update-render-object
+    - prefer-const-border-radius
+    - prefer-correct-edge-insets-constructor
+    - prefer-extracting-callbacks
+    - prefer-single-widget-per-file
+    - prefer-intl-name
+    - provide-correct-intl-args
+    - prefer-const-constructors
