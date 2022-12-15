@@ -13,7 +13,6 @@ updates:
       time: "09:00"
       timezone: Europe/Warsaw
     open-pull-requests-limit: 5
-updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

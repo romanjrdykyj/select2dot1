@@ -25,7 +25,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.CI_TOKEN }}
+          github_token: ${{ secrets.TOKEN_SELECT2DOT1 }}
           publish_dir: ./example/build/web
           cname: select2dot1.site
 
