@@ -1,11 +1,11 @@
 {
-    "name": "example",
-    "short_name": "example",
+    "name": "Select2dot1 Example",
+    "short_name": "Select2dot1 Example",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#EDEBF2",
+    "theme_color": "#87858C",
+    "description": "This project demonstrates how to use Select2dot1 widget.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

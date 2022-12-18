@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'select2dot1_example',
+      title: 'Select2dot1 Example',
       initialRoute: Menu.routeName,
       routes: <String, WidgetBuilder>{
         Menu.routeName: (context) => const Menu(),
