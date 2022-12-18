@@ -5,6 +5,11 @@ homepage: https://select2dot1.site
 repository: https://github.com/romanjrdykyj/select2dot1
 issue_tracker: https://github.com/romanjrdykyj/select2dot1/issues
 funding: https://www.buymeacoffee.com/romanjrdykyj
+screenshots:
+  - description: 'This screenshot shows Select2dot1 in desktop version'
+    path: screenshots/desktop_examlpe.jpeg
+  - description: 'This screenshot shows Select2dot1 in mobile version'
+    path: screenshots/mobile_example.png
 
 environment:
   sdk: '>=2.18.5 <3.0.0'

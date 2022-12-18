@@ -10,30 +10,68 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
+# Select2dot1
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Select2dot1 give you a customizable single/multiple select box with support for 
+searching, group option, extra info and avatar. Select2dot1 works using overlay
+(web, desktop) and modal (mobile) and is fully customizable by settings and builder.
 
-## Features
+## Screenshots
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Desktop and mobile version
+
+<img src="screenshots/desktop_example.jpeg" width="375" height="667" />
+<img src="screenshots/mobile_example.png" width="375" height="667" />
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Installation
 
-## Usage
+Add following dependency in pubspec.yaml file. And add this import to your file.
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```bash
+flutter pub add select2dot1
+import 'package:select2dot1/select2dot1.dart';
 ```
 
-## Additional information
+### Usage
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+On the first step you need to create a list of data that you want to display in.
+
+```dart
+const List<SingleCategoryModel> exampleData1 = [
+    SingleCategoryModel(
+      nameCategory: 'Team Leader',
+      singleItemCategoryList: [
+        SingleItemCategoryModel(
+          nameSingleItem: 'David Eubanks',
+          extraInfoSingleItem: 'Full time',
+          avatarSingleItem: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.transparent,
+            backgroundImage: AssetImage('assets/images/avatar1.jpg'),
+          ),
+        ),
+        SingleItemCategoryModel(
+          nameSingleItem: 'Stuart Resch',
+          extraInfoSingleItem: 'Part time',
+          avatarSingleItem: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text('SR', style: TextStyle(color: Colors.white)),
+          ),
+        ),
+      ],
+    ),
+```
+
+
+
+Use Select2dot1 widget and pass your data to it.
+
+```dart
+Select2dot1(
+    selectDataController: SelectDataController(data: ExampleData.exampleData1),
+    scrollController: scrollController,
+    ),
+```
