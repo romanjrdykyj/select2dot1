@@ -10,6 +10,8 @@ class ExampleData {
           nameSingleItem: 'David Eubanks',
           extraInfoSingleItem: 'Full time',
           avatarSingleItem: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.transparent,
             backgroundImage: AssetImage('assets/images/avatar1.jpg'),
           ),
         ),
@@ -30,6 +32,8 @@ class ExampleData {
           nameSingleItem: 'David Eubanks',
           extraInfoSingleItem: 'Full time',
           avatarSingleItem: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.transparent,
             backgroundImage: AssetImage('assets/images/avatar1.jpg'),
           ),
         ),
@@ -37,6 +41,8 @@ class ExampleData {
           nameSingleItem: 'Manuel Eyre',
           extraInfoSingleItem: 'Full time',
           avatarSingleItem: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.transparent,
             backgroundImage: AssetImage('assets/images/avatar2.jpg'),
           ),
         ),
