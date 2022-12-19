@@ -7,7 +7,7 @@ issue_tracker: https://github.com/romanjrdykyj/select2dot1/issues
 funding: [https://www.buymeacoffee.com/romanjrdykyj]
 screenshots:
   - description: 'This screenshot shows Select2dot1 in desktop version'
-    path: screenshots/desktop_examlpe.jpeg
+    path: screenshots/desktop_example.jpeg
   - description: 'This screenshot shows Select2dot1 in mobile version'
     path: screenshots/mobile_example.png
 
