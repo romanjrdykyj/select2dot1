@@ -2,7 +2,7 @@ name: select2dot1
 description: Select2dot1 give you a customizable single/multiple select box with support for 
   searching, group option, extra info and avatar. Select2dot1 works using overlay
   (web, desktop) and modal (mobile) and is fully customizable by settings and builder.
-version: 0.0.1
+version: 0.0.2
 homepage: https://select2dot1.site
 repository: https://github.com/romanjrdykyj/select2dot1
 issue_tracker: https://github.com/romanjrdykyj/select2dot1/issues
