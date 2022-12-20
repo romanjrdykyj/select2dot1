@@ -2,7 +2,7 @@
 [![build](https://img.shields.io/badge/build-passing-brightgreen)](https://pub.dev/packages/select2dot1)
 [![pub package](https://img.shields.io/pub/v/select2dot1.svg)](https://pub.dartlang.org/packages/select2dot1)
 [![pub points](https://img.shields.io/pub/points/select2dot1?color=2E8B57&label=pub%20points)](https://pub.dev/packages/select2dot1/score)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?color=red)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?color=red)](https://pub.dev/packages/select2dot1/license)
 [![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/romanjrdykyj)
 
 # Select2dot1
@@ -42,7 +42,7 @@ import 'package:select2dot1/select2dot1.dart';
 1. On the first step you need to create a list of data that you want to display in.
 
 ```dart
-const List<SingleCategoryModel> exampleData1 = [
+static const List<SingleCategoryModel> exampleData = [
     SingleCategoryModel(
       nameCategory: 'Team Leader',
       singleItemCategoryList: [
@@ -71,7 +71,7 @@ const List<SingleCategoryModel> exampleData1 = [
 
 ```dart
 Select2dot1(
-    selectDataController: SelectDataController(data: ExampleData.exampleData1),
+    selectDataController: SelectDataController(data: exampleData),
     scrollController: scrollController,
     ),
 ```
