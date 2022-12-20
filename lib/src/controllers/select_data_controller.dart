@@ -7,12 +7,16 @@ import 'package:select2dot1/src/models/single_item_category_model.dart';
 /// SelectDataController class extends [ChangeNotifier].
 class SelectDataController extends ChangeNotifier {
   /// The [_data] is all data pass to the package.
+  /// It is required.
   final List<SingleCategoryModel> _data;
 
   /// The [_initSelected] is initial selected data.
+  /// This data will be add to the [_selectedList] when the class is created.
+  /// if [_isMultiSelect] is false, [_initSelected] must be null or length <= 1.
   final List<SingleItemCategoryModel>? _initSelected;
 
   /// The [_isMultiSelect] is a boolean to set multi select or single select.
+  /// Default is true.
   final bool _isMultiSelect;
 
   /// The [_selectedList] is a list of [SingleItemCategoryModel] that is selected.

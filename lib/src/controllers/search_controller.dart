@@ -7,6 +7,7 @@ import 'package:select2dot1/src/models/single_item_category_model.dart';
 /// SearchController class extends [ChangeNotifier].
 class SearchController extends ChangeNotifier {
   /// Data to search.
+  /// It is required.
   final List<SingleCategoryModel> _data;
 
   /// Search results.

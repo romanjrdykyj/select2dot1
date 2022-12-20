@@ -1,23 +1,40 @@
 import 'package:flutter/material.dart';
 
+/// SingleItemCategoryModel is a model class that contains the name of the item, the value of the item, the extra info of the item, and the avatar of the item.
 class SingleItemCategoryModel {
+  /// The name of the item.
+  /// It is required.
   final String _nameSingleItem;
+
+  /// The value of the item.
+  /// It is optional
+  /// [_value] preffer set to avoid duplicate items when [_nameSingleItem] is the same.
   final dynamic _value;
+
+  /// The extra info of the item.
+  /// It is optional.
   final String? _extraInfoSingleItem;
+
+  /// The avatar of the item.
+  /// It is optional.
   final Widget? _avatarSingleItem;
 
+  /// Getter for [_nameSingleItem].
   String get getNameSingleItem {
     return _nameSingleItem;
   }
 
+  /// Getter for [_value].
   dynamic get getValue {
     return _value;
   }
 
+  /// Getter for [_extraInfoSingleItem].
   String? get getExtraInfoSingleItem {
     return _extraInfoSingleItem;
   }
 
+  /// Getter for [_avatarSingleItem].
   Widget? get getAvatarSingleItem {
     return _avatarSingleItem;
   }
@@ -25,6 +42,12 @@ class SingleItemCategoryModel {
   @override
   int get hashCode => _nameSingleItem.hashCode;
 
+  /// Creating an argument constructor of SingleItemCategoryModel class.
+  /// [_nameSingleItem] is required.
+  /// [_value] is optional.
+  /// [_value] preffer set to avoid duplicate items when [_nameSingleItem] is the same.
+  /// [_extraInfoSingleItem] is optional.
+  /// [_avatarSingleItem] is optional.
   const SingleItemCategoryModel({
     required String nameSingleItem,
     dynamic value,
