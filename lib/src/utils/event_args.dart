@@ -81,7 +81,7 @@ typedef PillboxBuilder = Widget Function(
 class PillboxDetails {
   /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
   final SelectDataController selectDataController;
-  
+
   /// [showDropdown] is a function that will be used to show the dropdown.
   final void Function() showDropdown;
 
@@ -102,7 +102,6 @@ class PillboxDetails {
 
   /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
-
 
   /// Creating an argument constructor of [PillboxDetails] class.
   /// The [PillboxDetails] is a class that contains the details to build the content of the pillbox.
@@ -184,7 +183,7 @@ class PillboxContentMultiDetails {
   /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
   /// [hover] is a boolean that will be used to check if the pillbox is hovered.
   /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.  
+  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
   /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
   /// [selectChip] is a function that will be used to build the chip of the pillbox.
   /// [selectEmptyInfo] is a function that will be used to build the empty info of the pillbox.
@@ -645,7 +644,7 @@ class ListDataViewOverlayDetails {
   final Widget Function(SingleItemCategoryModel singleItemCategory)
       categoryItemOverlay;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.    
+  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [ListDataViewOverlayDetails] class.
@@ -665,6 +664,7 @@ class ListDataViewOverlayDetails {
     required this.globalSettings,
   });
 }
+
 /// The [CategoryItemOverlayBuilder] is a function that will be used to build the category name of the pillbox.
 /// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
 /// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build the category name of the pillbox.
@@ -672,10 +672,9 @@ typedef CategoryItemOverlayBuilder = Widget Function(
   /// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
   BuildContext context,
 
-/// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build the category name of the pillbox.
+  /// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build the category name of the pillbox.
   CategoryItemOverlayDetails categoryItemOverlayDetails,
 );
-
 
 /// The [CategoryItemOverlayDetails] is a class that contains the details to build the category name of the pillbox.
 /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category name of the pillbox.
@@ -709,7 +708,7 @@ class CategoryItemOverlayDetails {
 
   /// Creating an argument constructor of [CategoryItemOverlayDetails] class.
   /// The [CategoryItemOverlayDetails] is a class that contains the details to build the category name of the pillbox.
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category name of the pillbox.  
+  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category name of the pillbox.
   /// [selectDataController] is a [SelectDataController] that will be used to build the category name of the pillbox.
   /// [overlayHide] is a [void Function()] that will be used to build the category name of the pillbox.
   /// [hover] is a [bool] that will be used to build the category name of the pillbox.

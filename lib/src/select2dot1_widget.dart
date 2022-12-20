@@ -38,8 +38,8 @@ import 'package:select2dot1/src/utils/event_args.dart';
 
 /// This is the main widget of the library and package.
 /// Use this widget to create a select2dot1 widget.
-/// 
-/// 
+///
+///
 /// On the first step you need to create a list of data that you want to display in.
 /// ```dart
 /// static const List<SingleCategoryModel> exampleData = [
