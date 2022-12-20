@@ -1,3 +1,9 @@
+## 0.1.0
+
+* improve README.md
+* make API documentation v1
+* update description in pubspec.yaml
+
 ## 0.0.2
 
 * improve README.md
