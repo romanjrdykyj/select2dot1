@@ -31,18 +31,21 @@ Author site: https://romanjrdykyj.site
   - [Usage](#usage)
 - [Features](#features)
   - [ScrollController](#scroll-controller)
-  - ['onChanged' Callback Function](#onchanged-callback-function)
-  - [Model Structor Data](#model-structur-data)
   - [Fully Customizable](#fully-customizable)
+- [Settings](#settings)
 - [Customization](#customization)
   - [By Settings](#by-settings)
   - [By Builder](#by-builder)
+- [Model Structur Data](#model-structur-data)
+- [Controllers](#controllers)
+  - [SelectDataController](#selectdatacontroller)
 - [Contributing](#contributing)
   - [Issues](#issues)
   - [Security](#security)
   - [Contributors](#contributors)
 - [Q&A](#qa)
 - [FAQ](#faq)
+  - [How to get selected item?](#how-to-get-selected-item)
 - [License](#license)
 
 ## Platform Support
@@ -94,6 +97,7 @@ static const List<SingleCategoryModel> exampleData = [
         ),
       ],
     ),
+  ];
 ```
 
 2. Use Select2dot1 widget and pass your data to it. You can also pass [scrollController](#scroll-controller) if you want to use it.
@@ -115,24 +119,12 @@ ScrollController is used to control anchor position of dropdown menu. You can pa
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/scrollcontroller.gif)
 
-### 'onChanged' Callback Function
-
-You can pass callback function to Select2dot1 widget. This function will be called every time when user select an item.
-
-```dart
-Select2dot1(
-    selectDataController: SelectDataController(data: exampleData),
-    onChanged: (value) {
-        print(value); // value is a list of selected items
-    },
-),
-```
-
-### Model Structur Data
-
 ### Fully Customizable
 
 All components of Select2dot1 are fully customizable by [settings](#by-settings) and [builder](#by-builder). If you want to change something that is not available in settings, let's make yor own component by builder. Check [Customization](#customization) section for more information.
+
+## Settings
+
 
 ## Customization
 
@@ -156,12 +148,11 @@ Select2dot1(
 );
 ```
 
-
 `Use single component settings to customize only one component of Select2dot1 widget`
 
 You can pass single component settings to Select2dot1 widget. Single component settings will be used only by one component of Select2dot1 widget.
 
-In this example we will customize only CategoryNameOverlay component and CategoryItemOverlay component in Dropdown.
+In this example we will customize only CategoryNameOverlay component and CategoryItemOverlay component in Dropdown (change visible only on desktop overlay).
 
 ```dart
 Select2dot1(
@@ -198,7 +189,6 @@ Select2dot1(
   ),
 );
 ```
-
 
 ### By Builder
 
@@ -293,6 +283,112 @@ Select2dot1(
 );
 ```
 
+## Model Structur Data
+
+To use Select2dot1 widget you have to pass data to SelectDataController. Data must be in list of SingleCategoryModel. 
+
+SingleCategoryModel is a model that contains data about single category. 
+Parameters:
+* nameCategory - name of category (It is optional if you don't want to show group select)
+* singleItemCategoryList - list of SingleItemCategoryModel (It is required)
+
+
+SingleItemCategoryModel is a model that contains data about single item in category.
+Parameters:
+* nameSingleItem - visible name of single item (It is required)
+* [value](#value-parametr-in-singleitemcategorymodel) - value of single item (It is optional)
+* extraInfoSingleItem - extra info about single item (It is optional)
+* avatarSingleItem - avatar of single item (It is optional)
+
+### Value parametr in SingleItemCategoryModel
+
+It used to get specific id of single item. It's necessary when you want to distinguish between single items with the same nameSingleItem.
+
+```dart
+static const List<SingleCategoryModel> exampleData3 = [
+  SingleCategoryModel(
+    singleItemCategoryList: [
+      SingleItemCategoryModel(nameSingleItem: 'Alabama', value: 'Alabama1'),
+      SingleItemCategoryModel(nameSingleItem: 'Alabama', value: 'Alabama2'),
+      SingleItemCategoryModel(nameSingleItem: 'Arkansas'),
+      SingleItemCategoryModel(nameSingleItem: 'Illonois'),
+    ],
+  ),
+];
+```
+
+### Example data
+
+```dart
+static const List<SingleCategoryModel> exampleData = [
+    SingleCategoryModel(
+      nameCategory: 'Team Leader',
+      singleItemCategoryList: [
+        SingleItemCategoryModel(
+          nameSingleItem: 'David Eubanks',
+          extraInfoSingleItem: 'Full time',
+          avatarSingleItem: CircleAvatar(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.transparent,
+            backgroundImage: AssetImage('assets/images/avatar1.jpg'),
+          ),
+        ),
+        SingleItemCategoryModel(
+          nameSingleItem: 'Stuart Resch',
+          extraInfoSingleItem: 'Part time',
+          avatarSingleItem: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text('SR', style: TextStyle(color: Colors.white)),
+          ),
+        ),
+      ],
+    ),
+    SingleCategoryModel(
+      nameCategory: 'UX Designer',
+      singleItemCategoryList: [
+        SingleItemCategoryModel(
+          nameSingleItem: 'Jan Foxstein',
+          extraInfoSingleItem: 'Full time',
+        ),
+        SingleItemCategoryModel(
+          nameSingleItem: 'Jhony Steward',
+          extraInfoSingleItem: 'Part time',
+          avatarSingleItem: CircleAvatar(
+            backgroundColor: Colors.blue,
+            child: Text('JS', style: TextStyle(color: Colors.white)),
+          ),
+        ),
+      ],
+    ),
+  ];
+```
+
+## Controllers
+
+### SelectDataController
+
+SelectDataController is a controller that is used to manage data in Select2dot1 widget. You can use it to add, remove, select and deselect data. All data that you want to display in Select2dot1 widget must be added to SelectDataController. 
+**Remember that when isMultiple is false, you can add only one position to initialSelectedData**.
+
+In SelectDataController you can also set: 
+* inital selected data
+* is multiple select or single select
+
+```dart
+Select2dot1(
+  selectDataController: 
+    SelectDataController(
+      data: exampleData, 
+      isMultiple: false, 
+      initialSelectedData: [ // Remember that when isMultiple is false, you can add only one position to initialSelectedData.
+        SingleItemCategoryModel(
+          nameSingleItem: 'Stuart Resch',
+          value: 'Stuart Resch 1', 
+        ),
+      ],
+    ),
+);
+```
 
 ## Contributing
 
@@ -305,7 +401,6 @@ If you find any issues (bug, feature, performance or other), please report them 
 Please do not ask questions in the issue tracker. Use [Q&A](#qa) section instead.
 
 Please do not report security vulnerabilities on the public issue tracker. The [SECURITY](#security) page details the procedure for disclosing security issues.
-
 
 ## Security
 
@@ -321,8 +416,20 @@ If you have any questions, feel free to ask them [here](https://github.com/roman
 
 ## FAQ
 
-Coming soon...
+### How to get selected item?
 
+Use 'onChanged' Callback Function
+
+You can pass callback function to Select2dot1 widget. This function will be called every time when user select an item.
+
+```dart
+Select2dot1(
+    selectDataController: SelectDataController(data: exampleData),
+    onChanged: (value) {
+        print(value); // value is a list of selected items
+    },
+),
+```
 ## License
 
 This package is licensed under the [MIT license](https://opensource.org/licenses/MIT). To see the full license text, see the [LICENSE](https://pub.dev/packages/select2dot1/license) file.
