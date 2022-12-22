@@ -38,11 +38,7 @@ class SelectDataController extends ChangeNotifier {
   }
 
   /// Creating an argument constructor of SelectDataController class.
-  /// [_data] is required.
-  /// [_isMultiSelect] is optional, default is true.
-  /// [_initSelected] is optional, default is null.
   /// if [_isMultiSelect] is false, [_initSelected] must be null or length <= 1.
-  /// On create, [_selectedList] will be add [_initSelected].
   SelectDataController({
     required List<SingleCategoryModel> data,
     bool isMultiSelect = true,

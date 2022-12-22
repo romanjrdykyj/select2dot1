@@ -229,49 +229,6 @@ class Select2dot1 extends StatefulWidget {
   final GlobalSettings globalSettings;
 
   /// [Select2dot1] is a package widget constructor.
-  /// [key] is a key of the widget.
-  /// [selectDataController] is a controller of the widget.
-  /// [onChanged] is a callback that is called when the selected data is changed.
-  /// [scrollController] is a controller of the scroll.
-  /// [isSearchable] is a boolean that indicates whether the search bar is visible or not.
-  /// [pillboxTitleBuilder] is a builder that is used to build the title of the widget.
-  /// [pillboxBuilder] is a builder that is used to build the pillbox of the widget.
-  /// [pillboxContentMultiBuilder] is a builder that is used to build the content of the pillbox in multi select mode.
-  /// [pillboxContentSingleBuilder] is a builder that is used to build the content of the pillbox in single select mode.
-  /// [pillboxIconBuilder] is a builder that is used to build the icon of the pillbox.
-  /// [selectChipBuilder] is a builder that is used to build the chip of the widget.
-  /// [selectSingleBuilder] is a builder that is used to build the single select mode of the widget.
-  /// [selectEmptyInfoBuilder] is a builder that is used to build the empty info of the widget.
-  /// [selectOverloadInfoBuilder] is a builder that is used to build the overload info of the widget.
-  /// [dropdownContentOverlayBuilder] is a builder that is used to build the overlay of the dropdown content.
-  /// [searchBarOverlayBuilder] is a builder that is used to build the overlay of the search bar.
-  /// [searchEmptyInfoOverlayBuilder] is a builder that is used to build the overlay of the search empty info.
-  /// [listDataViewOverlayBuilder] is a builder that is used to build the overlay of the list data view.
-  /// [categoryNameOverlayBuilder] is a builder that is used to build the overlay of the category name.
-  /// [categoryItemOverlayBuilder] is a builder that is used to build the overlay of the category item.
-  /// [dropdownContentModalBuilder] is a builder that is used to build the modal of the dropdown content.
-  /// [titleModalBuilder] is a builder that is used to build the modal of the title.
-  /// [doneButtonModalBuilder] is a builder that is used to build the modal of the done button.
-  /// [searchBarModalBuilder] is a builder that is used to build the modal of the search bar.
-  /// [searchEmptyInfoModalBuilder] is a builder that is used to build the modal of the search empty info.
-  /// [listDataViewModalBuilder] is a builder that is used to build the modal of the list data view.
-  /// [categoryNameModalBuilder] is a builder that is used to build the modal of the category name.
-  /// [categoryItemModalBuilder] is a builder that is used to build the modal of the category item.
-  /// [dropdownContentOverlaySettings] is a class that contains all the settings of the overlay of the dropdown content.
-  /// [searchBarOverlaySettings] is a class that contains all the settings of the overlay of the search bar.
-  /// [searchEmptyInfoOverlaySettings] is a class that contains all the settings of the overlay of the search empty info.
-  /// [listDataViewOverlaySettings] is a class that contains all the settings of the overlay of the list data view.
-  /// [categoryNameOverlaySettings] is a class that contains all the settings of the overlay of the category name.
-  /// [categoryItemOverlaySettings] is a class that contains all the settings of the overlay of the category item.
-  /// [dropdownContentModalSettings] is a class that contains all the settings of the modal of the dropdown content.
-  /// [titleModalSettings] is a class that contains all the settings of the modal of the title.
-  /// [doneButtonModalSettings] is a class that contains all the settings of the modal of the done button.
-  /// [searchBarModalSettings] is a class that contains all the settings of the modal of the search bar.
-  /// [searchEmptyInfoModalSettings] is a class that contains all the settings of the modal of the search empty info.
-  /// [listDataViewModalSettings] is a class that contains all the settings of the modal of the list data view.
-  /// [categoryNameModalSettings] is a class that contains all the settings of the modal of the category name.
-  /// [categoryItemModalSettings] is a class that contains all the settings of the modal of the category item.
-  /// [globalSettings] is a class that contains all the global settings of the widget.
   const Select2dot1({
     super.key,
     required this.selectDataController,

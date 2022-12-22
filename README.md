@@ -7,6 +7,8 @@
 
 # Select2dot1
 
+## Introduction
+
 Select2dot1 give you a customizable single/multiple select box with support for 
 searching, group option, extra info and avatar. Select2dot1 works using overlay
 (web, desktop) and modal (mobile) and is fully customizable by settings and builder.
@@ -17,10 +19,24 @@ Author site: https://romanjrdykyj.site
 
 ## Screenshots
 
-Desktop Example            |  Mobile Example
-:-------------------------:|:-------------------------:
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/screenshots/desktop_example.webp)  |  ![](https://github.com/romanjrdykyj/select2dot1/blob/main/screenshots/mobile_example.webp)
+| Desktop Example                             | Mobile Example                                |
+| :-----------------------------------------: | :-------------------------------------------: |
+| ![](https://github.com/romanjrdykyj/select2dot1/blob/main/screenshots/desktop_example.webp) | ![](https://github.com/romanjrdykyj/select2dot1/blob/main/screenshots/mobile_example.webp) |
 
+## Table of Contents
+- [Introduction](#Introduction)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+  - [ScrollController](#scroll-controller)
+- [Contributing](#contributing)
+  - [Issues](#issues)
+  - [QA](#qa)
+  - [Security](#security)
+  - [Contributors](#contributors)
+- [FAQ](#faq)
+- [License](#license)
 
 ## Installation
 
@@ -67,7 +83,7 @@ static const List<SingleCategoryModel> exampleData = [
     ),
 ```
 
-2. Use Select2dot1 widget and pass your data to it. You can also pass scrollController if you want to use it.
+2. Use Select2dot1 widget and pass your data to it. You can also pass [scrollController](#scroll-controller) if you want to use it.
 
 ```dart
 Select2dot1(
@@ -75,3 +91,50 @@ Select2dot1(
     scrollController: scrollController,
     ),
 ```
+
+## Features
+
+### Scroll Controller
+
+ScrollController is used to control anchor position of dropdown menu. You can pass your own ScrollController to Select2dot1 widget.
+
+```dart
+final ScrollController scrollController = ScrollController();
+Select2dot1(
+    selectDataController: SelectDataController(data: exampleData),
+    scrollController: scrollController,
+    ),
+```
+
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+### Issues
+
+If you find any issues, please report them [here](https://github.com/romanjrdykyj/select2dot1/issues).
+
+Please do not ask questions in the issue tracker. Use [Q&A](#qa) section instead.
+
+Please do not report security vulnerabilities on the public issue tracker. The [SECURITY](#security) page details the procedure for disclosing security issues.
+
+### QA
+
+If you have any questions, feel free to ask them [here](https://github.com/romanjrdykyj/select2dot1/discussions).
+
+### Security
+
+If you discover any security related issues, please go to [SECURITY](https://github.com/romanjrdykyj/select2dot1/blob/main/SECURITY.md) page.
+
+### Contributors
+
+- Roman Dykyj (@romanjrdykyj)
+
+## FAQ
+
+Coming soon...
+
+## License
+
+This package is licensed under the [MIT license](https://opensource.org/licenses/MIT). To see the full license text, see the [LICENSE](https://pub.dev/packages/select2dot1/license) file.

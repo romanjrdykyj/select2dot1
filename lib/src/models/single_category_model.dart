@@ -24,9 +24,6 @@ class SingleCategoryModel {
   int get hashCode => _nameCategory.hashCode ^ _singleItemCategoryList.hashCode;
 
   /// Creating an argument constructor of SingleCategoryModel class.
-  /// [_nameCategory] is optional.
-  /// [_singleItemCategoryList] is required.
-  /// [_singleItemCategoryList] preffer not be empty.
   const SingleCategoryModel({
     String? nameCategory,
     required List<SingleItemCategoryModel> singleItemCategoryList,
