@@ -102,7 +102,7 @@ static const List<SingleCategoryModel> exampleData = [
 Select2dot1(
     selectDataController: SelectDataController(data: exampleData),
     scrollController: scrollController,
-    ),
+),
 ```
 
 ## Features
@@ -125,7 +125,7 @@ Select2dot1(
     onChanged: (value) {
         print(value); // value is a list of selected items
     },
-    ),
+),
 ```
 
 ### Model Structur Data
@@ -139,6 +139,66 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 If you want to customize Select2dot1 widget you can do it by settings and builder. First try to use settings to customize, if you can't find what you need, use builder.
 
 ### By Settings
+
+`Use global settings to customize all components of Select2dot1 widget`
+
+You can pass global settings to Select2dot1 widget. Global settings will be used by all components of Select2dot1 widget.
+
+In this example we will customize mainColor and fontFamily for all components of Select2dot1 widget.
+
+```dart
+Select2dot1(
+  selectDataController: SelectDataController(data: exampleData),
+  globalSettings: const GlobalSettings(
+    fontFamily: 'Roboto',
+    mainColor: Colors.blue,
+  ),
+);
+```
+
+
+`Use single component settings to customize only one component of Select2dot1 widget`
+
+You can pass single component settings to Select2dot1 widget. Single component settings will be used only by one component of Select2dot1 widget.
+
+In this example we will customize only CategoryNameOverlay component and CategoryItemOverlay component in Dropdown.
+
+```dart
+Select2dot1(
+  selectDataController: SelectDataController(data: exampleData),
+  categoryNameOverlaySettings: CategoryNameOverlaySettings(
+    constraints: const BoxConstraints(minHeight: 27),
+    textStyle: const TextStyle(
+      color: Color(0xFF6B7893),
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+     ),
+    defaultDecoration: const BoxDecoration(color: Colors.transparent),
+    hoverDecoration:
+        BoxDecoration(color: const Color(0xFF00183D).withOpacity(0.5)),
+  ),
+  categoryItemOverlaySettings: CategoryItemOverlaySettings(
+    constraints: const BoxConstraints(minHeight: 35),
+    defaultTextStyle: const TextStyle(
+      color: Colors.white,
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+    ),
+    selectedTextStyle: const TextStyle(
+      color: Color(0xFF1DEDB2),
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+    ),
+    iconSize: 14,
+    iconSelectedColor: const Color(0xFF1DEDB2),
+    defaultDecoration: const BoxDecoration(color: Colors.transparent),
+    hoverDecoration:
+        BoxDecoration(color: const Color(0xFF00183D).withOpacity(0.5)),
+    showExtraInfo: extraInfoInDropdown,
+  ),
+);
+```
+
 
 ### By Builder
 
@@ -201,6 +261,7 @@ Select2dot1(
 `Use default components`
 
 If you want change layout of component which includes a lot of other components, you can use default components that are available in Select2dot1 widget. You can use them by passing them to Select2dot1Builder class.
+**Remember that when using this builder, you must ensure the correctness of the written code yourself.**
 
 ```dart
 Select2dot1(
