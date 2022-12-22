@@ -46,6 +46,9 @@ Author site: https://romanjrdykyj.site
 - [Q&A](#qa)
 - [FAQ](#faq)
   - [How to get selected item?](#how-to-get-selected-item)
+  - [How to init selected data?](#how-to-init-selected-data)
+  - [How to used only overlay or modal mode on all platforms?](#how-to-used-only-overlay-or-modal-mode-on-all-platforms)
+  - [How to set NO group select?](#how-to-set-no-group-select)
 - [License](#license)
 
 ## Platform Support
@@ -305,7 +308,7 @@ Parameters:
 It used to get specific id of single item. It's necessary when you want to distinguish between single items with the same nameSingleItem.
 
 ```dart
-static const List<SingleCategoryModel> exampleData3 = [
+static const List<SingleCategoryModel> exampleData = [
   SingleCategoryModel(
     singleItemCategoryList: [
       SingleItemCategoryModel(nameSingleItem: 'Alabama', value: 'Alabama1'),
@@ -430,6 +433,45 @@ Select2dot1(
     },
 ),
 ```
+
+### How to init selected data?
+
+```dart
+Select2dot1(
+    selectDataController: SelectDataController(data: exampleData, 
+    initialSelectedData: [
+        SingleItemCategoryModel(
+          nameSingleItem: 'Alabama',
+        ),
+        SingleItemCategoryModel(
+          nameSingleItem: 'California',
+        ),
+      ],
+    ),
+),
+```
+
+### How to used only overlay or modal mode on all platforms?
+
+It is not possible to use only overlay or modal mode on all platforms. It is automatically set by the package. Overlay mode is used on desktop and modal mode is used on mobile.
+
+### How to set NO group select?
+
+If you dont want to group select, you dont need to use name parameter in SingleCategoryModel.
+
+```dart
+static const List<SingleCategoryModel> exampleData3 = [
+  SingleCategoryModel(
+    nameCategory: null, // If you dont want to group select, you dont need to use name parameter in SingleCategoryModel or set it to null.
+    singleItemCategoryList: [
+      SingleItemCategoryModel(nameSingleItem: 'Alabama',),
+      SingleItemCategoryModel(nameSingleItem: 'Arkansas'),
+      SingleItemCategoryModel(nameSingleItem: 'Illonois'),
+    ],
+  ),
+];
+```
+
 ## License
 
 This package is licensed under the [MIT license](https://opensource.org/licenses/MIT). To see the full license text, see the [LICENSE](https://pub.dev/packages/select2dot1/license) file.
