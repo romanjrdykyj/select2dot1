@@ -25,18 +25,30 @@ Author site: https://romanjrdykyj.site
 
 ## Table of Contents
 - [Introduction](#Introduction)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Usage](#usage)
+  - [Screenshots](#screenshots)
+  - [Platform Support](#platform-support)
+  - [Installation](#installation)
+  - [Usage](#usage)
 - [Features](#features)
   - [ScrollController](#scroll-controller)
+  - [Settings](#settings)
+  - [Builder](#builder)
+- [Customization](#customization)
+  - [Customization by Settings](#customization-by-settings)
+  - [Customization by Builder](#customization-by-builder)
 - [Contributing](#contributing)
   - [Issues](#issues)
-  - [QA](#qa)
   - [Security](#security)
   - [Contributors](#contributors)
+- [Q&A](#qa)
 - [FAQ](#faq)
 - [License](#license)
+
+## Platform Support
+
+| Android | iOS | Web | Linux | macOS | Windows |
+| :-----: | :-: | :-: | :---: | :---: | :-----: |
+|    ✔    |  ✔  |  ✔  |   ✔   |   ✔   |    ✔    |
 
 ## Installation
 
@@ -106,30 +118,40 @@ Select2dot1(
     ),
 ```
 
+### Settings
+
+### Builder
+
+## Customization
+
+### Customization by Settings
+
+### Customization by Builder
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests (pull request template is available) are welcome. For major changes, please open an issue first to discuss what you would like to change. More information about contributing you can find [here](https://github.com/romanjrdykyj/select2dot1/blob/main/CONTRIBUTING.md). Remember to follow the [code of conduct](https://github.com/romanjrdykyj/select2dot1/blob/main/CODE_OF_CONDUCT.md).
 
-### Issues
+## Issues
 
-If you find any issues, please report them [here](https://github.com/romanjrdykyj/select2dot1/issues).
+If you find any issues (bug, feature, performance or other), please report them [here](https://github.com/romanjrdykyj/select2dot1/issues).
 
 Please do not ask questions in the issue tracker. Use [Q&A](#qa) section instead.
 
 Please do not report security vulnerabilities on the public issue tracker. The [SECURITY](#security) page details the procedure for disclosing security issues.
 
-### QA
 
-If you have any questions, feel free to ask them [here](https://github.com/romanjrdykyj/select2dot1/discussions).
-
-### Security
+## Security
 
 If you discover any security related issues, please go to [SECURITY](https://github.com/romanjrdykyj/select2dot1/blob/main/SECURITY.md) page.
 
-### Contributors
+## Contributors
 
 - Roman Dykyj (@romanjrdykyj)
+
+## QA
+
+If you have any questions, feel free to ask them [here](https://github.com/romanjrdykyj/select2dot1/discussions).
 
 ## FAQ
 
