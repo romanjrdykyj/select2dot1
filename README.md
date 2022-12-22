@@ -21,7 +21,7 @@ Author site: https://romanjrdykyj.site
 
 | Desktop Example                             | Mobile Example                                |
 | :-----------------------------------------: | :-------------------------------------------: |
-| ![](https://github.com/romanjrdykyj/select2dot1/blob/main/screenshots/desktop_example.webp) | ![](https://github.com/romanjrdykyj/select2dot1/blob/main/screenshots/mobile_example.webp) |
+| ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/desktop_example.webp) | ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/mobile_example.webp) |
 
 ## Table of Contents
 - [Introduction](#Introduction)
@@ -109,6 +109,13 @@ Select2dot1(
 ### Scroll Controller
 
 ScrollController is used to control anchor position of dropdown menu. You can pass your own ScrollController to Select2dot1 widget.
+
+#### Example
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/desktop_example.webp)
+
+
+#### Code Example
 
 ```dart
 final ScrollController scrollController = ScrollController();
