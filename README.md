@@ -31,11 +31,12 @@ Author site: https://romanjrdykyj.site
   - [Usage](#usage)
 - [Features](#features)
   - [ScrollController](#scroll-controller)
-  - [Settings](#settings)
-  - [Builder](#builder)
+  - ['onChanged' Callback Function](#onchanged-callback-function)
+  - [Model Structor Data](#model-structur-data)
+  - [Fully Customizable](#fully-customizable)
 - [Customization](#customization)
-  - [Customization by Settings](#customization-by-settings)
-  - [Customization by Builder](#customization-by-builder)
+  - [By Settings](#by-settings)
+  - [By Builder](#by-builder)
 - [Contributing](#contributing)
   - [Issues](#issues)
   - [Security](#security)
@@ -112,28 +113,125 @@ ScrollController is used to control anchor position of dropdown menu. You can pa
 
 #### Example
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/desktop_example.webp)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/scrollcontroller.gif)
 
+### 'onChanged' Callback Function
 
-#### Code Example
+You can pass callback function to Select2dot1 widget. This function will be called every time when user select an item.
 
 ```dart
-final ScrollController scrollController = ScrollController();
 Select2dot1(
     selectDataController: SelectDataController(data: exampleData),
-    scrollController: scrollController,
+    onChanged: (value) {
+        print(value); // value is a list of selected items
+    },
     ),
 ```
 
-### Settings
+### Model Structur Data
 
-### Builder
+### Fully Customizable
+
+All components of Select2dot1 are fully customizable by [settings](#by-settings) and [builder](#by-builder). If you want to change something that is not available in settings, let's make yor own component by builder. Check [Customization](#customization) section for more information.
 
 ## Customization
 
-### Customization by Settings
+If you want to customize Select2dot1 widget you can do it by settings and builder. First try to use settings to customize, if you can't find what you need, use builder.
 
-### Customization by Builder
+### By Settings
+
+### By Builder
+
+In builder you can customize all components of Select2dot1 widget. You can use your own components or use default components that are available in Select2dot1 widget.
+
+`Create your completly own component`
+
+You can create your own component by using Select2dot1Builder class. You have to pass your own component to Select2dot1Builder class and then pass this class to Select2dot1 widget. In builder you have access to all data that you need to create your own component.
+
+```dart
+Select2dot1(
+    selectDataController: SelectDataController(data: exampleData),
+    selectChipBuilder: (context, selectChipDetails) {
+          return Container(
+            height: 29,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            constraints: const BoxConstraints(maxWidth: 200),
+            decoration: BoxDecoration(
+              color: const Color(0xFF001029),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.white),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  child: Text(
+                    selectChipDetails.singleItemCategory.getNameSingleItem,
+                    softWrap: false,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 1.0, left: 2.0),
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        selectChipDetails.selectDataController
+                            .removeSingleSelectedChip(
+                          selectChipDetails.singleItemCategory,
+                        );
+                      },
+                      child: const Icon(
+                        Icons.clear,
+                        color: Colors.white,
+                        size: 14,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          );
+        },
+    ),
+```
+
+`Use default components`
+
+If you want change layout of component which includes a lot of other components, you can use default components that are available in Select2dot1 widget. You can use them by passing them to Select2dot1Builder class.
+
+```dart
+Select2dot1(
+  selectDataController: SelectDataController(data: exampleData),
+  pillboxTitleSettings:
+      const PillboxTitleSettings(title: 'Example use builder'),
+  pillboxBuilder: (context, pillboxDetails) => Material(
+    color: Colors.transparent,
+    child: InkWell(
+      onTap: pillboxDetails.showDropdown,
+      mouseCursor: SystemMouseCursors.click,
+      onHover: (hoverState) => mounted
+          ? setState(() => pillboxDetails.hover = hoverState)
+          : null,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      focusColor: Colors.transparent,
+      child: Row( // In this builder I changed layout of pillbox (Column to Row)
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          pillboxDetails.pillboxTitle(),
+          const SizedBox(width: 8),
+          Expanded(child: pillboxDetails.pillboxContent()),
+        ],
+      ),
+    ),
+  ),
+);
+```
+
 
 ## Contributing
 
