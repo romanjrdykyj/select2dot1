@@ -1,3 +1,8 @@
+## 0.1.1
+
+* improve README.md
+* refactor settings name
+
 ## 0.1.0
 
 * improve README.md
