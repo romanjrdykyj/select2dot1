@@ -56,7 +56,7 @@ class _PillboxIconState extends State<PillboxIcon> {
       );
     }
 
-    if (widget.pillboxIconSettings.iconData != null) {
+    if (widget.pillboxIconSettings.iconData == null) {
       return const SizedBox();
     }
 

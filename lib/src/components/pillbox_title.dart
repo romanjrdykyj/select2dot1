@@ -57,7 +57,7 @@ class _PillboxTitleState extends State<PillboxTitle> {
       );
     }
 
-    if (widget.pillboxTitleSettings.title != null) {
+    if (widget.pillboxTitleSettings.title == null) {
       return const SizedBox();
     }
 
