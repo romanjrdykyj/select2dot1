@@ -30,7 +30,7 @@ Author site: https://romanjrdykyj.site
   - [Installation](#installation)
   - [Usage](#usage)
 - [Features](#features)
-  - [ScrollController](#scroll-controller)
+  - [Scroll Controller](#scroll-controller)
   - [Fully Customizable](#fully-customizable)
 - [Components and Settings](#components-and-settings)
   - [Components View](#components-view)
@@ -42,10 +42,14 @@ Author site: https://romanjrdykyj.site
     - [Component Dropdown Overlay Configuration 2](#component-dropdown-overlay-configuration-2)
     - [Component Dropdown Modal Configuration 1](#component-dropdown-modal-configuration-1)
     - [Component Dropdown Modal Configuration 2](#component-dropdown-modal-configuration-2)
-  - [TreeView Components with Settings](#treeview-components-with-settings)
+  - [TreeView Components with Settings](#tree-view-components-with-settings)
 - [Customization](#customization)
   - [By Settings](#by-settings)
+    - [Use global settings to customize all components of Select2dot1 widget](#use-global-settings-to-customize-all-components-of-select2dot1-widget)
+    - [Use single component settings to customize only one component of Select2dot1 widget](#use-single-component-settings-to-customize-only-one-component-of-select2dot1-widget)
   - [By Builder](#by-builder)
+    - [Create your completly own component](#create-your-completly-own-component)
+    - [Use default components](#use-default-components)
 - [Model Structur Data](#model-structur-data)
 - [Controllers](#controllers)
   - [SelectDataController](#selectdatacontroller)
@@ -128,8 +132,6 @@ Select2dot1(
 
 ScrollController is used to control anchor position of dropdown menu. You can pass your own ScrollController to Select2dot1 widget.
 
-#### Example
-
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/scroll_controller.gif)
 
 ### Fully Customizable
@@ -140,7 +142,10 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 
 ### Components View
 
-#### Component Pillbox Configuration 1
+In this section you can see how components of Select2dot1 widget look like and see hierarchy. You can also see how to customize them by [settings](#by-settings) and [builder](#by-builder). For more details hierarchy of components , go to [Tree View Components with Settings](#tree-view-components-with-settings) section.
+
+
+#### **Component Pillbox Configuration 1**
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_1.png)
 
@@ -151,7 +156,9 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 5. SelectEmptyInfo
 6. PillboxIcon
 
-#### Component Pillbox Configuration 2
+____________________________________________________________________________________________
+
+#### **Component Pillbox Configuration 2**
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_2.png)
 
@@ -162,7 +169,9 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 5. SelectChip
 6. PillboxIcon
 
-#### Component Pillbox Configuration 3
+____________________________________________________________________________________________
+
+#### **Component Pillbox Configuration 3**
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_3.png)
 
@@ -173,7 +182,9 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 5. SelectOverloadInfo
 6. PillboxIcon
 
-#### Component Pillbox Configuration 4
+____________________________________________________________________________________________
+
+#### **Component Pillbox Configuration 4**
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_4.png)
 
@@ -184,7 +195,9 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 5. SelectSingle
 6. PillboxIcon
 
-#### Component Dropdown Overlay Configuration 1
+____________________________________________________________________________________________
+
+#### **Component Dropdown Overlay Configuration 1**
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_1.png)
 
@@ -194,7 +207,9 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 4. CategoryNameOverlay
 5. CategoryItemOverlay
 
-#### Component Dropdown Overlay Configuration 2
+____________________________________________________________________________________________
+
+#### **Component Dropdown Overlay Configuration 2**
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_2.png)
 
@@ -202,7 +217,9 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 2. SearchBarOverlay
 3. SearchEmptyOverlay
 
-#### Component Dropdown Modal Configuration 1
+____________________________________________________________________________________________
+
+#### **Component Dropdown Modal Configuration 1**
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_1.png)
 
@@ -214,7 +231,9 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 6. CategoryNameModal
 7. CategoryItemModal
 
-#### Component Dropdown Modal Configuration 2
+____________________________________________________________________________________________
+
+#### **Component Dropdown Modal Configuration 2**
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_2.png)
 
@@ -224,11 +243,13 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 4. SearchBarModal
 5. SearchEmptyModal
 
+____________________________________________________________________________________________
+
 ### Tree View Components with Settings
 
 You can see TreeView components with settings [there](https://miro.com/app/live-embed/uXjVP25lfEY=/?moveToViewport=-3198,-1103,6438,2600&embedId=52335582682).
+Tree View was created by [Miro](https://miro.com/). **If you want customize components of Select2dot1 widget, you can use Tree View to see all components and settings. The most helpful site - You must see it.**
 
-<iframe width="830" height="532" src="https://miro.com/app/live-embed/uXjVP25lfEY=/?moveToViewport=-3198,-1103,6438,2600&embedId=52335582682" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
 ## Customization
 
@@ -236,7 +257,7 @@ If you want to customize Select2dot1 widget you can do it by settings and builde
 
 ### By Settings
 
-`Use global settings to customize all components of Select2dot1 widget`
+#### **Use global settings to customize all components of Select2dot1 widget**
 
 You can pass global settings to Select2dot1 widget. Global settings will be used by all components of Select2dot1 widget.
 
@@ -252,7 +273,7 @@ Select2dot1(
 );
 ```
 
-`Use single component settings to customize only one component of Select2dot1 widget`
+#### **Use single component settings to customize only one component of Select2dot1 widget**
 
 You can pass single component settings to Select2dot1 widget. Single component settings will be used only by one component of Select2dot1 widget.
 
@@ -298,7 +319,7 @@ Select2dot1(
 
 In builder you can customize all components of Select2dot1 widget. You can use your own components or use default components that are available in Select2dot1 widget.
 
-`Create your completly own component`
+#### **Create your completly own component**
 
 You can create your own component by using Select2dot1Builder class. You have to pass your own component to Select2dot1Builder class and then pass this class to Select2dot1 widget. In builder you have access to all data that you need to create your own component.
 
@@ -352,7 +373,7 @@ Select2dot1(
     ),
 ```
 
-`Use default components`
+#### **Use default components**
 
 If you want change layout of component which includes a lot of other components, you can use default components that are available in Select2dot1 widget. You can use them by passing them to Select2dot1Builder class.
 **Remember that when using this builder, you must ensure the correctness of the written code yourself.**
@@ -572,8 +593,6 @@ static const List<SingleCategoryModel> exampleData3 = [
   ),
 ];
 ```
-
-#### Example
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/no_group_example.png)
 
