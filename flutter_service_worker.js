@@ -21,8 +21,8 @@ const RESOURCES = {
 "assets/assets/images/avatar1.jpg": "eedea4c84d9589939bf16cc6f641c7ae",
 "assets/assets/images/avatar2.jpg": "ab1cd0074a573780164103a90318f0e9",
 "assets/NOTICES": "976b20f97d54456b6b89e52e2c678d14",
-"index.html": "94061dd08f8e6ae4a13fe5f2f0c7bd72",
-"/": "94061dd08f8e6ae4a13fe5f2f0c7bd72",
+"index.html": "9b501ec1879509f163f64b2931bc102a",
+"/": "9b501ec1879509f163f64b2931bc102a",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "version.json": "ff966ab969ba381b900e61629bfb9789"
 };
