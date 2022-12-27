@@ -32,7 +32,17 @@ Author site: https://romanjrdykyj.site
 - [Features](#features)
   - [ScrollController](#scroll-controller)
   - [Fully Customizable](#fully-customizable)
-- [Settings](#settings)
+- [Components and Settings](#components-and-settings)
+  - [Components View](#components-view)
+    - [Component Pillbox Configuration 1](#component-pillbox-configuration-1)
+    - [Component Pillbox Configuration 2](#component-pillbox-configuration-2)
+    - [Component Pillbox Configuration 3](#component-pillbox-configuration-3)
+    - [Component Pillbox Configuration 4](#component-pillbox-configuration-4)
+    - [Component Dropdown Overlay Configuration 1](#component-dropdown-overlay-configuration-1)
+    - [Component Dropdown Overlay Configuration 2](#component-dropdown-overlay-configuration-2)
+    - [Component Dropdown Modal Configuration 1](#component-dropdown-modal-configuration-1)
+    - [Component Dropdown Modal Configuration 2](#component-dropdown-modal-configuration-2)
+  - [TreeView Components with Settings](#treeview-components-with-settings)
 - [Customization](#customization)
   - [By Settings](#by-settings)
   - [By Builder](#by-builder)
@@ -126,7 +136,97 @@ ScrollController is used to control anchor position of dropdown menu. You can pa
 
 All components of Select2dot1 are fully customizable by [settings](#by-settings) and [builder](#by-builder). If you want to change something that is not available in settings, let's make yor own component by builder. Check [Customization](#customization) section for more information.
 
-## Settings
+## Components and Settings
+
+### Components View
+
+#### Component Pillbox Configuration 1
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_1.png)
+
+1. Pillbox
+2. PillboxTitle
+3. PillboxContent
+4. PillboxContentMulti / PillboxContentSingle
+5. SelectEmptyInfo
+6. PillboxIcon
+
+#### Component Pillbox Configuration 2
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_2.png)
+
+1. Pillbox
+2. PillboxTitle
+3. PillboxContent
+4. PillboxContentMulti
+5. SelectChip
+6. PillboxIcon
+
+#### Component Pillbox Configuration 3
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_3.png)
+
+1. Pillbox
+2. PillboxTitle
+3. PillboxContent
+4. PillboxContentMulti
+5. SelectOverloadInfo
+6. PillboxIcon
+
+#### Component Pillbox Configuration 4
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_4.png)
+
+1. Pillbox
+2. PillboxTitle
+3. PillboxContent
+4. PillboxContentSingle
+5. SelectSingle
+6. PillboxIcon
+
+#### Component Dropdown Overlay Configuration 1
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_1.png)
+
+1. DropdownOverlay, DropdownContentOverlay
+2. SearchBarOverlay
+3. ListDataViewOverlay
+4. CategoryNameOverlay
+5. CategoryItemOverlay
+
+#### Component Dropdown Overlay Configuration 2
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_2.png)
+
+1. DropdownOverlay, DropdownContentOverlay
+2. SearchBarOverlay
+3. SearchEmptyOverlay
+
+#### Component Dropdown Modal Configuration 1
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_1.png)
+
+1. showModalBottomSheet, DropdownModal, DropdownContentModal
+2. TitleModal
+3. ButtonModal
+4. SearchBarModal
+5. ListDataViewModal
+6. CategoryNameModal
+7. CategoryItemModal
+
+#### Component Dropdown Modal Configuration 2
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_2.png)
+
+1. DropdownOverlay, DropdownContent
+2. TitleModal
+3. ButtonModal
+4. SearchBarModal
+5. SearchEmptyModal
+
+### Tree View Components with Settings
+
+You can see TreeView components with settings [there](https://miro.com/app/live-embed/uXjVP25lfEY=/?moveToViewport=-3198,-1103,6438,2600&embedId=52335582682).
 
 <iframe width="830" height="532" src="https://miro.com/app/live-embed/uXjVP25lfEY=/?moveToViewport=-3198,-1103,6438,2600&embedId=52335582682" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
