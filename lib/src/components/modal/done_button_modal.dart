@@ -29,7 +29,7 @@ class DoneButtonModal extends StatelessWidget {
       );
     }
 
-    if (doneButtonModalSettings.isVisible) {
+    if (!doneButtonModalSettings.isVisible) {
       return const SizedBox();
     }
 
