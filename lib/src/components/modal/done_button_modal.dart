@@ -29,6 +29,10 @@ class DoneButtonModal extends StatelessWidget {
       );
     }
 
+    if (doneButtonModalSettings.isVisible) {
+      return const SizedBox();
+    }
+
     return Container(
       margin: doneButtonModalSettings.margin,
       child: GestureDetector(

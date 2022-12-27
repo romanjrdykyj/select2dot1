@@ -8,7 +8,7 @@ import 'package:select2dot1/src/controllers/select_data_controller.dart';
 import 'package:select2dot1/src/settings/global_settings.dart';
 import 'package:select2dot1/src/settings/overlay/category_item_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/category_name_overlay_settings.dart';
-import 'package:select2dot1/src/settings/overlay/dropdown_content_overlay_settings.dart';
+import 'package:select2dot1/src/settings/overlay/dropdown_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/list_data_view_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_bar_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_empty_info_overlay_settings.dart';
@@ -21,7 +21,7 @@ class DropdownContentOverlay extends StatefulWidget {
   final ScrollController? scrollController;
   final double? appBarMaxHeight;
   final DropdownContentOverlayBuilder? dropdownContentOverlayBuilder;
-  final DropdownContentOverlaySettings dropdownContentOverlaySettings;
+  final DropdownOverlaySettings dropdownOverlaySettings;
   final bool isSearchable;
   final SearchBarOverlayBuilder? searchBarOverlayBuilder;
   final SearchBarOverlaySettings searchBarOverlaySettings;
@@ -43,7 +43,7 @@ class DropdownContentOverlay extends StatefulWidget {
     required this.scrollController,
     required this.appBarMaxHeight,
     required this.dropdownContentOverlayBuilder,
-    required this.dropdownContentOverlaySettings,
+    required this.dropdownOverlaySettings,
     required this.isSearchable,
     required this.searchBarOverlayBuilder,
     required this.searchBarOverlaySettings,
@@ -113,8 +113,8 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
 
     return Container(
       decoration: _getDecoration(),
-      margin: widget.dropdownContentOverlaySettings.margin,
-      padding: widget.dropdownContentOverlaySettings.padding,
+      margin: widget.dropdownOverlaySettings.margin,
+      padding: widget.dropdownOverlaySettings.padding,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -140,7 +140,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
           ),
           Container(
             constraints: BoxConstraints(
-              minHeight: widget.dropdownContentOverlaySettings.minHeight,
+              minHeight: widget.dropdownOverlaySettings.minHeight,
               maxHeight: _calculateMaxHeight(),
             ),
             child: searchController.getResults.isEmpty
@@ -180,7 +180,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
   }
 
   BoxDecoration _getDecoration() {
-    BoxDecoration decoration = widget.dropdownContentOverlaySettings.decoration;
+    BoxDecoration decoration = widget.dropdownOverlaySettings.decoration;
 
     if (decoration.color == null) {
       decoration = decoration.copyWith(
@@ -240,12 +240,12 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
         sizeSearchBarOverlay.height -
         dropdownOverlayPadding;
 
-    if (widget.dropdownContentOverlaySettings.maxHeight > results) {
-      return results >= widget.dropdownContentOverlaySettings.minHeight
+    if (widget.dropdownOverlaySettings.maxHeight > results) {
+      return results >= widget.dropdownOverlaySettings.minHeight
           ? results
-          : widget.dropdownContentOverlaySettings.minHeight;
+          : widget.dropdownOverlaySettings.minHeight;
     } else {
-      return widget.dropdownContentOverlaySettings.maxHeight;
+      return widget.dropdownOverlaySettings.maxHeight;
     }
   }
 

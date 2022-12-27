@@ -57,6 +57,10 @@ class _PillboxTitleState extends State<PillboxTitle> {
       );
     }
 
+    if (widget.pillboxTitleSettings.title != null) {
+      return const SizedBox();
+    }
+
     return Container(
       padding: widget.pillboxTitleSettings.titlePadding,
       child: Text(

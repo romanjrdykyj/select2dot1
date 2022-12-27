@@ -10,7 +10,7 @@ import 'package:select2dot1/src/settings/global_settings.dart';
 import 'package:select2dot1/src/settings/modal/category_item_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/done_button_modal_settings.dart';
-import 'package:select2dot1/src/settings/modal/dropdown_content_modal_settings.dart';
+import 'package:select2dot1/src/settings/modal/dropdown_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_bar_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_empty_info_modal_settings.dart';
@@ -21,7 +21,7 @@ class DropdownContentModal extends StatefulWidget {
   final ScrollController scrollController;
   final SelectDataController selectDataController;
   final DropdownContentModalBuilder? dropdownContentModalBuilder;
-  final DropdownContentModalSettings dropdownContentModalSettings;
+  final DropdownModalSettings dropdownModalSettings;
   final TitleModalBuilder? titleModalBuilder;
   final TitleModalSettings titleModalSettings;
   final DoneButtonModalBuilder? doneButtonModalBuilder;
@@ -44,7 +44,7 @@ class DropdownContentModal extends StatefulWidget {
     required this.scrollController,
     required this.selectDataController,
     required this.dropdownContentModalBuilder,
-    required this.dropdownContentModalSettings,
+    required this.dropdownModalSettings,
     required this.titleModalBuilder,
     required this.titleModalSettings,
     required this.doneButtonModalBuilder,
@@ -108,7 +108,7 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
     }
 
     return Container(
-      padding: widget.dropdownContentModalSettings.contentPadding,
+      padding: widget.dropdownModalSettings.contentPadding,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -121,12 +121,11 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
                   globalSettings: widget.globalSettings,
                 ),
               ),
-              if (widget.doneButtonModalSettings.isVisible)
-                DoneButtonModal(
-                  doneButtonModalBuilder: widget.doneButtonModalBuilder,
-                  doneButtonModalSettings: widget.doneButtonModalSettings,
-                  globalSettings: widget.globalSettings,
-                ),
+              DoneButtonModal(
+                doneButtonModalBuilder: widget.doneButtonModalBuilder,
+                doneButtonModalSettings: widget.doneButtonModalSettings,
+                globalSettings: widget.globalSettings,
+              ),
             ],
           ),
           SearchBarModal(

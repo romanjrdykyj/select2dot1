@@ -18,7 +18,6 @@ class SearchController extends ChangeNotifier {
   List<SingleCategoryModel> get getResults => _results;
 
   /// Creating an argument constructor of SearchController class.
-  /// [_data] is required.
   SearchController(this._data)
       : _results = _data.toList(); // Fix pass by reference.
 

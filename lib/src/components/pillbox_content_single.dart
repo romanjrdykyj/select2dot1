@@ -110,14 +110,13 @@ class _PillboxContentSingleState extends State<PillboxContentSingle> {
                     globalSettings: widget.globalSettings,
                   ),
           ),
-          if (widget.pillboxIconSettings.iconData != null)
-            PillboxIcon(
-              hover: widget.hover,
-              isVisibleOvarlay: widget.isVisibleOvarlay,
-              pillboxIconBuilder: widget.pillboxIconBuilder,
-              pillboxIconSettings: widget.pillboxIconSettings,
-              globalSettings: widget.globalSettings,
-            ),
+          PillboxIcon(
+            hover: widget.hover,
+            isVisibleOvarlay: widget.isVisibleOvarlay,
+            pillboxIconBuilder: widget.pillboxIconBuilder,
+            pillboxIconSettings: widget.pillboxIconSettings,
+            globalSettings: widget.globalSettings,
+          ),
         ],
       ),
     );

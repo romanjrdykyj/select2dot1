@@ -43,11 +43,6 @@ class SingleItemCategoryModel {
   int get hashCode => _nameSingleItem.hashCode;
 
   /// Creating an argument constructor of SingleItemCategoryModel class.
-  /// [_nameSingleItem] is required.
-  /// [_value] is optional.
-  /// [_value] preffer set to avoid duplicate items when [_nameSingleItem] is the same.
-  /// [_extraInfoSingleItem] is optional.
-  /// [_avatarSingleItem] is optional.
   const SingleItemCategoryModel({
     required String nameSingleItem,
     dynamic value,

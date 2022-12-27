@@ -5,7 +5,7 @@ import 'package:select2dot1/src/settings/global_settings.dart';
 import 'package:select2dot1/src/settings/modal/category_item_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/done_button_modal_settings.dart';
-import 'package:select2dot1/src/settings/modal/dropdown_content_modal_settings.dart';
+import 'package:select2dot1/src/settings/modal/dropdown_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_bar_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_empty_info_modal_settings.dart';
@@ -15,7 +15,7 @@ import 'package:select2dot1/src/utils/event_args.dart';
 class DropdownModal extends StatefulWidget {
   final SelectDataController selectDataController;
   final DropdownContentModalBuilder? dropdownContentModalBuilder;
-  final DropdownContentModalSettings dropdownContentModalSettings;
+  final DropdownModalSettings dropdownModalSettings;
   final TitleModalBuilder? titleModalBuilder;
   final TitleModalSettings titleModalSettings;
   final DoneButtonModalBuilder? doneButtonModalBuilder;
@@ -38,7 +38,7 @@ class DropdownModal extends StatefulWidget {
     super.key,
     required this.selectDataController,
     required this.dropdownContentModalBuilder,
-    required this.dropdownContentModalSettings,
+    required this.dropdownModalSettings,
     required this.titleModalBuilder,
     required this.titleModalSettings,
     required this.doneButtonModalBuilder,
@@ -77,9 +77,9 @@ class _DropdownModalState extends State<DropdownModal> {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-      initialChildSize: widget.dropdownContentModalSettings.initialChildSize,
-      minChildSize: widget.dropdownContentModalSettings.minChildSize,
-      maxChildSize: widget.dropdownContentModalSettings.maxChildSize,
+      initialChildSize: widget.dropdownModalSettings.initialChildSize,
+      minChildSize: widget.dropdownModalSettings.minChildSize,
+      maxChildSize: widget.dropdownModalSettings.maxChildSize,
       expand: false,
       builder: (BuildContext context, ScrollController scrollController) {
         return Material(
@@ -87,7 +87,7 @@ class _DropdownModalState extends State<DropdownModal> {
           child: DropdownContentModal(
             selectDataController: widget.selectDataController,
             dropdownContentModalBuilder: widget.dropdownContentModalBuilder,
-            dropdownContentModalSettings: widget.dropdownContentModalSettings,
+            dropdownModalSettings: widget.dropdownModalSettings,
             titleModalBuilder: widget.titleModalBuilder,
             titleModalSettings: widget.titleModalSettings,
             doneButtonModalBuilder: widget.doneButtonModalBuilder,
