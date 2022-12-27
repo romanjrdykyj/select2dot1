@@ -128,7 +128,7 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 
 ## Settings
 
-<iframe width="830" height="532" src="https://miro.com/app/live-embed/uXjVP2wBd0I=/?moveToViewport=913,1296,2447,1275&embedId=532240863766" frameborder="0" scrolling="no" allowfullscreen></iframe>
+<iframe width="830" height="532" src="https://miro.com/app/live-embed/uXjVP25lfEY=/?moveToViewport=-3198,-1103,6438,2600&embedId=52335582682" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
 ## Customization
 
