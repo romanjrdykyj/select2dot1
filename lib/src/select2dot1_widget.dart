@@ -14,14 +14,14 @@ import 'package:select2dot1/src/settings/global_settings.dart';
 import 'package:select2dot1/src/settings/modal/category_item_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/done_button_modal_settings.dart';
-import 'package:select2dot1/src/settings/modal/dropdown_content_modal_settings.dart';
+import 'package:select2dot1/src/settings/modal/dropdown_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_bar_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_empty_info_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/title_modal_settings.dart';
 import 'package:select2dot1/src/settings/overlay/category_item_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/category_name_overlay_settings.dart';
-import 'package:select2dot1/src/settings/overlay/dropdown_content_overlay_settings.dart';
+import 'package:select2dot1/src/settings/overlay/dropdown_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/list_data_view_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_bar_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_empty_info_overlay_settings.dart';
@@ -183,8 +183,8 @@ class Select2dot1 extends StatefulWidget {
   /// [SelectOverloadInfoSettings] is a class that contains all the settings of the overload info of the widget.
   final SelectOverloadInfoSettings selectOverloadInfoSettings;
 
-  /// [DropdownContentOverlaySettings] is a class that contains all the settings of the overlay of the dropdown content.
-  final DropdownContentOverlaySettings dropdownContentOverlaySettings;
+  /// [DropdownOverlaySettings] is a class that contains all the settings of the overlay of the dropdown content.
+  final DropdownOverlaySettings dropdownOverlaySettings;
 
   /// [SearchBarOverlaySettings] is a class that contains all the settings of the overlay of the search bar.
   final SearchBarOverlaySettings searchBarOverlaySettings;
@@ -201,8 +201,8 @@ class Select2dot1 extends StatefulWidget {
   /// [CategoryItemOverlaySettings] is a class that contains all the settings of the overlay of the category item.
   final CategoryItemOverlaySettings categoryItemOverlaySettings;
 
-  /// [DropdownContentModalSettings] is a class that contains all the settings of the modal of the dropdown content.
-  final DropdownContentModalSettings dropdownContentModalSettings;
+  /// [DropdownModalSettings] is a class that contains all the settings of the modal of the dropdown content.
+  final DropdownModalSettings dropdownModalSettings;
 
   /// [TitleModalSettings] is a class that contains all the settings of the modal of the title.
   final TitleModalSettings titleModalSettings;
@@ -266,13 +266,13 @@ class Select2dot1 extends StatefulWidget {
     SelectSingleSettings? selectSingleSettings,
     SelectEmptyInfoSettings? selectEmptyInfoSettings,
     SelectOverloadInfoSettings? selectOverloadInfoSettings,
-    DropdownContentOverlaySettings? dropdownContentOverlaySettings,
+    DropdownOverlaySettings? dropdownOverlaySettings,
     SearchBarOverlaySettings? searchBarOverlaySettings,
     SearchEmptyInfoOverlaySettings? searchEmptyInfoOverlaySettings,
     ListDataViewOverlaySettings? listDataViewOverlaySettings,
     CategoryNameOverlaySettings? categoryNameOverlaySettings,
     CategoryItemOverlaySettings? categoryItemOverlaySettings,
-    DropdownContentModalSettings? dropdownContentModalSettings,
+    DropdownModalSettings? dropdownModalSettings,
     TitleModalSettings? titleModalSettings,
     DoneButtonModalSettings? doneButtonModalSettings,
     SearchBarModalSettings? searchBarModalSettings,
@@ -295,8 +295,8 @@ class Select2dot1 extends StatefulWidget {
             selectEmptyInfoSettings ?? const SelectEmptyInfoSettings(),
         selectOverloadInfoSettings =
             selectOverloadInfoSettings ?? const SelectOverloadInfoSettings(),
-        dropdownContentOverlaySettings = dropdownContentOverlaySettings ??
-            const DropdownContentOverlaySettings(),
+        dropdownOverlaySettings =
+            dropdownOverlaySettings ?? const DropdownOverlaySettings(),
         searchBarOverlaySettings =
             searchBarOverlaySettings ?? const SearchBarOverlaySettings(),
         searchEmptyInfoOverlaySettings = searchEmptyInfoOverlaySettings ??
@@ -307,8 +307,8 @@ class Select2dot1 extends StatefulWidget {
             categoryNameOverlaySettings ?? const CategoryNameOverlaySettings(),
         categoryItemOverlaySettings =
             categoryItemOverlaySettings ?? const CategoryItemOverlaySettings(),
-        dropdownContentModalSettings = dropdownContentModalSettings ??
-            const DropdownContentModalSettings(),
+        dropdownModalSettings =
+            dropdownModalSettings ?? const DropdownModalSettings(),
         titleModalSettings = titleModalSettings ?? const TitleModalSettings(),
         doneButtonModalSettings =
             doneButtonModalSettings ?? const DoneButtonModalSettings(),
@@ -358,7 +358,7 @@ class _Select2dot1State extends AnimatedState
           scrollController: widget.scrollController,
           pillboxLayout: widget.pillboxContentMultiSettings.pillboxLayout,
           dropdownContentOverlayBuilder: widget.dropdownContentOverlayBuilder,
-          dropdownContentOverlaySettings: widget.dropdownContentOverlaySettings,
+          dropdownOverlaySettings: widget.dropdownOverlaySettings,
           isSearchable: widget.isSearchable,
           searchBarOverlayBuilder: widget.searchBarOverlayBuilder,
           searchBarOverlaySettings: widget.searchBarOverlaySettings,

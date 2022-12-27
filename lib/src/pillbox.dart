@@ -148,14 +148,13 @@ class _PillboxState extends State<Pillbox> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (widget.pillboxTitleSettings.title != null)
-              PillboxTitle(
-                isVisibleOvarlay: widget.isVisibleOverlay,
-                hover: hover,
-                pillboxTitleBuilder: widget.pillboxTitleBuilder,
-                pillboxTitleSettings: widget.pillboxTitleSettings,
-                globalSettings: widget.globalSettings,
-              ),
+            PillboxTitle(
+              isVisibleOvarlay: widget.isVisibleOverlay,
+              hover: hover,
+              pillboxTitleBuilder: widget.pillboxTitleBuilder,
+              pillboxTitleSettings: widget.pillboxTitleSettings,
+              globalSettings: widget.globalSettings,
+            ),
             PillboxContent(
               selectDataController: widget.selectDataController,
               hover: hover,

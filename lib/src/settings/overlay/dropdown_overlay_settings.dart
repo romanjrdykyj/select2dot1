@@ -1,7 +1,7 @@
 // ignore_for_file: no-magic-number
 import 'package:flutter/material.dart';
 
-class DropdownContentOverlaySettings {
+class DropdownOverlaySettings {
   final BoxDecoration decoration;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
@@ -12,7 +12,7 @@ class DropdownContentOverlaySettings {
   final Curve fadeAnimationCurve;
   final Curve sizeAnimationCurve;
 
-  const DropdownContentOverlaySettings({
+  const DropdownOverlaySettings({
     this.decoration = const BoxDecoration(
       borderRadius: BorderRadius.all(
         Radius.circular(5.0),

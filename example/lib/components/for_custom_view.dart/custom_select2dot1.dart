@@ -136,7 +136,7 @@ class CustomSelect2dot1 extends StatelessWidget {
             ),
           );
         },
-        dropdownContentOverlaySettings: DropdownContentOverlaySettings(
+        dropdownOverlaySettings: DropdownOverlaySettings(
           maxHeight: 330,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.zero,
@@ -267,7 +267,7 @@ class CustomSelect2dot1 extends StatelessWidget {
         searchEmptyInfoModalSettings: const SearchEmptyInfoModalSettings(
           textStyle: TextStyle(color: Colors.white),
         ),
-        dropdownContentModalSettings: const DropdownContentModalSettings(
+        dropdownModalSettings: const DropdownModalSettings(
           backgroundColor: Color(0xff001029),
         ),
         categoryNameModalSettings: const CategoryNameModalSettings(

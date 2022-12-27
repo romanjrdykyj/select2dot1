@@ -9,15 +9,15 @@ mixin ModalController on AnimatedState {
     unawaited(
       showModalBottomSheet(
         isScrollControlled: true,
-        shape: widget.dropdownContentModalSettings.shape,
-        backgroundColor: widget.dropdownContentModalSettings.backgroundColor,
-        barrierColor: widget.dropdownContentModalSettings.barrierColor,
+        shape: widget.dropdownModalSettings.shape,
+        backgroundColor: widget.dropdownModalSettings.backgroundColor,
+        barrierColor: widget.dropdownModalSettings.barrierColor,
         context: context,
         builder: (context) {
           return DropdownModal(
             selectDataController: widget.selectDataController,
             dropdownContentModalBuilder: widget.dropdownContentModalBuilder,
-            dropdownContentModalSettings: widget.dropdownContentModalSettings,
+            dropdownModalSettings: widget.dropdownModalSettings,
             titleModalBuilder: widget.titleModalBuilder,
             titleModalSettings: widget.titleModalSettings,
             doneButtonModalBuilder: widget.doneButtonModalBuilder,

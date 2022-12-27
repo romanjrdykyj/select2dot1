@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DropdownContentModalSettings {
+class DropdownModalSettings {
   final double initialChildSize;
   final double minChildSize;
   final double maxChildSize;
@@ -15,7 +15,7 @@ class DropdownContentModalSettings {
     ),
   );
 
-  const DropdownContentModalSettings({
+  const DropdownModalSettings({
     // its specific param for DraggableScrollableSheet
     // ignore: no-magic-number
     this.initialChildSize = 0.7,

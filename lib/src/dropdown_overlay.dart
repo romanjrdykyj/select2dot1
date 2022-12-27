@@ -5,7 +5,7 @@ import 'package:select2dot1/src/controllers/select_data_controller.dart';
 import 'package:select2dot1/src/settings/global_settings.dart';
 import 'package:select2dot1/src/settings/overlay/category_item_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/category_name_overlay_settings.dart';
-import 'package:select2dot1/src/settings/overlay/dropdown_content_overlay_settings.dart';
+import 'package:select2dot1/src/settings/overlay/dropdown_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/list_data_view_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_bar_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_empty_info_overlay_settings.dart';
@@ -21,7 +21,7 @@ class DropdownOverlay extends StatefulWidget {
   final ScrollController? scrollController;
   final PillboxLayout pillboxLayout;
   final DropdownContentOverlayBuilder? dropdownContentOverlayBuilder;
-  final DropdownContentOverlaySettings dropdownContentOverlaySettings;
+  final DropdownOverlaySettings dropdownOverlaySettings;
   final bool isSearchable;
   final SearchBarOverlayBuilder? searchBarOverlayBuilder;
   final SearchBarOverlaySettings searchBarOverlaySettings;
@@ -45,7 +45,7 @@ class DropdownOverlay extends StatefulWidget {
     required this.scrollController,
     required this.pillboxLayout,
     required this.dropdownContentOverlayBuilder,
-    required this.dropdownContentOverlaySettings,
+    required this.dropdownOverlaySettings,
     required this.isSearchable,
     required this.searchBarOverlayBuilder,
     required this.searchBarOverlaySettings,
@@ -98,7 +98,7 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
             isBottomDirectAnchor ? Alignment.topLeft : Alignment.bottomLeft,
         targetAnchor:
             isBottomDirectAnchor ? Alignment.bottomLeft : Alignment.topLeft,
-        offset: widget.dropdownContentOverlaySettings.offset,
+        offset: widget.dropdownOverlaySettings.offset,
         child: Visibility(
           visible: isCalcAnchorFinished,
           maintainSize: true,
@@ -124,14 +124,14 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
                     return ScaleTransition(
                       scale: CurvedAnimation(
                         parent: widget.animationController,
-                        curve: widget
-                            .dropdownContentOverlaySettings.sizeAnimationCurve,
+                        curve:
+                            widget.dropdownOverlaySettings.sizeAnimationCurve,
                       ),
                       child: FadeTransition(
                         opacity: CurvedAnimation(
                           parent: widget.animationController,
-                          curve: widget.dropdownContentOverlaySettings
-                              .fadeAnimationCurve,
+                          curve:
+                              widget.dropdownOverlaySettings.fadeAnimationCurve,
                         ),
                         child: child,
                       ),
@@ -146,8 +146,7 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
                     appBarMaxHeight: widget.appBarMaxHeight,
                     dropdownContentOverlayBuilder:
                         widget.dropdownContentOverlayBuilder,
-                    dropdownContentOverlaySettings:
-                        widget.dropdownContentOverlaySettings,
+                    dropdownOverlaySettings: widget.dropdownOverlaySettings,
                     isSearchable: widget.isSearchable,
                     searchBarOverlayBuilder: widget.searchBarOverlayBuilder,
                     searchBarOverlaySettings: widget.searchBarOverlaySettings,
