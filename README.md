@@ -120,7 +120,7 @@ ScrollController is used to control anchor position of dropdown menu. You can pa
 
 #### Example
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/scrollcontroller.gif)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/scroll_controller.gif)
 
 ### Fully Customizable
 
@@ -128,6 +128,7 @@ All components of Select2dot1 are fully customizable by [settings](#by-settings)
 
 ## Settings
 
+<iframe width="830" height="532" src="https://miro.com/app/live-embed/uXjVP2wBd0I=/?moveToViewport=913,1296,2447,1275&embedId=532240863766" frameborder="0" scrolling="no" allowfullscreen></iframe>
 
 ## Customization
 
@@ -471,6 +472,10 @@ static const List<SingleCategoryModel> exampleData3 = [
   ),
 ];
 ```
+
+#### Example
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/no_group_example.png)
 
 ## License
 
