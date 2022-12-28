@@ -237,7 +237,7 @@ ________________________________________________________________________________
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_2.png)
 
-1. DropdownOverlay, DropdownContent
+1. showModalBottomSheet, DropdownModal, DropdownContentModal
 2. TitleModal
 3. ButtonModal
 4. SearchBarModal
