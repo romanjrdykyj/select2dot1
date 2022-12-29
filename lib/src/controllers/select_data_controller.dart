@@ -2,43 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:select2dot1/src/models/single_category_model.dart';
 import 'package:select2dot1/src/models/single_item_category_model.dart';
 
-/// SelectDataController is a class that will be used to select data.
-/// SelectDataController is a controller class.
-/// SelectDataController class extends [ChangeNotifier].
+/// SelectDataController is a class that will be used to control select data.
 class SelectDataController extends ChangeNotifier {
-  /// The [_data] is all data pass to the package.
+  /// All data pass to the package.
   /// It is required.
   final List<SingleCategoryModel> _data;
 
-  /// The [_initSelected] is initial selected data.
+  /// Is initial selected data.
   /// This data will be add to the [_selectedList] when the class is created.
-  /// if [_isMultiSelect] is false, [_initSelected] must be null or length <= 1.
+  /// if [_isMultiSelect] is false, must be null or length <= 1.
   final List<SingleItemCategoryModel>? _initSelected;
 
-  /// The [_isMultiSelect] is a boolean to set multi select or single select.
+  /// Is a boolean to set multi select or single select.
   /// Default is true.
   final bool _isMultiSelect;
 
-  /// The [_selectedList] is a list of [SingleItemCategoryModel] that is selected.
+  /// Is a list of [SingleItemCategoryModel] selected items.
   final List<SingleItemCategoryModel> _selectedList = [];
 
-  /// Getter for [_data].
+  /// Get list of all data pass to the package.
   List<SingleCategoryModel> get getData {
     return _data;
   }
 
-  /// Getter for [_isMultiSelect].
+  /// Get select mode. True is multi select, false is single select.
   bool get getIsMultiSelect {
     return _isMultiSelect;
   }
 
-  /// Getter for [_selectedList].
+  /// Get list of selected items.
   List<SingleItemCategoryModel> get getSelectedList {
     return _selectedList;
   }
 
-  /// Creating an argument constructor of SelectDataController class.
-  /// if [_isMultiSelect] is false, [_initSelected] must be null or length <= 1.
+  /// SelectDataController is a class that will be used to control select data.
+  /// Use this constructor to create a [SelectDataController] object.
+  /// [data] is required.
+  /// if [isMultiSelect] is false, [initSelected] must be null or length <= 1.
   SelectDataController({
     required List<SingleCategoryModel> data,
     bool isMultiSelect = true,
@@ -53,15 +53,14 @@ class SelectDataController extends ChangeNotifier {
     addGroupSelectChip(_initSelected);
   }
 
-  /// Clear the [_selectedList].
+  /// Function to clear all selected items.
   void clearSelectedList() {
     _selectedList.clear();
     notifyListeners();
   }
 
-  /// Add group the [SingleItemCategoryModel] from the [_selectedList].
-  /// If the [SingleItemCategoryModel] is null, do nothing.
-  /// If the [SingleItemCategoryModel] is in the [_data], and in the [_selectedList], add it from the [_selectedList].
+  /// Add items from list of [SingleItemCategoryModel] to the [_selectedList],
+  /// when items are in the [_data] and not in the [_selectedList].
   void addGroupSelectChip(List<SingleItemCategoryModel>? singleItemList) {
     if (singleItemList == null) {
       return;
@@ -88,9 +87,8 @@ class SelectDataController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Remove group the [SingleItemCategoryModel] from the [_selectedList].
-  /// If the [SingleItemCategoryModel] is null, do nothing.
-  /// If the [SingleItemCategoryModel] is in the [_data], and in the [_selectedList], remove it from the [_selectedList].
+  /// Remove items from list of [SingleItemCategoryModel] to the [_selectedList],
+  /// when items are in the [_data] and not in the [_selectedList].
   void removeGroupSelectChip(List<SingleItemCategoryModel>? singleItemList) {
     if (singleItemList == null) {
       return;
@@ -107,10 +105,8 @@ class SelectDataController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Set single the [SingleItemCategoryModel] is in the [_data].
-  /// If the [SingleItemCategoryModel] is null, return false.
-  /// If the [SingleItemCategoryModel] is not in the [_data], do nothing.
-  /// If the [SingleItemCategoryModel] is in the [_data], set it to the [_selectedList].
+  /// Set single [SingleItemCategoryModel] to the [_selectedList],
+  /// when items are in the [_data] and not in the [_selectedList].
   void setSingleSelect(SingleItemCategoryModel? singleItem) {
     if (singleItem == null) {
       return;
@@ -124,11 +120,8 @@ class SelectDataController extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Add single the [SingleItemCategoryModel] to the [_selectedList].
-  /// If the [SingleItemCategoryModel] is null, do nothing.
-  /// If the [SingleItemCategoryModel] is not in the [_data], do nothing.
-  /// If the [SingleItemCategoryModel] is in the [_data] and not in the [_selectedList], add it to the [_selectedList].
-  /// If the [SingleItemCategoryModel] is in the [_data] and in the [_selectedList], do nothing.
+  /// Add single [SingleItemCategoryModel] to the [_selectedList],
+  /// when items are in the [_data] and not in the [_selectedList].
   void addSelectChip(SingleItemCategoryModel? singleItem) {
     if (singleItem == null) {
       return;
@@ -143,11 +136,8 @@ class SelectDataController extends ChangeNotifier {
     }
   }
 
-  /// Remove single the [SingleItemCategoryModel] from the [_selectedList].
-  /// If the [SingleItemCategoryModel] is null, do nothing.
-  /// If the [SingleItemCategoryModel] is not in the [_data], do nothing.
-  /// If the [SingleItemCategoryModel] is in the [_data] and [_selectedList], remove it from the [_selectedList].
-  /// If the [SingleItemCategoryModel] is in the [_data] and not in the [_selectedList], do nothing.
+  /// Remove single [SingleItemCategoryModel] from the [_selectedList],
+  /// when items are in the [_data] and not in the [_selectedList].
   void removeSingleSelectedChip(SingleItemCategoryModel? singleItem) {
     if (singleItem == null) {
       return;
@@ -165,9 +155,6 @@ class SelectDataController extends ChangeNotifier {
   }
 
   /// Check if the [SingleItemCategoryModel] is in the [_selectedList].
-  /// If the [SingleItemCategoryModel] is null, return false.
-  /// If the [SingleItemCategoryModel] is in the [_selectedList], return true.
-  /// If the [SingleItemCategoryModel] is not in the [_selectedList], return false.
   bool _singleItemContainsInSelected(SingleItemCategoryModel? singleItem) {
     if (singleItem == null) {
       return false;
@@ -177,9 +164,6 @@ class SelectDataController extends ChangeNotifier {
   }
 
   /// Check if the [SingleItemCategoryModel] is in the [_data].
-  /// If the [SingleItemCategoryModel] is null, return false.
-  /// If the [SingleItemCategoryModel] is in the [_data], return true.
-  /// If the [SingleItemCategoryModel] is not in the [_data], return false.
   bool _singeItemContainsInData(SingleItemCategoryModel? singleItem) {
     if (singleItem == null) {
       return false;

@@ -6,16 +6,12 @@ import 'package:select2dot1/src/models/single_category_model.dart';
 import 'package:select2dot1/src/models/single_item_category_model.dart';
 import 'package:select2dot1/src/settings/global_settings.dart';
 
-/// The [PillboxTitleBuilder] is a function that will be used to build the title of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the title of the pillbox.
-/// [pillboxTitleDetails] is a [PillboxTitleDetails] that will be used to build the title of the pillbox.
-/// [PillboxTitleDetails] is a class that contains the details to build the title of the pillbox.
+/// Is a function that will be used to build your own title of the pillbox.
 typedef PillboxTitleBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the title of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own title of the pillbox.
   BuildContext context,
 
-  /// [pillboxTitleDetails] is a [PillboxTitleDetails] that will be used to build the title of the pillbox.
-  /// [PillboxTitleDetails] is a class that contains the details to build the title of the pillbox.
+  /// [pillboxTitleDetails] is a [PillboxTitleDetails] that will be used to build your own title of the pillbox.
   PillboxTitleDetails pillboxTitleDetails,
 );
 
@@ -57,15 +53,12 @@ class PillboxTitleDetails {
   });
 }
 
-/// The [PillboxBuilder] is a function that will be used to build the content of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the content of the pillbox.
-/// [pillboxDetails] is a [PillboxDetails] that will be used to build the content of the pillbox.
-/// [PillboxDetails] is a class that contains the details to build the content of the pillbox.
+/// Is a function that will be used to build your own content of the pillbox.
 typedef PillboxBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the content of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own content of the pillbox.
   BuildContext context,
 
-  /// [pillboxDetails] is a [PillboxDetails] that will be used to build the content of the pillbox.
+  /// [pillboxDetails] is a [PillboxDetails] that will be used to build your own content of the pillbox.
   PillboxDetails pillboxDetails,
 );
 
@@ -125,14 +118,12 @@ class PillboxDetails {
   });
 }
 
-/// The [PillboxContentMultiBuilder] is a function that will be used to build the content of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the content of the pillbox.
-/// [pillboxContentMultiDetails] is a [PillboxContentMultiDetails] that will be used to build the content of the pillbox.
+/// Is a function that will be used to build your own content of the pillbox.
 typedef PillboxContentMultiBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the content of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own content of the pillbox.
   BuildContext context,
 
-  /// [pillboxContentMultiDetails] is a [PillboxContentMultiDetails] that will be used to build the content of the pillbox.
+  /// [pillboxContentMultiDetails] is a [PillboxContentMultiDetails] that will be used to build your own content of the pillbox.
   PillboxContentMultiDetails pillboxContentMultiDetails,
 );
 
@@ -204,14 +195,12 @@ class PillboxContentMultiDetails {
   });
 }
 
-/// The [PillboxContentSingleBuilder] is a function that will be used to build the content of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the content of the pillbox.
-/// [pillboxContentSingleDetails] is a [PillboxContentSingleDetails] that will be used to build the content of the pillbox.
+/// Is a function that will be used to build your own content of the pillbox.
 typedef PillboxContentSingleBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the content of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own content of the pillbox.
   BuildContext context,
 
-  /// [pillboxContentSingleDetails] is a [PillboxContentSingleDetails] that will be used to build the content of the pillbox.
+  /// [pillboxContentSingleDetails] is a [PillboxContentSingleDetails] that will be used to build your own content of the pillbox.
   PillboxContentSingleDetails pillboxContentSingleDetails,
 );
 
@@ -277,14 +266,12 @@ class PillboxContentSingleDetails {
   });
 }
 
-/// The [PillboxIconBuilder] is a function that will be used to build the icon of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the icon of the pillbox.
-/// [pillboxIconDetails] is a [PillboxIconDetails] that will be used to build the icon of the pillbox.
+/// Is a function that will be used to build your own icon of the pillbox.
 typedef PillboxIconBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the icon of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own icon of the pillbox.
   BuildContext context,
 
-  /// [pillboxIconDetails] is a [PillboxIconDetails] that will be used to build the icon of the pillbox.
+  /// [pillboxIconDetails] is a [PillboxIconDetails] that will be used to build your own icon of the pillbox.
   PillboxIconDetails pillboxIconDetails,
 );
 
@@ -326,14 +313,12 @@ class PillboxIconDetails {
   });
 }
 
-/// The [SelectChipBuilder] is a function that will be used to build the chip of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the chip of the pillbox.
-/// [selectChipDetails] is a [SelectChipDetails] that will be used to build the chip of the pillbox.
+/// Is a function that will be used to build your own chip of the pillbox.
 typedef SelectChipBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the chip of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own chip of the pillbox.
   BuildContext context,
 
-  /// [selectChipDetails] is a [SelectChipDetails] that will be used to build the chip of the pillbox.
+  /// [selectChipDetails] is a [SelectChipDetails] that will be used to build your own chip of the pillbox.
   SelectChipDetails selectChipDetails,
 );
 
@@ -363,14 +348,12 @@ class SelectChipDetails {
   });
 }
 
-/// The [SelectSingleBuilder] is a function that will be used to build the single of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the single of the pillbox.
-/// [selectSingleDetails] is a [SelectSingleDetails] that will be used to build the single of the pillbox.
+/// Is a function that will be used to build your own single of the pillbox.
 typedef SelectSingleBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the single of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own single of the pillbox.
   BuildContext context,
 
-  /// [selectSingleDetails] is a [SelectSingleDetails] that will be used to build the single of the pillbox.
+  /// [selectSingleDetails] is a [SelectSingleDetails] that will be used to build your own single of the pillbox.
   SelectSingleDetails selectSingleDetails,
 );
 
@@ -400,14 +383,12 @@ class SelectSingleDetails {
   });
 }
 
-/// The [SelectEmptyInfoBuilder] is a function that will be used to build the empty info of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the empty info of the pillbox.
-/// [selectEmptyInfoDetails] is a [SelectEmptyInfoDetails] that will be used to build the empty info of the pillbox.
+/// Is a function that will be used to build your own empty info of the pillbox.
 typedef SelectEmptyInfoBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the empty info of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own empty info of the pillbox.
   BuildContext context,
 
-  /// [selectEmptyInfoDetails] is a [SelectEmptyInfoDetails] that will be used to build the empty info of the pillbox.
+  /// [selectEmptyInfoDetails] is a [SelectEmptyInfoDetails] that will be used to build your own empty info of the pillbox.
   SelectEmptyInfoDetails selectEmptyInfoDetails,
 );
 
@@ -425,14 +406,12 @@ class SelectEmptyInfoDetails {
   });
 }
 
-/// The [SelectOverloadInfoBuilder] is a function that will be used to build the overload info of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the overload info of the pillbox.
-/// [selectOverloadInfoDetails] is a [SelectOverloadInfoDetails] that will be used to build the overload info of the pillbox.
+/// Is a function that will be used to build your own overload info of the pillbox.
 typedef SelectOverloadInfoBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the overload info of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own overload info of the pillbox.
   BuildContext context,
 
-  /// [selectOverloadInfoDetails] is a [SelectOverloadInfoDetails] that will be used to build the overload info of the pillbox.
+  /// [selectOverloadInfoDetails] is a [SelectOverloadInfoDetails] that will be used to build your own overload info of the pillbox.
   SelectOverloadInfoDetails selectOverloadInfoDetails,
 );
 
@@ -456,14 +435,12 @@ class SelectOverloadInfoDetails {
   });
 }
 
-/// The [DropdownContentOverlayBuilder] is a function that will be used to build the overlay of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the overlay of the pillbox.
-/// [dropdownContentOverlayDetails] is a [DropdownContentOverlayDetails] that will be used to build the overlay of the pillbox.
+/// Is a function that will be used to build your own overlay of the pillbox.
 typedef DropdownContentOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the overlay of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own overlay of the pillbox.
   BuildContext context,
 
-  /// [dropdownContentOverlayDetails] is a [DropdownContentOverlayDetails] that will be used to build the overlay of the pillbox.
+  /// [dropdownContentOverlayDetails] is a [DropdownContentOverlayDetails] that will be used to build your own overlay of the pillbox.
   DropdownContentOverlayDetails dropdownContentOverlayDetails,
 );
 
@@ -535,14 +512,12 @@ class DropdownContentOverlayDetails {
   });
 }
 
-/// The [SearchBarOverlayBuilder] is a function that will be used to build the search bar of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the search bar of the pillbox.
-/// [searchBarOverlayDetails] is a [SearchBarOverlayDetails] that will be used to build the search bar of the pillbox.
+/// Is a function that will be used to build your own search bar of the pillbox.
 typedef SearchBarOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the search bar of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own search bar of the pillbox.
   BuildContext context,
 
-  /// [searchBarOverlayDetails] is a [SearchBarOverlayDetails] that will be used to build the search bar of the pillbox.
+  /// [searchBarOverlayDetails] is a [SearchBarOverlayDetails] that will be used to build your own search bar of the pillbox.
   SearchBarOverlayDetails searchBarOverlayDetails,
 );
 
@@ -584,14 +559,12 @@ class SearchBarOverlayDetails {
   });
 }
 
-/// The [SearchEmptyInfoOverlayBuilder] is a function that will be used to build the search empty info of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the search empty info of the pillbox.
-/// [searchEmptyInfoOverlayDetails] is a [SearchEmptyInfoOverlayDetails] that will be used to build the search empty info of the pillbox.
+/// Is a function that will be used to build your own search empty info of the pillbox.
 typedef SearchEmptyInfoOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the search empty info of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own search empty info of the pillbox.
   BuildContext context,
 
-  /// [searchEmptyInfoOverlayDetails] is a [SearchEmptyInfoOverlayDetails] that will be used to build the search empty info of the pillbox.
+  /// [searchEmptyInfoOverlayDetails] is a [SearchEmptyInfoOverlayDetails] that will be used to build your own search empty info of the pillbox.
   SearchEmptyInfoOverlayDetails searchEmptyInfoOverlayDetails,
 );
 
@@ -609,14 +582,12 @@ class SearchEmptyInfoOverlayDetails {
   });
 }
 
-/// The [ListDataViewOverlayBuilder] is a function that will be used to build the list data view of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the list data view of the pillbox.
-/// [listDataViewOverlayDetails] is a [ListDataViewOverlayDetails] that will be used to build the list data view of the pillbox.
+/// Is a function that will be used to build your own list data view of the pillbox.
 typedef ListDataViewOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the list data view of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own list data view of the pillbox.
   BuildContext context,
 
-  /// [listDataViewOverlayDetails] is a [ListDataViewOverlayDetails] that will be used to build the list data view of the pillbox.
+  /// [listDataViewOverlayDetails] is a [ListDataViewOverlayDetails] that will be used to build your own list data view of the pillbox.
   ListDataViewOverlayDetails listDataViewOverlayDetails,
 );
 
@@ -665,14 +636,12 @@ class ListDataViewOverlayDetails {
   });
 }
 
-/// The [CategoryItemOverlayBuilder] is a function that will be used to build the category name of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
-/// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build the category name of the pillbox.
+/// Is a function that will be used to build your own category name of the pillbox.
 typedef CategoryItemOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own category name of the pillbox.
   BuildContext context,
 
-  /// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build the category name of the pillbox.
+  /// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build your own category name of the pillbox.
   CategoryItemOverlayDetails categoryItemOverlayDetails,
 );
 
@@ -726,14 +695,12 @@ class CategoryItemOverlayDetails {
   });
 }
 
-/// The [CategoryNameOverlayBuilder] is a function that will be used to build the category name of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
-/// [categoryNameOverlayDetails] is a [CategoryNameOverlayDetails] that will be used to build the category name of the pillbox.
+/// Is a function that will be used to build your own category name of the pillbox.
 typedef CategoryNameOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own category name of the pillbox.
   BuildContext context,
 
-  /// [categoryNameOverlayDetails] is a [CategoryNameOverlayDetails] that will be used to build the category name of the pillbox.
+  /// [categoryNameOverlayDetails] is a [CategoryNameOverlayDetails] that will be used to build your own category name of the pillbox.
   CategoryNameOverlayDetails categoryNameOverlayDetails,
 );
 
@@ -775,14 +742,12 @@ class CategoryNameOverlayDetails {
   });
 }
 
-/// The [DropdownContentModalBuilder] is a function that will be used to build the dropdown content modal.
-/// [context] is a [BuildContext] that will be used to build the dropdown content modal.
-/// [dropdownContentModalDetails] is a [DropdownContentModalDetails] that will be used to build the dropdown content modal.
+/// Is a function that will be used to build your own dropdown content modal.
 typedef DropdownContentModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the dropdown content modal.
+  /// [context] is a [BuildContext] that will be used to build your own dropdown content modal.
   BuildContext context,
 
-  /// [dropdownContentModalDetails] is a [DropdownContentModalDetails] that will be used to build the dropdown content modal.
+  /// [dropdownContentModalDetails] is a [DropdownContentModalDetails] that will be used to build your own dropdown content modal.
   DropdownContentModalDetails dropdownContentModalDetails,
 );
 
@@ -831,14 +796,12 @@ class DropdownContentModalDetails {
   });
 }
 
-/// The [DoneButtonModalBuilder] is a function that will be used to build the done button modal.
-/// [context] is a [BuildContext] that will be used to build the done button modal.
-/// [doneButtonModalDetails] is a [DoneButtonModalDetails] that will be used to build the done button modal.
+/// Is a function that will be used to build your own done button modal.
 typedef DoneButtonModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the done button modal.
+  /// [context] is a [BuildContext] that will be used to build your own done button modal.
   BuildContext context,
 
-  /// [doneButtonModalDetails] is a [DoneButtonModalDetails] that will be used to build the done button modal.
+  /// [doneButtonModalDetails] is a [DoneButtonModalDetails] that will be used to build your own done button modal.
   DoneButtonModalDetails doneButtonModalDetails,
 );
 
@@ -862,14 +825,12 @@ class DoneButtonModalDetails {
   });
 }
 
-/// The [TitleModalBuilder] is a function that will be used to build the title modal.
-/// [context] is a [BuildContext] that will be used to build the title modal.
-/// [tittleModalDetails] is a [TittleModalDetails] that will be used to build the title modal.
+/// Is a function that will be used to build your own title modal.
 typedef TitleModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the title modal.
+  /// [context] is a [BuildContext] that will be used to build your own title modal.
   BuildContext context,
 
-  /// [tittleModalDetails] is a [TittleModalDetails] that will be used to build the title modal.
+  /// [tittleModalDetails] is a [TittleModalDetails] that will be used to build your own title modal.
   TittleModalDetails tittleModalDetails,
 );
 
@@ -887,14 +848,12 @@ class TittleModalDetails {
   });
 }
 
-/// The [SearchBarModalBuilder] is a function that will be used to build the search bar modal.
-/// [context] is a [BuildContext] that will be used to build the search bar modal.
-/// [searchBarModalDetails] is a [SearchBarModalDetails] that will be used to build the search bar modal.
+/// Is a function that will be used to build your own search bar modal.
 typedef SearchBarModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the search bar modal.
+  /// [context] is a [BuildContext] that will be used to build your own search bar modal.
   BuildContext context,
 
-  /// [searchBarModalDetails] is a [SearchBarModalDetails] that will be used to build the search bar modal.
+  /// [searchBarModalDetails] is a [SearchBarModalDetails] that will be used to build your own search bar modal.
   SearchBarModalDetails searchBarModalDetails,
 );
 
@@ -948,14 +907,12 @@ class SearchBarModalDetails {
   });
 }
 
-/// The [SearchEmptyInfoModalBuilder] is a function that will be used to build the search empty info modal.
-/// [context] is a [BuildContext] that will be used to build the search empty info modal.
-/// [searchEmptyInfoModalDetails] is a [SearchEmptyInfoModalDetails] that will be used to build the search empty info modal.
+/// Is a function that will be used to build your own search empty info modal.
 typedef SearchEmptyInfoModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the search empty info modal.
+  /// [context] is a [BuildContext] that will be used to build your own search empty info modal.
   BuildContext context,
 
-  /// [searchEmptyInfoModalDetails] is a [SearchEmptyInfoModalDetails] that will be used to build the search empty info modal.
+  /// [searchEmptyInfoModalDetails] is a [SearchEmptyInfoModalDetails] that will be used to build your own search empty info modal.
   SearchEmptyInfoModalDetails searchEmptyInfoModalDetails,
 );
 
@@ -973,14 +930,12 @@ class SearchEmptyInfoModalDetails {
   });
 }
 
-/// The [ListDataViewModalBuilder] is a function that will be used to build the list data view modal.
-/// [context] is a [BuildContext] that will be used to build the list data view modal.
-/// [listDataViewModalDetails] is a [ListDataViewModalDetails] that will be used to build the list data view modal.
+/// Is a function that will be used to build your own list data view modal.
 typedef ListDataViewModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the list data view modal.
+  /// [context] is a [BuildContext] that will be used to build your own list data view modal.
   BuildContext context,
 
-  /// [listDataViewModalDetails] is a [ListDataViewModalDetails] that will be used to build the list data view modal.
+  /// [listDataViewModalDetails] is a [ListDataViewModalDetails] that will be used to build your own list data view modal.
   ListDataViewModalDetails listDataViewModalDetails,
 );
 
@@ -1029,14 +984,12 @@ class ListDataViewModalDetails {
   });
 }
 
-/// The [CategoryNameModalBuilder] is a function that will be used to build the category name modal.
-/// [context] is a [BuildContext] that will be used to build the category name modal.
-/// [categoryNameModalDetails] is a [CategoryNameModalDetails] that will be used to build the category name modal.
+/// Is a function that will be used to build your own category name modal.
 typedef CategoryNameModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the category name modal.
+  /// [context] is a [BuildContext] that will be used to build your own category name modal.
   BuildContext context,
 
-  /// [categoryNameModalDetails] is a [CategoryNameModalDetails] that will be used to build the category name modal.
+  /// [categoryNameModalDetails] is a [CategoryNameModalDetails] that will be used to build your own category name modal.
   CategoryNameModalDetails categoryNameModalDetails,
 );
 
@@ -1072,14 +1025,12 @@ class CategoryNameModalDetails {
   });
 }
 
-/// The [CategoryItemModalBuilder] is a function that will be used to build the category item modal.
-/// [context] is a [BuildContext] that will be used to build the category item modal.
-/// [categoryItemModalDetails] is a [CategoryItemModalDetails] that will be used to build the category item modal.
+/// Is a function that will be used to build your own category item modal.
 typedef CategoryItemModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the category item modal.
+  /// [context] is a [BuildContext] that will be used to build your own category item modal.
   BuildContext context,
 
-  /// [categoryItemModalDetails] is a [CategoryItemModalDetails] that will be used to build the category item modal.
+  /// [categoryItemModalDetails] is a [CategoryItemModalDetails] that will be used to build your own category item modal.
   CategoryItemModalDetails categoryItemModalDetails,
 );
 
