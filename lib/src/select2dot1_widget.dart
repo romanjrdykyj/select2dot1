@@ -258,71 +258,31 @@ class Select2dot1 extends StatefulWidget {
     this.listDataViewModalBuilder,
     this.categoryNameModalBuilder,
     this.categoryItemModalBuilder,
-    PillboxTitleSettings? pillboxTitleSettings,
-    PillboxSettings? pillboxSettings,
-    PillboxContentMultiSettings? pillboxContentMultiSettings,
-    PillboxIconSettings? pillboxIconSettings,
-    SelectChipSettings? selectChipSettings,
-    SelectSingleSettings? selectSingleSettings,
-    SelectEmptyInfoSettings? selectEmptyInfoSettings,
-    SelectOverloadInfoSettings? selectOverloadInfoSettings,
-    DropdownOverlaySettings? dropdownOverlaySettings,
-    SearchBarOverlaySettings? searchBarOverlaySettings,
-    SearchEmptyInfoOverlaySettings? searchEmptyInfoOverlaySettings,
-    ListDataViewOverlaySettings? listDataViewOverlaySettings,
-    CategoryNameOverlaySettings? categoryNameOverlaySettings,
-    CategoryItemOverlaySettings? categoryItemOverlaySettings,
-    DropdownModalSettings? dropdownModalSettings,
-    TitleModalSettings? titleModalSettings,
-    DoneButtonModalSettings? doneButtonModalSettings,
-    SearchBarModalSettings? searchBarModalSettings,
-    SearchEmptyInfoModalSettings? searchEmptyInfoModalSettings,
-    ListDataViewModalSettings? listDataViewModalSettings,
-    CategoryNameModalSettings? categoryNameModalSettings,
-    CategoryItemModalSettings? categoryItemModalSettings,
-    GlobalSettings? globalSettings,
-  })  : pillboxTitleSettings =
-            pillboxTitleSettings ?? const PillboxTitleSettings(),
-        pillboxSettings = pillboxSettings ?? const PillboxSettings(),
-        pillboxContentMultiSettings =
-            pillboxContentMultiSettings ?? const PillboxContentMultiSettings(),
-        pillboxIconSettings =
-            pillboxIconSettings ?? const PillboxIconSettings(),
-        selectChipSettings = selectChipSettings ?? const SelectChipSettings(),
-        selectSingleSettings =
-            selectSingleSettings ?? const SelectSingleSettings(),
-        selectEmptyInfoSettings =
-            selectEmptyInfoSettings ?? const SelectEmptyInfoSettings(),
-        selectOverloadInfoSettings =
-            selectOverloadInfoSettings ?? const SelectOverloadInfoSettings(),
-        dropdownOverlaySettings =
-            dropdownOverlaySettings ?? const DropdownOverlaySettings(),
-        searchBarOverlaySettings =
-            searchBarOverlaySettings ?? const SearchBarOverlaySettings(),
-        searchEmptyInfoOverlaySettings = searchEmptyInfoOverlaySettings ??
-            const SearchEmptyInfoOverlaySettings(),
-        listDataViewOverlaySettings =
-            listDataViewOverlaySettings ?? const ListDataViewOverlaySettings(),
-        categoryNameOverlaySettings =
-            categoryNameOverlaySettings ?? const CategoryNameOverlaySettings(),
-        categoryItemOverlaySettings =
-            categoryItemOverlaySettings ?? const CategoryItemOverlaySettings(),
-        dropdownModalSettings =
-            dropdownModalSettings ?? const DropdownModalSettings(),
-        titleModalSettings = titleModalSettings ?? const TitleModalSettings(),
-        doneButtonModalSettings =
-            doneButtonModalSettings ?? const DoneButtonModalSettings(),
-        searchBarModalSettings =
-            searchBarModalSettings ?? const SearchBarModalSettings(),
-        searchEmptyInfoModalSettings = searchEmptyInfoModalSettings ??
-            const SearchEmptyInfoModalSettings(),
-        listDataViewModalSettings =
-            listDataViewModalSettings ?? const ListDataViewModalSettings(),
-        categoryNameModalSettings =
-            categoryNameModalSettings ?? const CategoryNameModalSettings(),
-        categoryItemModalSettings =
-            categoryItemModalSettings ?? const CategoryItemModalSettings(),
-        globalSettings = globalSettings ?? const GlobalSettings();
+    this.pillboxTitleSettings = const PillboxTitleSettings(),
+    this.pillboxSettings = const PillboxSettings(),
+    this.pillboxContentMultiSettings = const PillboxContentMultiSettings(),
+    this.pillboxIconSettings = const PillboxIconSettings(),
+    this.selectChipSettings = const SelectChipSettings(),
+    this.selectSingleSettings = const SelectSingleSettings(),
+    this.selectEmptyInfoSettings = const SelectEmptyInfoSettings(),
+    this.selectOverloadInfoSettings = const SelectOverloadInfoSettings(),
+    this.dropdownOverlaySettings = const DropdownOverlaySettings(),
+    this.searchBarOverlaySettings = const SearchBarOverlaySettings(),
+    this.searchEmptyInfoOverlaySettings =
+        const SearchEmptyInfoOverlaySettings(),
+    this.listDataViewOverlaySettings = const ListDataViewOverlaySettings(),
+    this.categoryNameOverlaySettings = const CategoryNameOverlaySettings(),
+    this.categoryItemOverlaySettings = const CategoryItemOverlaySettings(),
+    this.dropdownModalSettings = const DropdownModalSettings(),
+    this.titleModalSettings = const TitleModalSettings(),
+    this.doneButtonModalSettings = const DoneButtonModalSettings(),
+    this.searchBarModalSettings = const SearchBarModalSettings(),
+    this.searchEmptyInfoModalSettings = const SearchEmptyInfoModalSettings(),
+    this.listDataViewModalSettings = const ListDataViewModalSettings(),
+    this.categoryNameModalSettings = const CategoryNameModalSettings(),
+    this.categoryItemModalSettings = const CategoryItemModalSettings(),
+    this.globalSettings = const GlobalSettings(),
+  });
   @override
   State<Select2dot1> createState() => _Select2dot1State();
 }
