@@ -1,6 +1,6 @@
 import 'package:select2dot1/src/models/single_item_category_model.dart';
 
-/// SingleCategoryModel is a model class which contains the name of the category and the list of items in the category.
+/// This is a model class which contains the name of the category and the list of items in the category.
 class SingleCategoryModel {
   /// The name of the category.
   /// It is optional.
@@ -10,12 +10,12 @@ class SingleCategoryModel {
   /// It is required.
   final List<SingleItemCategoryModel> _singleItemCategoryList;
 
-  /// Getter for [_nameCategory].
+  /// Get name of SingleCategoryModel.
   String? get getNameCategory {
     return _nameCategory;
   }
 
-  /// Getter for [_singleItemCategoryList].
+  /// Get list of SingleItemCategory in SingleCategoryModel.
   List<SingleItemCategoryModel> get getSingleItemCategoryList {
     return _singleItemCategoryList;
   }
@@ -23,7 +23,7 @@ class SingleCategoryModel {
   @override
   int get hashCode => _nameCategory.hashCode ^ _singleItemCategoryList.hashCode;
 
-  /// Creating an argument constructor of SingleCategoryModel class.
+  /// Creating an argument constructor of [SingleCategoryModel] class.
   const SingleCategoryModel({
     String? nameCategory,
     required List<SingleItemCategoryModel> singleItemCategoryList,

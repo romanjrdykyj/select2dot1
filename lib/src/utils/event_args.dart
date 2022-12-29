@@ -33,6 +33,7 @@ class PillboxTitleDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxTitleDetails] class.
+  /// Remember: You don't need use all of the parameters.
   PillboxTitleDetails({
     required this.isVisibleOvarlay,
     required this.hover,
@@ -78,6 +79,7 @@ class PillboxDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxDetails] class.
+  /// Remember: You don't need use all of the parameters.
   PillboxDetails({
     required this.selectDataController,
     required this.showDropdown,
@@ -132,6 +134,7 @@ class PillboxContentMultiDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxContentMultiDetails] class.
+  /// Remember: You don't need use all of the parameters.
   PillboxContentMultiDetails({
     required this.selectDataController,
     required this.hover,
@@ -185,6 +188,7 @@ class PillboxContentSingleDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxContentSingleDetails] class.
+  /// Remember: You don't need use all of the parameters.
   PillboxContentSingleDetails({
     required this.selectDataController,
     required this.hover,
@@ -225,6 +229,7 @@ class PillboxIconDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxIconDetails] class.
+  /// Remember: You don't need use all of the parameters.
   PillboxIconDetails({
     required this.isVisibleOvarlay,
     required this.hover,
@@ -234,18 +239,18 @@ class PillboxIconDetails {
   });
 }
 
-/// This is a function that will be used to build your own chip of the pillbox.
+/// This is a function that will be used to build your own select chip of the pillbox.
 typedef SelectChipBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build your own chip of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own select chip of the pillbox.
   BuildContext context,
 
-  /// [selectChipDetails] is a [SelectChipDetails] that will be used to build your own chip of the pillbox.
+  /// [selectChipDetails] is a [SelectChipDetails] that will be used to build your own select chip of the pillbox.
   SelectChipDetails selectChipDetails,
 );
 
-/// This is a class which contains necessary details to build your own chip of the pillbox.
+/// This is a class which contains necessary details to build your own select chip of the pillbox.
 class SelectChipDetails {
-  /// This is a [SingleItemCategoryModel] that will be used to build the chip of the pillbox.
+  /// This is a [SingleItemCategoryModel] that will be used to build the select chip of the pillbox.
   final SingleItemCategoryModel singleItemCategory;
 
   /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
@@ -255,6 +260,7 @@ class SelectChipDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectChipDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const SelectChipDetails({
     required this.singleItemCategory,
     required this.selectDataController,
@@ -283,6 +289,7 @@ class SelectSingleDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectSingleDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const SelectSingleDetails({
     required this.singleItemCategory,
     required this.selectDataController,
@@ -305,6 +312,7 @@ class SelectEmptyInfoDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectEmptyInfoDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const SelectEmptyInfoDetails({
     required this.globalSettings,
   });
@@ -328,6 +336,7 @@ class SelectOverloadInfoDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectOverloadInfoDetails] class.
+  /// Remember: You don't need use all of the parameters.
   SelectOverloadInfoDetails({
     required this.countSelected,
     required this.globalSettings,
@@ -376,6 +385,7 @@ class DropdownContentOverlayDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [DropdownContentOverlayDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const DropdownContentOverlayDetails({
     required this.selectDataController,
     required this.overlayHide,
@@ -417,6 +427,7 @@ class SearchBarOverlayDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchBarOverlayDetails] class.
+  /// Remember: You don't need use all of the parameters.
   SearchBarOverlayDetails({
     required this.searchController,
     required this.searchBarFocusNode,
@@ -426,36 +437,37 @@ class SearchBarOverlayDetails {
   });
 }
 
-/// This is a function that will be used to build your own search empty info of the pillbox.
+/// This is a function that will be used to build your own search empty info.
 typedef SearchEmptyInfoOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build your own search empty info of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own search empty info.
   BuildContext context,
 
-  /// [searchEmptyInfoOverlayDetails] is a [SearchEmptyInfoOverlayDetails] that will be used to build your own search empty info of the pillbox.
+  /// [searchEmptyInfoOverlayDetails] is a [SearchEmptyInfoOverlayDetails] that will be used to build your own search empty info.
   SearchEmptyInfoOverlayDetails searchEmptyInfoOverlayDetails,
 );
 
-/// This is a class which contains necessary details to build your own search empty info of the pillbox.
+/// This is a class which contains necessary details to build your own search empty info.
 class SearchEmptyInfoOverlayDetails {
   /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchEmptyInfoOverlayDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const SearchEmptyInfoOverlayDetails({
     required this.globalSettings,
   });
 }
 
-/// This is a function that will be used to build your own list data view of the pillbox.
+/// This is a function that will be used to build your own list data view.
 typedef ListDataViewOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build your own list data view of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own list data view.
   BuildContext context,
 
-  /// [listDataViewOverlayDetails] is a [ListDataViewOverlayDetails] that will be used to build your own list data view of the pillbox.
+  /// [listDataViewOverlayDetails] is a [ListDataViewOverlayDetails] that will be used to build your own list data view.
   ListDataViewOverlayDetails listDataViewOverlayDetails,
 );
 
-/// This is a class which contains necessary details to build your own list data view of the pillbox.
+/// This is a class which contains necessary details to build your own list data view.
 class ListDataViewOverlayDetails {
   /// This is a [ScrollController] that will be used to control the scroll in list data view.
   final SearchController searchController;
@@ -477,6 +489,7 @@ class ListDataViewOverlayDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [ListDataViewOverlayDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const ListDataViewOverlayDetails({
     required this.searchController,
     required this.selectDataController,
@@ -520,6 +533,7 @@ class CategoryItemOverlayDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [CategoryItemOverlayDetails] class.
+  /// Remember: You don't need use all of the parameters.
   CategoryItemOverlayDetails({
     required this.singleItemCategory,
     required this.selectDataController,
@@ -558,6 +572,7 @@ class CategoryNameOverlayDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [CategoryNameOverlayDetails] class.
+  /// Remember: You don't need use all of the parameters.
   CategoryNameOverlayDetails({
     required this.singleCategory,
     required this.selectDataController,
@@ -606,6 +621,7 @@ class DropdownContentModalDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [DropdownContentModalDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const DropdownContentModalDetails({
     required this.scrollController,
     required this.selectDataController,
@@ -637,6 +653,7 @@ class DoneButtonModalDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [DoneButtonModalDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const DoneButtonModalDetails({
     required this.hideModal,
     required this.globalSettings,
@@ -658,6 +675,7 @@ class TittleModalDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [TittleModalDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const TittleModalDetails({
     required this.globalSettings,
   });
@@ -696,6 +714,7 @@ class SearchBarModalDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchBarModalDetails] class.
+  /// Remember: You don't need use all of the parameters.
   SearchBarModalDetails({
     required this.searchController,
     required this.searchBarModalFocusNode,
@@ -722,6 +741,7 @@ class SearchEmptyInfoModalDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchEmptyInfoModalDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const SearchEmptyInfoModalDetails({
     required this.globalSettings,
   });
@@ -758,6 +778,7 @@ class ListDataViewModalDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [ListDataViewModalDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const ListDataViewModalDetails({
     required this.scrollController,
     required this.searchController,
@@ -792,6 +813,7 @@ class CategoryNameModalDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [CategoryNameModalDetails] class.
+  /// Remember: You don't need use all of the parameters.
   const CategoryNameModalDetails({
     required this.singleCategory,
     required this.selectDataController,
@@ -827,6 +849,7 @@ class CategoryItemModalDetails {
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [CategoryItemModalDetails] class.
+  /// Remember: You don't need use all of the parameters.
   CategoryItemModalDetails({
     required this.singleItemCategory,
     required this.selectDataController,
