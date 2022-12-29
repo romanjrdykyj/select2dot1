@@ -8,16 +8,16 @@ class SelectDataController extends ChangeNotifier {
   /// It is required.
   final List<SingleCategoryModel> _data;
 
-  /// Is initial selected data.
+  /// This is initial selected data.
   /// This data will be add to the [_selectedList] when the class is created.
   /// if [_isMultiSelect] is false, must be null or length <= 1.
   final List<SingleItemCategoryModel>? _initSelected;
 
-  /// Is a boolean to set multi select or single select.
+  /// This is a boolean to set multi select or single select.
   /// Default is true.
   final bool _isMultiSelect;
 
-  /// Is a list of [SingleItemCategoryModel] selected items.
+  /// This is a list of [SingleItemCategoryModel] selected items.
   final List<SingleItemCategoryModel> _selectedList = [];
 
   /// Get list of all data pass to the package.

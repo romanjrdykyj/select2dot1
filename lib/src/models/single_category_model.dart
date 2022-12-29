@@ -1,6 +1,6 @@
 import 'package:select2dot1/src/models/single_item_category_model.dart';
 
-/// SingleCategoryModel is a model class that contains the name of the category and the list of items in the category.
+/// SingleCategoryModel is a model class which contains the name of the category and the list of items in the category.
 class SingleCategoryModel {
   /// The name of the category.
   /// It is optional.

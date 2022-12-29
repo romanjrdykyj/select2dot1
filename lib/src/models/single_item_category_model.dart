@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// SingleItemCategoryModel is a model class that contains the name of the item, the value of the item, the extra info of the item, and the avatar of the item.
+/// SingleItemCategoryModel is a model class which contains the name of the item, the value of the item, the extra info of the item, and the avatar of the item.
 class SingleItemCategoryModel {
   /// The name of the item.
   /// It is required.
