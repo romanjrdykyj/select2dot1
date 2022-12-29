@@ -64,7 +64,7 @@ class SelectSingle extends StatelessWidget {
                 if (singleItemCategory.extraInfoSingleItem != null &&
                     selectSingleSettings.showExtraInfo)
                   Container(
-                    padding: selectSingleSettings.extraInfopadding,
+                    padding: selectSingleSettings.extraInfoPadding,
                     child: Text(
                       // This can't be null anyways
                       // ignore: avoid-non-null-assertion

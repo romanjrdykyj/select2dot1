@@ -33,7 +33,7 @@ class SelectSingleSettings {
 
   /// The padding of the extra info of the select single.
   /// Default value is [null].
-  final EdgeInsetsGeometry? extraInfopadding;
+  final EdgeInsetsGeometry? extraInfoPadding;
 
   /// The avatar of the select single.
   /// Default value is [true].
@@ -73,7 +73,7 @@ class SelectSingleSettings {
     this.showExtraInfo = true,
     this.extraInfoTextStyle = kExtraInfoTextStyle,
     this.extraInfoTextOverflow = TextOverflow.ellipsis,
-    this.extraInfopadding,
+    this.extraInfoPadding,
     this.showAvatar = true,
     this.avatarMargin = const EdgeInsets.only(right: 5.0),
     // its specyfic parameters

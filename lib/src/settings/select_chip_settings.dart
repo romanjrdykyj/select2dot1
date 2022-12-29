@@ -17,7 +17,7 @@ class SelectChipSettings {
   final MouseCursor iconMouseCursor;
 
   /// The padding of the icon of the select chip.
-  /// Default value is [EdgeInsets.symmetric(horizontal: 12.0)].
+  /// Default value is [EdgeInsets.symmetric(horizontal: 1.0)].
   final EdgeInsetsGeometry? iconPadding;
   
   /// The icon of the select chip.
@@ -73,7 +73,7 @@ class SelectChipSettings {
   final bool isAvatarVisible;
 
   /// The margin of the avatar of the select chip.
-  /// Default value is [EdgeInsets.symmetric(horizontal: 4.0)].
+  /// Default value is [EdgeInsets.only(left: 4.0, top: 3.0, bottom: 3.0)].
   final EdgeInsetsGeometry? avatarMargin;
 
   /// The constraints (maxWidth) of the avatar of the select chip.
