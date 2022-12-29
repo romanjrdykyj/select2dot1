@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-  /// This is a class which contains all the settings of the category item of list data view in overlay mode.
+/// This is a class which contains all the settings of the category item of list data view in overlay mode.
 class CategoryItemOverlaySettings {
   /// The mouse cursor when the mouse is hovering over the category item.
   /// Default value is [SystemMouseCursors.click].
@@ -72,7 +72,7 @@ class CategoryItemOverlaySettings {
   /// Default value is [TextOverflow.ellipsis].
   final TextOverflow? textOverflow;
 
-  /// The extra info of the category item.  
+  /// The extra info of the category item.
   /// Default value is [true].
   /// If [false], the extra info will be hidden.
   final bool showExtraInfo;

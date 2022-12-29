@@ -33,7 +33,6 @@ class GlobalSettings {
   /// Default value is [Color(0xFFE4E4E4)].
   final Color chipColor;
 
-
   /// Creating an argument constructor of [GlobalSettings] class.
   const GlobalSettings({
     this.fontFamily,

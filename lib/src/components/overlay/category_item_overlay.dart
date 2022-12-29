@@ -116,8 +116,7 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
                         ),
                       ),
                       if (widget.categoryItemOverlaySettings.showExtraInfo &&
-                          widget.singleItemCategory.extraInfoSingleItem !=
-                              null)
+                          widget.singleItemCategory.extraInfoSingleItem != null)
                         Container(
                           padding: widget
                               .categoryItemOverlaySettings.extraInfoPadding,

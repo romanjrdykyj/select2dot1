@@ -57,8 +57,7 @@ class _CategoryNameOverlayState extends State<CategoryNameOverlay> {
           cursor: widget.selectDataController.isMultiSelect
               ? widget.categoryNameOverlaySettings.mouseCursorSelect
               : SystemMouseCursors.basic,
-          onHover:
-              widget.selectDataController.isMultiSelect ? _onHover : null,
+          onHover: widget.selectDataController.isMultiSelect ? _onHover : null,
           onExit: widget.selectDataController.isMultiSelect ? _onExit : null,
           child: Container(
             decoration: _getDecoration(),
@@ -141,8 +140,7 @@ class _CategoryNameOverlayState extends State<CategoryNameOverlay> {
     }
 
     if (widget.singleCategory.singleItemCategoryList.every(
-      (element) =>
-          widget.selectDataController.selectedList.contains(element),
+      (element) => widget.selectDataController.selectedList.contains(element),
     )) {
       widget.selectDataController.removeGroupSelectChip(
         widget.singleCategory.singleItemCategoryList,

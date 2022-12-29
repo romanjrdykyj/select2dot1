@@ -107,8 +107,7 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
                       ),
                     ),
                     if (widget.categoryItemModalSettings.showExtraInfo &&
-                        widget.singleItemCategory.extraInfoSingleItem !=
-                            null)
+                        widget.singleItemCategory.extraInfoSingleItem != null)
                       Container(
                         padding:
                             widget.categoryItemModalSettings.extraInfoPadding,

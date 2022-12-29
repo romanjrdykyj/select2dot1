@@ -19,7 +19,7 @@ class SelectChipSettings {
   /// The padding of the icon of the select chip.
   /// Default value is [EdgeInsets.symmetric(horizontal: 1.0)].
   final EdgeInsetsGeometry? iconPadding;
-  
+
   /// The icon of the select chip.
   /// Default value is [Icons.clear_rounded].
   final IconData iconData;
