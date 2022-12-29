@@ -95,7 +95,7 @@ class _PillboxContentSingleState extends State<PillboxContentSingle> {
       child: Row(
         children: [
           Expanded(
-            child: widget.selectDataController.getSelectedList.isEmpty
+            child: widget.selectDataController.selectedList.isEmpty
                 ? SelectEmptyInfo(
                     selectEmptyInfoBuilder: widget.selectEmptyInfoBuilder,
                     selectEmptyInfoSettings: widget.selectEmptyInfoSettings,
@@ -103,7 +103,7 @@ class _PillboxContentSingleState extends State<PillboxContentSingle> {
                   )
                 : SelectSingle(
                     singleItemCategory:
-                        widget.selectDataController.getSelectedList.first,
+                        widget.selectDataController.selectedList.first,
                     selectDataController: widget.selectDataController,
                     selectSingleBuilder: widget.selectSingleBuilder,
                     selectSingleSettings: widget.selectSingleSettings,
@@ -127,7 +127,7 @@ class _PillboxContentSingleState extends State<PillboxContentSingle> {
         ? widget.pillboxSettings.focusDecoration
         : widget.hover
             ? widget.pillboxSettings.hoverDecoration
-            : widget.selectDataController.getSelectedList.isNotEmpty
+            : widget.selectDataController.selectedList.isNotEmpty
                 ? widget.pillboxSettings.activeDecoration
                 : widget.pillboxSettings.defaultDecoration;
 
@@ -149,7 +149,7 @@ class _PillboxContentSingleState extends State<PillboxContentSingle> {
       return widget.globalSettings.activeColor;
     }
 
-    if (widget.selectDataController.getSelectedList.isNotEmpty) {
+    if (widget.selectDataController.selectedList.isNotEmpty) {
       return widget.globalSettings.mainColor;
     }
 
@@ -171,7 +171,7 @@ class _PillboxContentSingleState extends State<PillboxContentSingle> {
   }
 
   Widget _selectSingle() => SelectSingle(
-        singleItemCategory: widget.selectDataController.getSelectedList.first,
+        singleItemCategory: widget.selectDataController.selectedList.first,
         selectDataController: widget.selectDataController,
         selectSingleBuilder: widget.selectSingleBuilder,
         selectSingleSettings: widget.selectSingleSettings,

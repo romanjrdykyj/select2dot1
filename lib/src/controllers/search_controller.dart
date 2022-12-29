@@ -30,8 +30,8 @@ class SearchController extends ChangeNotifier {
     for (var category in _data) {
       List<SingleItemCategoryModel> tempSingleItemCategoryList = [];
 
-      for (var singleItemCategory in category.getSingleItemCategoryList) {
-        if (singleItemCategory.getNameSingleItem
+      for (var singleItemCategory in category.singleItemCategoryList) {
+        if (singleItemCategory.nameSingleItem
             .toLowerCase()
             .startsWith(value.toLowerCase())) {
           tempSingleItemCategoryList.add(singleItemCategory);
@@ -41,7 +41,7 @@ class SearchController extends ChangeNotifier {
       if (tempSingleItemCategoryList.isNotEmpty) {
         _results.add(
           SingleCategoryModel(
-            nameCategory: category.getNameCategory,
+            nameCategory: category.nameCategory,
             singleItemCategoryList: tempSingleItemCategoryList,
           ),
         );

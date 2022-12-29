@@ -34,7 +34,7 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
   @override
   void initState() {
     super.initState();
-    if (widget.selectDataController.getSelectedList
+    if (widget.selectDataController.selectedList
         .contains(widget.singleItemCategory)) {
       isSelected = true;
     }
@@ -91,14 +91,14 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
                     ),
                   ),
                 ),
-                if (widget.singleItemCategory.getAvatarSingleItem != null &&
+                if (widget.singleItemCategory.avatarSingleItem != null &&
                     widget.categoryItemOverlaySettings.showAvatar)
                   Container(
                     height: widget.categoryItemOverlaySettings.avatarMaxHeight,
                     width: widget.categoryItemOverlaySettings.avatarMaxWidth,
                     margin: widget.categoryItemOverlaySettings.avatarMargin,
                     child: FittedBox(
-                      child: widget.singleItemCategory.getAvatarSingleItem,
+                      child: widget.singleItemCategory.avatarSingleItem,
                     ),
                   ),
                 Flexible(
@@ -109,14 +109,14 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
                       Container(
                         padding: widget.categoryItemOverlaySettings.textPadding,
                         child: Text(
-                          widget.singleItemCategory.getNameSingleItem,
+                          widget.singleItemCategory.nameSingleItem,
                           overflow:
                               widget.categoryItemOverlaySettings.textOverflow,
                           style: _getNameItemTextStyle(),
                         ),
                       ),
                       if (widget.categoryItemOverlaySettings.showExtraInfo &&
-                          widget.singleItemCategory.getExtraInfoSingleItem !=
+                          widget.singleItemCategory.extraInfoSingleItem !=
                               null)
                         Container(
                           padding: widget
@@ -124,7 +124,7 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
                           child: Text(
                             // This can't be null anyways
                             // ignore: avoid-non-null-assertion
-                            widget.singleItemCategory.getExtraInfoSingleItem!,
+                            widget.singleItemCategory.extraInfoSingleItem!,
                             overflow: widget.categoryItemOverlaySettings
                                 .extraInfoTextOverflow,
                             style: _getExtraInfoTextStyle(),
@@ -207,7 +207,7 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
 
   void _onTapSingleItemCategory() {
     if (!isSelected) {
-      widget.selectDataController.getIsMultiSelect
+      widget.selectDataController.isMultiSelect
           ? widget.selectDataController.addSelectChip(widget.singleItemCategory)
           : widget.selectDataController
               .setSingleSelect(widget.singleItemCategory);
@@ -216,13 +216,13 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
           .removeSingleSelectedChip(widget.singleItemCategory);
     }
 
-    if (!widget.selectDataController.getIsMultiSelect) {
+    if (!widget.selectDataController.isMultiSelect) {
       widget.overlayHide();
     }
   }
 
   bool _isSelected() {
-    if (widget.selectDataController.getSelectedList
+    if (widget.selectDataController.selectedList
         .contains(widget.singleItemCategory)) {
       return true;
     }

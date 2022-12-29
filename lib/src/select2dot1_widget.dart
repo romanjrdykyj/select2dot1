@@ -230,7 +230,13 @@ class Select2dot1 extends StatefulWidget {
   /// This is a class which contains all the global settings of the widget.
   final GlobalSettings globalSettings;
 
-  /// [Select2dot1] is a package widget constructor. //TODO: add more description
+  /// Controller of the data of the widget [selectDataController].
+  /// To callback the data of the widget, you can use [selectDataController] to get the data
+  /// or use [onChanged] to get the data.
+  /// Pass [scrollController] to the widget to control anchor position of dropdown menu
+  /// Set [isSearchable] to false to disable search bar
+  /// Use builder to customize package by yourself.
+  /// If you want you can also use the settings to customize the widget.
   const Select2dot1({
     super.key,
     required this.selectDataController,
@@ -416,7 +422,7 @@ class _Select2dot1State extends AnimatedState
       // This can't be null anyways
       // ignore:avoid-non-null-assertion
       widget.onChanged!(
-        widget.selectDataController.getSelectedList,
+        widget.selectDataController.selectedList,
       );
     }
   }

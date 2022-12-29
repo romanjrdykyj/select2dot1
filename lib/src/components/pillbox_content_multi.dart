@@ -128,13 +128,13 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
                           ? widget.pillboxContentMultiSettings.runSpacingChip
                           : 0.0,
                   children: widget
-                          .selectDataController.getSelectedList.isNotEmpty
-                      ? widget.selectDataController.getSelectedList.length >=
+                          .selectDataController.selectedList.isNotEmpty
+                      ? widget.selectDataController.selectedList.length >=
                               widget.pillboxContentMultiSettings.pillboxOverload
                           ? [
                               SelectOverloadInfo(
                                 countSelected: widget.selectDataController
-                                    .getSelectedList.length,
+                                    .selectedList.length,
                                 selectOverloadInfoBuilder:
                                     widget.selectOverloadInfoBuilder,
                                 selectOverloadInfoSettings:
@@ -142,7 +142,7 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
                                 globalSettings: widget.globalSettings,
                               ),
                             ]
-                          : widget.selectDataController.getSelectedList.reversed
+                          : widget.selectDataController.selectedList.reversed
                               .map(
                                 (i) => SelectChip(
                                   singleItemCategory: i,
@@ -184,7 +184,7 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
         ? widget.pillboxSettings.focusDecoration
         : widget.hover
             ? widget.pillboxSettings.hoverDecoration
-            : widget.selectDataController.getSelectedList.isNotEmpty
+            : widget.selectDataController.selectedList.isNotEmpty
                 ? widget.pillboxSettings.activeDecoration
                 : widget.pillboxSettings.defaultDecoration;
 
@@ -206,7 +206,7 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
       return widget.globalSettings.activeColor;
     }
 
-    if (widget.selectDataController.getSelectedList.isNotEmpty) {
+    if (widget.selectDataController.selectedList.isNotEmpty) {
       return widget.globalSettings.mainColor;
     }
 

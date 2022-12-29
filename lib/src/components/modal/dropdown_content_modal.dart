@@ -75,7 +75,7 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
   @override
   void initState() {
     super.initState();
-    searchController = SearchController(widget.selectDataController.getData);
+    searchController = SearchController(widget.selectDataController.data);
     searchController.addListener(_refreshState);
   }
 
