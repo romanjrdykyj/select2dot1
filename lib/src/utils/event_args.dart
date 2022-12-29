@@ -17,16 +17,16 @@ typedef PillboxTitleBuilder = Widget Function(
 
 /// This is a class which contains necessary details to build your own title of the pillbox.
 class PillboxTitleDetails {
-  /// This is a boolean[ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a boolean[ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOvarlay;
 
-  /// This is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// This is a boolean that will be used to check if the pillbox is focused.
+  /// This is a boolean representing if the pillbox is focused.
   bool isFocus;
 
-  /// This is a function that will be used to change the focus of the pillbox.
+  /// This is emmbedded function services change the focus of the pillbox.
   final void Function() onFocusChange;
 
   /// This is a [GlobalSettings] that will be used to get the global settings.
@@ -42,30 +42,30 @@ class PillboxTitleDetails {
   });
 }
 
-/// This is a function that will be used to build your own content of the pillbox.
+/// This is a function that will be used to build your own pillbox.
 typedef PillboxBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build your own content of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own pillbox.
   BuildContext context,
 
-  /// [pillboxDetails] is a [PillboxDetails] that will be used to build your own content of the pillbox.
+  /// [pillboxDetails] is a [PillboxDetails] that will be used to build your own pillbox.
   PillboxDetails pillboxDetails,
 );
 
-/// This is a class which contains necessary details to build your own content of the pillbox.
+/// This is a class which contains necessary details to build your own pillbox.
 class PillboxDetails {
-  /// This is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// This is a function that will be used to show the dropdown or modal.
+  /// This is embedded function services show the dropdown.
   final void Function() showDropdown;
 
-  /// This is a boolean[ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a boolean[ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOverlay;
 
   /// This is a [LayerLink] that will be used to link the pillbox to the dropdown.
   final LayerLink? pillboxLayerLink;
 
-  /// This is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
   /// This is a function returning a [Widget] of the title of the pillbox.
@@ -101,19 +101,19 @@ typedef PillboxContentMultiBuilder = Widget Function(
 
 /// This is a class which contains necessary details to build your own multi content of the pillbox.
 class PillboxContentMultiDetails {
-  /// This is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// This is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// This is a boolean[ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a boolean[ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOvarlay;
 
-  /// This is a boolean that will be used to check if the pillbox is focused.
+  /// This is a boolean representing if the pillbox is focused.
   bool isFocus;
 
-  /// This is a function that will be used to change the focus of the pillbox.
+  /// This is embedded function services change the focus of the pillbox.
   final void Function() onFocusChange;
 
   /// This is a function returning a [Widget] of the the chip of the pillbox.
@@ -146,30 +146,30 @@ class PillboxContentMultiDetails {
   });
 }
 
-/// This is a function that will be used to build your own content of the pillbox.
+/// This is a function that will be used to build your own single content of the pillbox.
 typedef PillboxContentSingleBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build your own content of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own single content of the pillbox.
   BuildContext context,
 
-  /// [pillboxContentSingleDetails] is a [PillboxContentSingleDetails] that will be used to build your own content of the pillbox.
+  /// [pillboxContentSingleDetails] is a [PillboxContentSingleDetails] that will be used to build your own single content of the pillbox.
   PillboxContentSingleDetails pillboxContentSingleDetails,
 );
 
-/// This is a class which contains necessary details to build your own content of the pillbox.
+/// This is a class which contains necessary details to build your own single content of the pillbox.
 class PillboxContentSingleDetails {
-  /// This is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// This is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// This is a boolean[ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a boolean[ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOvarlay;
 
-  /// This is a boolean that will be used to check if the pillbox is focused.
+  /// This is a boolean representing if the pillbox is focused.
   bool isFocus;
 
-  /// This is a function that will be used to change the focus of the pillbox.
+  /// This is embedded function services change the focus of the pillbox.
   final void Function() onFocusChange;
 
   /// This is a function returning a [Widget] of the single of the pillbox.
@@ -209,16 +209,16 @@ typedef PillboxIconBuilder = Widget Function(
 
 /// This is a class which contains necessary details to build your own icon of the pillbox.
 class PillboxIconDetails {
-  /// This is a [ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a [ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOvarlay;
 
-  /// This is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// This is a boolean that will be used to check if the pillbox is focused.
+  /// This is a boolean representing if the pillbox is focused.
   bool isFocus;
 
-  /// This is a function that will be used to change the focus of the pillbox.
+  /// This is embedded function services change the focus of the pillbox.
   final void Function() onFocusChange;
 
   /// This is a [GlobalSettings] that will be used to get the global settings.
@@ -248,7 +248,7 @@ class SelectChipDetails {
   /// This is a [SingleItemCategoryModel] that will be used to build the chip of the pillbox.
   final SingleItemCategoryModel singleItemCategory;
 
-  /// This is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
   /// This is a [GlobalSettings] that will be used to get the global settings.
@@ -262,21 +262,21 @@ class SelectChipDetails {
   });
 }
 
-/// This is a function that will be used to build your own single of the pillbox.
+/// This is a function that will be used to build your own select single of the pillbox.
 typedef SelectSingleBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build your own single of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own select single of the pillbox.
   BuildContext context,
 
-  /// [selectSingleDetails] is a [SelectSingleDetails] that will be used to build your own single of the pillbox.
+  /// [selectSingleDetails] is a [SelectSingleDetails] that will be used to build your own select single of the pillbox.
   SelectSingleDetails selectSingleDetails,
 );
 
-/// This is a class which contains necessary details to build your own single of the pillbox.
+/// This is a class which contains necessary details to build your own select single of the pillbox.
 class SelectSingleDetails {
-  /// This is a [SingleItemCategoryModel] that will be used to build the single of the pillbox.
+  /// This is a [SingleItemCategoryModel] that will be used to build the select single of the pillbox.
   final SingleItemCategoryModel singleItemCategory;
 
-  /// This is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
   /// This is a [GlobalSettings] that will be used to get the global settings.
@@ -321,7 +321,7 @@ typedef SelectOverloadInfoBuilder = Widget Function(
 
 /// This is a class which contains necessary details to build your own overload info of the pillbox.
 class SelectOverloadInfoDetails {
-  /// This is a int that will be used to build the overload info of the pillbox.
+  /// This is a int representing the number of selected items.
   int countSelected;
 
   /// This is a [GlobalSettings] that will be used to get the global settings.
@@ -334,42 +334,42 @@ class SelectOverloadInfoDetails {
   });
 }
 
-/// This is a function that will be used to build your own overlay of the pillbox.
+/// This is a function that will be used to build your own dropdown content (overlay).
 typedef DropdownContentOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build your own overlay of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own dropdown content (overlay).
   BuildContext context,
 
-  /// [dropdownContentOverlayDetails] is a [DropdownContentOverlayDetails] that will be used to build your own overlay of the pillbox.
+  /// [dropdownContentOverlayDetails] is a [DropdownContentOverlayDetails] that will be used to build your own dropdown content (overlay).
   DropdownContentOverlayDetails dropdownContentOverlayDetails,
 );
 
-/// This is a class which contains necessary details to build your own overlay of the pillbox.
+/// This is a class which contains necessary details to build your own dropdown content (overlay).
 class DropdownContentOverlayDetails {
-  /// This is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// This is a function that will be used to hide the overlay of the pillbox.
+  /// This is embedded function services hide the overlay of the pillbox.
   final void Function() overlayHide;
 
-  /// This is a [LayerLink] that will be used to build the overlay of the pillbox.
+  /// This is a [LayerLink] that will be used to link the dropdown to the pillbox.
   final LayerLink layerLink;
 
-  /// This is a [ScrollController] that will be used to build the overlay of the pillbox.
+  /// This is a [ScrollController] that will be used to controll the scroll of the dropdown.
   final ScrollController? scrollController;
 
-  /// This is a [double] that will be used to build the overlay of the pillbox.
+  /// This is a [double] representing the maximum height of the app bar (MaterialAppBar).
   final double? appBarMaxHeight;
 
-  /// This is a [SearchController] that will be used to build the overlay of the pillbox.
+  /// This is a [SearchController] that will be used to search the data.
   final SearchController searchController;
 
-  /// This is a function returning a [Widget] of the overlay of the pillbox.
+  /// This is a function returning a [Widget] of the searchBar.
   final Widget Function() searchBarOverlay;
 
-  /// This is a function returning a [Widget] of the overlay of the pillbox.
+  /// This is a function returning a [Widget] of the search empty info.
   final Widget Function() searchEmptyInfoOverlay;
 
-  /// This is a function returning a [Widget] of the overlay of the pillbox.
+  /// This is a function returning a [Widget] of the list data view.
   final Widget Function() listDataViewOverlay;
 
   /// This is a [GlobalSettings] that will be used to get the global settings.
@@ -390,24 +390,24 @@ class DropdownContentOverlayDetails {
   });
 }
 
-/// This is a function that will be used to build your own search bar of the pillbox.
+/// This is a function that will be used to build your own search bar.
 typedef SearchBarOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build your own search bar of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own search bar.
   BuildContext context,
 
-  /// [searchBarOverlayDetails] is a [SearchBarOverlayDetails] that will be used to build your own search bar of the pillbox.
+  /// [searchBarOverlayDetails] is a [SearchBarOverlayDetails] that will be used to build your own search bar.
   SearchBarOverlayDetails searchBarOverlayDetails,
 );
 
-/// This is a class which contains necessary details to build your own search bar of the pillbox.
+/// This is a class which contains necessary details to build your own search bar.
 class SearchBarOverlayDetails {
-  /// This is a [SearchController] that will be used to build the search bar of the pillbox.
+  /// This is a [SearchController] that will be used to build the search bar.
   final SearchController searchController;
 
-  /// This is a [FocusNode] that will be used to build the search bar of the pillbox.
+  /// This is a [FocusNode] that will be used to build the search bar.
   final FocusNode searchBarFocusNode;
 
-  /// This is a [TextEditingController] that will be used to build the search bar of the pillbox.
+  /// This is a [TextEditingController] that will be used to build the search bar.
   final TextEditingController searchBarController;
 
   /// This is a boolean representing the focus of the search bar.
