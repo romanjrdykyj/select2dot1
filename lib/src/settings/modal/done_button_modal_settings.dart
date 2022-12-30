@@ -43,6 +43,7 @@ class DoneButtonModalSettings {
   /// Default value is [null].
   final EdgeInsetsGeometry? iconPadding;
 
+  /// The default text style of the done button.
   static const kTextStyle = TextStyle(
     fontSize: 16.0,
     fontWeight: FontWeight.w600,
