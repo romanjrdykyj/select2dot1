@@ -30,12 +30,9 @@ class SearchEmptyInfoModal extends StatelessWidget {
 
     if (searchEmptyInfoModalSettings.isCenter) {
       return Center(
-        child: Container(
-          padding: searchEmptyInfoModalSettings.padding,
-          child: Text(
-            searchEmptyInfoModalSettings.text,
-            style: _getTextStyle(),
-          ),
+        child: Text(
+          searchEmptyInfoModalSettings.text,
+          style: _getTextStyle(),
         ),
       );
     }

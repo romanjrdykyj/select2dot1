@@ -1,17 +1,51 @@
 import 'package:flutter/material.dart';
 
+/// This is a class which contains all the settings of the list data view of dropdown content in overlay mode.
 class ListDataViewOverlaySettings {
+  /// The margin of the list data view of dropdown content in overlay mode.
+  /// Default value is [null].
   final EdgeInsetsGeometry? margin;
+
+  /// The padding of the list data view of dropdown content in overlay mode.
+  /// Default value is [null].
   final EdgeInsetsGeometry? padding;
+
+  /// The visibility of the track of the scrollbar of the list data view of dropdown content in overlay mode.
+  /// Default value is [true].
   final bool? trackVisibility;
+
+  /// The visibility of the thumb of the scrollbar of the list data view of dropdown content in overlay mode.
+  /// Default value is [true].
   final bool? thumbVisibility;
+
+  /// The color of the thumb of the scrollbar of the list data view of dropdown content in overlay mode.
+  /// Default value is [null],
+  /// because the color of the icon is set by the [GlobalSettings].
   final Color? thumbColor;
+
+  /// The color of the track of the scrollbar of the list data view of dropdown content in overlay mode.
+  /// Default value is [null],
+  /// because the color of the icon is set by the [GlobalSettings].
   final Color? trackColor;
+
+  /// The border color of the track of the scrollbar of the list data view of dropdown content in overlay mode.
+  /// Default value is [null],
+  /// because the color of the icon is set by the [GlobalSettings].
   final Color? trackBorderColor;
+
+  /// The radius of the scrollbar of the list data view of dropdown content in overlay mode.
+  /// Default value is [Radius.circular(5.0)].
   final Radius? radiusScrollbar;
+
+  /// The thickness of the scrollbar of the list data view of dropdown content in overlay mode.
+  /// Default value is [null].
   final double? thicknessScrollbar;
+
+  /// The shape of the scrollbar of the list data view of dropdown content in overlay mode.
+  /// Default value is [null].
   final OutlinedBorder? shapeScrollbar;
 
+  /// Creating an argument constructor of [ListDataViewOverlaySettings] class.
   const ListDataViewOverlaySettings({
     this.margin,
     this.padding,

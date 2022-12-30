@@ -12,7 +12,7 @@ class SelectChipSettings {
   /// Default value is [BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(5.0)))].
   final BoxDecoration chipDecoration;
 
-  /// The mouseCoursor of the select chip.
+  /// The mouseCoursor of the icon of the select chip.
   /// Default value is [SystemMouseCursors.click].
   final MouseCursor iconMouseCursor;
 
