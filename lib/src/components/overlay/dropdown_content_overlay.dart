@@ -74,7 +74,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
   @override
   void initState() {
     super.initState();
-    searchController = SearchController(widget.selectDataController.getData);
+    searchController = SearchController(widget.selectDataController.data);
     if (widget.dropdownContentOverlayBuilder == null) {
       _calculateSearchBarOverlaySize();
     }

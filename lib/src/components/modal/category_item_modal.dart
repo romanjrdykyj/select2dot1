@@ -31,7 +31,7 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
   @override
   void initState() {
     super.initState();
-    if (widget.selectDataController.getSelectedList
+    if (widget.selectDataController.selectedList
         .contains(widget.singleItemCategory)) {
       isSelected = true;
     }
@@ -83,14 +83,14 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
                   ),
                 ),
               ),
-              if (widget.singleItemCategory.getAvatarSingleItem != null &&
+              if (widget.singleItemCategory.avatarSingleItem != null &&
                   widget.categoryItemModalSettings.showAvatar)
                 Container(
                   height: widget.categoryItemModalSettings.avatarMaxHeight,
                   width: widget.categoryItemModalSettings.avatarMaxWidth,
                   margin: widget.categoryItemModalSettings.avatarMargin,
                   child: FittedBox(
-                    child: widget.singleItemCategory.getAvatarSingleItem,
+                    child: widget.singleItemCategory.avatarSingleItem,
                   ),
                 ),
               Flexible(
@@ -101,21 +101,20 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
                     Container(
                       padding: widget.categoryItemModalSettings.textPadding,
                       child: Text(
-                        widget.singleItemCategory.getNameSingleItem,
+                        widget.singleItemCategory.nameSingleItem,
                         overflow: widget.categoryItemModalSettings.textOverflow,
                         style: _getNameItemTextStyle(),
                       ),
                     ),
                     if (widget.categoryItemModalSettings.showExtraInfo &&
-                        widget.singleItemCategory.getExtraInfoSingleItem !=
-                            null)
+                        widget.singleItemCategory.extraInfoSingleItem != null)
                       Container(
                         padding:
                             widget.categoryItemModalSettings.extraInfoPadding,
                         child: Text(
                           // This can't be null anyways
                           // ignore: avoid-non-null-assertion
-                          widget.singleItemCategory.getExtraInfoSingleItem!,
+                          widget.singleItemCategory.extraInfoSingleItem!,
                           overflow: widget
                               .categoryItemModalSettings.extraInfoTextOverflow,
                           style: _getExtraInfoTextStyle(),
@@ -181,7 +180,7 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
 
   void _onTapSingleItemCategory() {
     if (!isSelected) {
-      widget.selectDataController.getIsMultiSelect
+      widget.selectDataController.isMultiSelect
           ? widget.selectDataController.addSelectChip(widget.singleItemCategory)
           : widget.selectDataController
               .setSingleSelect(widget.singleItemCategory);
@@ -190,13 +189,13 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
           .removeSingleSelectedChip(widget.singleItemCategory);
     }
 
-    if (!widget.selectDataController.getIsMultiSelect) {
+    if (!widget.selectDataController.isMultiSelect) {
       Navigator.pop(context);
     }
   }
 
   bool _isSelected() {
-    if (widget.selectDataController.getSelectedList
+    if (widget.selectDataController.selectedList
         .contains(widget.singleItemCategory)) {
       return true;
     }

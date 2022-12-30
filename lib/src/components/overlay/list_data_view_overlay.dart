@@ -115,7 +115,7 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
                                   singleItemCategory: widget
                                       .searchController
                                       .getResults[categoryIndex]
-                                      .getSingleItemCategoryList[itemIndex],
+                                      .singleItemCategoryList[itemIndex],
                                   selectDataController:
                                       widget.selectDataController,
                                   overlayHide: widget.overlayHide,
@@ -129,7 +129,7 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
                               childCount: widget
                                   .searchController
                                   .getResults[categoryIndex]
-                                  .getSingleItemCategoryList
+                                  .singleItemCategoryList
                                   .length,
                             ),
                           ),

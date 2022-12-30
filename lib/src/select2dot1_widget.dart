@@ -75,7 +75,9 @@ import 'package:select2dot1/src/utils/event_args.dart';
 ///     ),
 /// ```
 class Select2dot1 extends StatefulWidget {
-  /// [selectDataController] is a controller that contains all the data that you want to display in the widget.
+  /// This is a controller which contains all the data that you want to display in the widget.
+  /// You can also use this controller to get the value of the widget outside the widget.
+  /// Also you can controller selected items.
   /// It is required.
   final SelectDataController selectDataController;
 
@@ -83,152 +85,158 @@ class Select2dot1 extends StatefulWidget {
   /// It is call every time when the value of the widget is changed.
   final ValueChanged<List<SingleItemCategoryModel>>? onChanged;
 
-  /// Pass [scrollController] if you want adjustable dropdown anchor.
+  /// Pass it if you want adjustable dropdown anchor.
   final ScrollController? scrollController;
 
-  /// [isSearchable] is a boolean value that indicates whether the widget is searchable or not.
+  /// This is a boolean value that indicates whether the widget is searchable or not.
   /// Default value is [true].
   final bool isSearchable;
 
-  /// [PillboxTitleBuilder] is a builder that is used to build the title of the widget.
+  /// This is a builder that is used to build the title pillbox of the widget.
   final PillboxTitleBuilder? pillboxTitleBuilder;
 
-  /// [PillboxBuilder] is a builder that is used to build the pillbox of the widget.
+  /// This is a builder that is used to build the pillbox of the widget.
   final PillboxBuilder? pillboxBuilder;
 
-  /// [PillboxContentMultiBuilder] is a builder that is used to build the content of the pillbox in multi select mode.
+  /// This is a builder that is used to build the content of the pillbox in multi select mode.
   final PillboxContentMultiBuilder? pillboxContentMultiBuilder;
 
-  /// [PillboxContentSingleBuilder] is a builder that is used to build the content of the pillbox in single select mode.
+  /// This is a builder that is used to build the content of the pillbox in single select mode.
   final PillboxContentSingleBuilder? pillboxContentSingleBuilder;
 
-  /// [PillboxIconBuilder] is a builder that is used to build the icon of the pillbox.
+  /// This is a builder that is used to build the icon of the pillbox.
   final PillboxIconBuilder? pillboxIconBuilder;
 
-  /// [SelectChipBuilder] is a builder that is used to build the chip of the widget.
+  /// This is a builder that is used to build the select chip of the widget.
   final SelectChipBuilder? selectChipBuilder;
 
-  /// [SelectSingleBuilder] is a builder that is used to build the single select mode of the widget.
+  /// This is a builder that is used to build the single select of the widget.
   final SelectSingleBuilder? selectSingleBuilder;
 
-  /// [SelectEmptyInfoBuilder] is a builder that is used to build the empty info of the widget.
+  /// This is a builder that is used to build the empty info in pillbox.
   final SelectEmptyInfoBuilder? selectEmptyInfoBuilder;
 
-  /// [SelectOverloadInfoBuilder] is a builder that is used to build the overload info of the widget.
+  /// This is a builder that is used to build the overload info in pillbox.
   final SelectOverloadInfoBuilder? selectOverloadInfoBuilder;
 
-  /// [DropdownContentOverlayBuilder] is a builder that is used to build the overlay of the dropdown content.
+  /// This is a builder that is used to build the dropdown content (overlay) of the widget.
   final DropdownContentOverlayBuilder? dropdownContentOverlayBuilder;
 
-  /// [SearchBarOverlayBuilder] is a builder that is used to build the overlay of the search bar.
+  /// This is a builder that is used to build the search bar of the widget in overlay mode.
   final SearchBarOverlayBuilder? searchBarOverlayBuilder;
 
-  /// [SearchEmptyInfoOverlayBuilder] is a builder that is used to build the overlay of the search empty info.
+  /// This is a builder that is used to build the search empty info of dropdown content in overlay mode.
   final SearchEmptyInfoOverlayBuilder? searchEmptyInfoOverlayBuilder;
 
-  /// [ListDataViewOverlayBuilder] is a builder that is used to build the overlay of the list data view.
+  /// This is a builder that is used to build the list data view of dropdown content in overlay mode.
   final ListDataViewOverlayBuilder? listDataViewOverlayBuilder;
 
-  /// [CategoryNameOverlayBuilder] is a builder that is used to build the overlay of the category name.
+  /// This is a builder that is used to build the category name of list data view in overlay mode.
   final CategoryNameOverlayBuilder? categoryNameOverlayBuilder;
 
-  /// [CategoryItemOverlayBuilder] is a builder that is used to build the overlay of the category item.
+  /// This is a builder that is used to build the category item of list data view in overlay mode.
   final CategoryItemOverlayBuilder? categoryItemOverlayBuilder;
 
-  /// [DropdownContentModalBuilder] is a builder that is used to build the modal of the dropdown content.
+  /// This is a builder that is used to build the dropdown content (modal) of the widget.
   final DropdownContentModalBuilder? dropdownContentModalBuilder;
 
-  /// [TitleModalBuilder] is a builder that is used to build the modal of the title.
+  /// This is a builder that is used to build the title of dropdown content in modal mode.
   final TitleModalBuilder? titleModalBuilder;
 
-  /// [DoneButtonModalBuilder] is a builder that is used to build the modal of the done button.
+  /// This is a builder that is used to build the done button of dropdown content in modal mode.
   final DoneButtonModalBuilder? doneButtonModalBuilder;
 
-  /// [SearchBarModalBuilder] is a builder that is used to build the modal of the search bar.
+  /// This is a builder that is used to build the search bar of the widget in modal mode.
   final SearchBarModalBuilder? searchBarModalBuilder;
 
-  /// [SearchEmptyInfoModalBuilder] is a builder that is used to build the modal of the search empty info.
+  /// This is a builder that is used to build the search empty info of dropdown content in modal mode.
   final SearchEmptyInfoModalBuilder? searchEmptyInfoModalBuilder;
 
-  /// [ListDataViewModalBuilder] is a builder that is used to build the modal of the list data view.
+  /// This is a builder that is used to build the list data view of dropdown content in modal mode.
   final ListDataViewModalBuilder? listDataViewModalBuilder;
 
-  /// [CategoryNameModalBuilder] is a builder that is used to build the modal of the category name.
+  /// This is a builder that is used to build the category name of list data view in modal mode.
   final CategoryNameModalBuilder? categoryNameModalBuilder;
 
-  /// [CategoryItemModalBuilder] is a builder that is used to build the modal of the category item.
+  /// This is a builder that is used to build the category item of list data view in modal mode.
   final CategoryItemModalBuilder? categoryItemModalBuilder;
 
-  /// [PillboxTitleSettings] is a class that contains all the settings of the title of the widget.
+  /// This is a class which contains all the settings of the title of the widget.
   final PillboxTitleSettings pillboxTitleSettings;
 
-  /// [PillboxSettings] is a class that contains all the settings of the pillbox of the widget.
+  /// This is a class which contains all the settings of the pillbox of the widget.
   final PillboxSettings pillboxSettings;
 
-  /// [PillboxContentMultiSettings] is a class that contains all the settings of the content of the pillbox in multi select mode.
+  /// This is a class which contains all the settings of the content of the pillbox in multi select mode.
   final PillboxContentMultiSettings pillboxContentMultiSettings;
 
-  /// [PillboxIconSettings] is a class that contains all the settings of the icon of the pillbox.
+  /// This is a class which contains all the settings of the icon of the pillbox.
   final PillboxIconSettings pillboxIconSettings;
 
-  /// [SelectChipSettings] is a class that contains all the settings of the chip of the widget.
+  /// This is a class which contains all the settings of the select chip of the widget.
   final SelectChipSettings selectChipSettings;
 
-  /// [SelectSingleSettings] is a class that contains all the settings of the single select mode of the widget.
+  /// This is a class which contains all the settings of the single select of the widget.
   final SelectSingleSettings selectSingleSettings;
 
-  /// [SelectEmptyInfoSettings] is a class that contains all the settings of the empty info of the widget.
+  /// This is a class which contains all the settings of the empty info of the widget.
   final SelectEmptyInfoSettings selectEmptyInfoSettings;
 
-  /// [SelectOverloadInfoSettings] is a class that contains all the settings of the overload info of the widget.
+  /// This is a class which contains all the settings of the overload info of the widget.
   final SelectOverloadInfoSettings selectOverloadInfoSettings;
 
-  /// [DropdownOverlaySettings] is a class that contains all the settings of the overlay of the dropdown content.
+  /// This is a class which contains all the settings of the dropdown content (overlay) of the widget.
   final DropdownOverlaySettings dropdownOverlaySettings;
 
-  /// [SearchBarOverlaySettings] is a class that contains all the settings of the overlay of the search bar.
+  /// This is a class which contains all the settings of the search bar of the widget in overlay mode.
   final SearchBarOverlaySettings searchBarOverlaySettings;
 
-  /// [SearchEmptyInfoOverlaySettings] is a class that contains all the settings of the overlay of the search empty info.
+  /// This is a class which contains all the settings of the search empty info of dropdown content in overlay mode.
   final SearchEmptyInfoOverlaySettings searchEmptyInfoOverlaySettings;
 
-  /// [ListDataViewOverlaySettings] is a class that contains all the settings of the overlay of the list data view.
+  /// This is a class which contains all the settings of the list data view of dropdown content in overlay mode.
   final ListDataViewOverlaySettings listDataViewOverlaySettings;
 
-  /// [CategoryNameOverlaySettings] is a class that contains all the settings of the overlay of the category name.
+  /// This is a class which contains all the settings of the category name of list data view in overlay mode.
   final CategoryNameOverlaySettings categoryNameOverlaySettings;
 
-  /// [CategoryItemOverlaySettings] is a class that contains all the settings of the overlay of the category item.
+  /// This is a class which contains all the settings of the category item of list data view in overlay mode.
   final CategoryItemOverlaySettings categoryItemOverlaySettings;
 
-  /// [DropdownModalSettings] is a class that contains all the settings of the modal of the dropdown content.
+  /// This is a class which contains all the settings of the dropdown content (modal) of the widget.
   final DropdownModalSettings dropdownModalSettings;
 
-  /// [TitleModalSettings] is a class that contains all the settings of the modal of the title.
+  /// This is a class which contains all the settings of the title of dropdown content in modal mode.
   final TitleModalSettings titleModalSettings;
 
-  /// [DoneButtonModalSettings] is a class that contains all the settings of the modal of the done button.
+  /// This is a class which contains all the settings of the done button of dropdown content in modal mode.
   final DoneButtonModalSettings doneButtonModalSettings;
 
-  /// [SearchBarModalSettings] is a class that contains all the settings of the modal of the search bar.
+  /// This is a class which contains all the settings of the search bar of the widget in modal mode.
   final SearchBarModalSettings searchBarModalSettings;
 
-  /// [SearchEmptyInfoModalSettings] is a class that contains all the settings of the modal of the search empty info.
+  /// This is a class which contains all the settings of the search empty info of dropdown content in modal mode.
   final SearchEmptyInfoModalSettings searchEmptyInfoModalSettings;
 
-  /// [ListDataViewModalSettings] is a class that contains all the settings of the modal of the list data view.
+  /// This is a class which contains all the settings of the list data view of dropdown content in modal mode.
   final ListDataViewModalSettings listDataViewModalSettings;
 
-  /// [CategoryNameModalSettings] is a class that contains all the settings of the modal of the category name.
+  /// This is a class which contains all the settings of the category name of list data view in modal mode.
   final CategoryNameModalSettings categoryNameModalSettings;
 
-  /// [CategoryItemModalSettings] is a class that contains all the settings of the modal of the category item.
+  /// This is a class which contains all the settings of the category item of list data view in modal mode.
   final CategoryItemModalSettings categoryItemModalSettings;
 
-  /// [GlobalSettings] is a class that contains all the global settings of the widget.
+  /// This is a class which contains all the global settings of the widget.
   final GlobalSettings globalSettings;
 
-  /// [Select2dot1] is a package widget constructor.
+  /// Controller of the data of the widget [selectDataController].
+  /// To callback the data of the widget, you can use [selectDataController] to get the data
+  /// or use [onChanged] to get the data.
+  /// Pass [scrollController] to the widget to control anchor position of dropdown menu
+  /// Set [isSearchable] to false to disable search bar
+  /// Use builder to customize package by yourself.
+  /// If you want you can also use the settings to customize the widget.
   const Select2dot1({
     super.key,
     required this.selectDataController,
@@ -258,71 +266,31 @@ class Select2dot1 extends StatefulWidget {
     this.listDataViewModalBuilder,
     this.categoryNameModalBuilder,
     this.categoryItemModalBuilder,
-    PillboxTitleSettings? pillboxTitleSettings,
-    PillboxSettings? pillboxSettings,
-    PillboxContentMultiSettings? pillboxContentMultiSettings,
-    PillboxIconSettings? pillboxIconSettings,
-    SelectChipSettings? selectChipSettings,
-    SelectSingleSettings? selectSingleSettings,
-    SelectEmptyInfoSettings? selectEmptyInfoSettings,
-    SelectOverloadInfoSettings? selectOverloadInfoSettings,
-    DropdownOverlaySettings? dropdownOverlaySettings,
-    SearchBarOverlaySettings? searchBarOverlaySettings,
-    SearchEmptyInfoOverlaySettings? searchEmptyInfoOverlaySettings,
-    ListDataViewOverlaySettings? listDataViewOverlaySettings,
-    CategoryNameOverlaySettings? categoryNameOverlaySettings,
-    CategoryItemOverlaySettings? categoryItemOverlaySettings,
-    DropdownModalSettings? dropdownModalSettings,
-    TitleModalSettings? titleModalSettings,
-    DoneButtonModalSettings? doneButtonModalSettings,
-    SearchBarModalSettings? searchBarModalSettings,
-    SearchEmptyInfoModalSettings? searchEmptyInfoModalSettings,
-    ListDataViewModalSettings? listDataViewModalSettings,
-    CategoryNameModalSettings? categoryNameModalSettings,
-    CategoryItemModalSettings? categoryItemModalSettings,
-    GlobalSettings? globalSettings,
-  })  : pillboxTitleSettings =
-            pillboxTitleSettings ?? const PillboxTitleSettings(),
-        pillboxSettings = pillboxSettings ?? const PillboxSettings(),
-        pillboxContentMultiSettings =
-            pillboxContentMultiSettings ?? const PillboxContentMultiSettings(),
-        pillboxIconSettings =
-            pillboxIconSettings ?? const PillboxIconSettings(),
-        selectChipSettings = selectChipSettings ?? const SelectChipSettings(),
-        selectSingleSettings =
-            selectSingleSettings ?? const SelectSingleSettings(),
-        selectEmptyInfoSettings =
-            selectEmptyInfoSettings ?? const SelectEmptyInfoSettings(),
-        selectOverloadInfoSettings =
-            selectOverloadInfoSettings ?? const SelectOverloadInfoSettings(),
-        dropdownOverlaySettings =
-            dropdownOverlaySettings ?? const DropdownOverlaySettings(),
-        searchBarOverlaySettings =
-            searchBarOverlaySettings ?? const SearchBarOverlaySettings(),
-        searchEmptyInfoOverlaySettings = searchEmptyInfoOverlaySettings ??
-            const SearchEmptyInfoOverlaySettings(),
-        listDataViewOverlaySettings =
-            listDataViewOverlaySettings ?? const ListDataViewOverlaySettings(),
-        categoryNameOverlaySettings =
-            categoryNameOverlaySettings ?? const CategoryNameOverlaySettings(),
-        categoryItemOverlaySettings =
-            categoryItemOverlaySettings ?? const CategoryItemOverlaySettings(),
-        dropdownModalSettings =
-            dropdownModalSettings ?? const DropdownModalSettings(),
-        titleModalSettings = titleModalSettings ?? const TitleModalSettings(),
-        doneButtonModalSettings =
-            doneButtonModalSettings ?? const DoneButtonModalSettings(),
-        searchBarModalSettings =
-            searchBarModalSettings ?? const SearchBarModalSettings(),
-        searchEmptyInfoModalSettings = searchEmptyInfoModalSettings ??
-            const SearchEmptyInfoModalSettings(),
-        listDataViewModalSettings =
-            listDataViewModalSettings ?? const ListDataViewModalSettings(),
-        categoryNameModalSettings =
-            categoryNameModalSettings ?? const CategoryNameModalSettings(),
-        categoryItemModalSettings =
-            categoryItemModalSettings ?? const CategoryItemModalSettings(),
-        globalSettings = globalSettings ?? const GlobalSettings();
+    this.pillboxTitleSettings = const PillboxTitleSettings(),
+    this.pillboxSettings = const PillboxSettings(),
+    this.pillboxContentMultiSettings = const PillboxContentMultiSettings(),
+    this.pillboxIconSettings = const PillboxIconSettings(),
+    this.selectChipSettings = const SelectChipSettings(),
+    this.selectSingleSettings = const SelectSingleSettings(),
+    this.selectEmptyInfoSettings = const SelectEmptyInfoSettings(),
+    this.selectOverloadInfoSettings = const SelectOverloadInfoSettings(),
+    this.dropdownOverlaySettings = const DropdownOverlaySettings(),
+    this.searchBarOverlaySettings = const SearchBarOverlaySettings(),
+    this.searchEmptyInfoOverlaySettings =
+        const SearchEmptyInfoOverlaySettings(),
+    this.listDataViewOverlaySettings = const ListDataViewOverlaySettings(),
+    this.categoryNameOverlaySettings = const CategoryNameOverlaySettings(),
+    this.categoryItemOverlaySettings = const CategoryItemOverlaySettings(),
+    this.dropdownModalSettings = const DropdownModalSettings(),
+    this.titleModalSettings = const TitleModalSettings(),
+    this.doneButtonModalSettings = const DoneButtonModalSettings(),
+    this.searchBarModalSettings = const SearchBarModalSettings(),
+    this.searchEmptyInfoModalSettings = const SearchEmptyInfoModalSettings(),
+    this.listDataViewModalSettings = const ListDataViewModalSettings(),
+    this.categoryNameModalSettings = const CategoryNameModalSettings(),
+    this.categoryItemModalSettings = const CategoryItemModalSettings(),
+    this.globalSettings = const GlobalSettings(),
+  });
   @override
   State<Select2dot1> createState() => _Select2dot1State();
 }
@@ -454,7 +422,7 @@ class _Select2dot1State extends AnimatedState
       // This can't be null anyways
       // ignore:avoid-non-null-assertion
       widget.onChanged!(
-        widget.selectDataController.getSelectedList,
+        widget.selectDataController.selectedList,
       );
     }
   }

@@ -45,7 +45,7 @@ class _CategoryNameOverlayState extends State<CategoryNameOverlay> {
       );
     }
 
-    if (widget.singleCategory.getNameCategory == null) {
+    if (widget.singleCategory.nameCategory == null) {
       return const SizedBox();
     }
 
@@ -54,12 +54,11 @@ class _CategoryNameOverlayState extends State<CategoryNameOverlay> {
       child: GestureDetector(
         onTap: _onTapCategory,
         child: MouseRegion(
-          cursor: widget.selectDataController.getIsMultiSelect
+          cursor: widget.selectDataController.isMultiSelect
               ? widget.categoryNameOverlaySettings.mouseCursorSelect
               : SystemMouseCursors.basic,
-          onHover:
-              widget.selectDataController.getIsMultiSelect ? _onHover : null,
-          onExit: widget.selectDataController.getIsMultiSelect ? _onExit : null,
+          onHover: widget.selectDataController.isMultiSelect ? _onHover : null,
+          onExit: widget.selectDataController.isMultiSelect ? _onExit : null,
           child: Container(
             decoration: _getDecoration(),
             alignment: widget.categoryNameOverlaySettings.alignmentGeometry,
@@ -72,7 +71,7 @@ class _CategoryNameOverlayState extends State<CategoryNameOverlay> {
                   child: Text(
                     // This can't be null because of the if statement above
                     // ignore: avoid-non-null-assertion
-                    widget.singleCategory.getNameCategory!,
+                    widget.singleCategory.nameCategory!,
                     overflow: widget.categoryNameOverlaySettings.textOverflow,
                     style: _getTextStyle(),
                   ),
@@ -136,20 +135,19 @@ class _CategoryNameOverlayState extends State<CategoryNameOverlay> {
   }
 
   void _onTapCategory() {
-    if (!widget.selectDataController.getIsMultiSelect) {
+    if (!widget.selectDataController.isMultiSelect) {
       return;
     }
 
-    if (widget.singleCategory.getSingleItemCategoryList.every(
-      (element) =>
-          widget.selectDataController.getSelectedList.contains(element),
+    if (widget.singleCategory.singleItemCategoryList.every(
+      (element) => widget.selectDataController.selectedList.contains(element),
     )) {
       widget.selectDataController.removeGroupSelectChip(
-        widget.singleCategory.getSingleItemCategoryList,
+        widget.singleCategory.singleItemCategoryList,
       );
     } else {
       widget.selectDataController
-          .addGroupSelectChip(widget.singleCategory.getSingleItemCategoryList);
+          .addGroupSelectChip(widget.singleCategory.singleItemCategoryList);
     }
   }
 }

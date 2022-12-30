@@ -237,7 +237,7 @@ ________________________________________________________________________________
 
 ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_2.png)
 
-1. DropdownOverlay, DropdownContent
+1. showModalBottomSheet, DropdownModal, DropdownContentModal
 2. TitleModal
 3. ButtonModal
 4. SearchBarModal
@@ -412,13 +412,13 @@ Select2dot1(
 
 To use Select2dot1 widget you have to pass data to SelectDataController. Data must be in list of SingleCategoryModel. 
 
-SingleCategoryModel is a model that contains data about single category. 
+SingleCategoryModel is a model which contains data about single category. 
 Parameters:
 * nameCategory - name of category (It is optional if you don't want to show group select)
 * singleItemCategoryList - list of SingleItemCategoryModel (It is required)
 
 
-SingleItemCategoryModel is a model that contains data about single item in category.
+SingleItemCategoryModel is a model which contains data about single item in category.
 Parameters:
 * nameSingleItem - visible name of single item (It is required)
 * [value](#value-parametr-in-singleitemcategorymodel) - value of single item (It is optional)

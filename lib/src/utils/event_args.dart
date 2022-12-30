@@ -6,48 +6,34 @@ import 'package:select2dot1/src/models/single_category_model.dart';
 import 'package:select2dot1/src/models/single_item_category_model.dart';
 import 'package:select2dot1/src/settings/global_settings.dart';
 
-/// The [PillboxTitleBuilder] is a function that will be used to build the title of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the title of the pillbox.
-/// [pillboxTitleDetails] is a [PillboxTitleDetails] that will be used to build the title of the pillbox.
-/// [PillboxTitleDetails] is a class that contains the details to build the title of the pillbox.
+/// This is a function that will be used to build your own title of the pillbox.
 typedef PillboxTitleBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the title of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own title of the pillbox.
   BuildContext context,
 
-  /// [pillboxTitleDetails] is a [PillboxTitleDetails] that will be used to build the title of the pillbox.
-  /// [PillboxTitleDetails] is a class that contains the details to build the title of the pillbox.
+  /// [pillboxTitleDetails] is a [PillboxTitleDetails] that will be used to build your own title of the pillbox.
   PillboxTitleDetails pillboxTitleDetails,
 );
 
-/// The [PillboxTitleDetails] is a class that contains the details to build the title of the pillbox.
-/// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-/// [hover] is a boolean that will be used to check if the pillbox is hovered.
-/// [isFocus] is a boolean that will be used to check if the pillbox is focused.
-/// [onFocusChange] is a function that will be used to change the focus of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own title of the pillbox.
 class PillboxTitleDetails {
-  /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a boolean[ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOvarlay;
 
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
+  /// This is a boolean representing if the pillbox is focused.
   bool isFocus;
 
-  /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
+  /// This is emmbedded function services change the focus of the pillbox.
   final void Function() onFocusChange;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxTitleDetails] class.
-  /// The [PillboxTitleDetails] is a class that contains the details to build the title of the pillbox.
-  /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
-  /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   PillboxTitleDetails({
     required this.isVisibleOvarlay,
     required this.hover,
@@ -57,62 +43,43 @@ class PillboxTitleDetails {
   });
 }
 
-/// The [PillboxBuilder] is a function that will be used to build the content of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the content of the pillbox.
-/// [pillboxDetails] is a [PillboxDetails] that will be used to build the content of the pillbox.
-/// [PillboxDetails] is a class that contains the details to build the content of the pillbox.
+/// This is a function that will be used to build your own pillbox.
 typedef PillboxBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the content of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own pillbox.
   BuildContext context,
 
-  /// [pillboxDetails] is a [PillboxDetails] that will be used to build the content of the pillbox.
+  /// [pillboxDetails] is a [PillboxDetails] that will be used to build your own pillbox.
   PillboxDetails pillboxDetails,
 );
 
-/// The [PillboxDetails] is a class that contains the details to build the content of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-/// [showDropdown] is a function that will be used to show the dropdown.
-/// [isVisibleOverlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-/// [pillboxLayerLink] is a [LayerLink] that will be used to link the pillbox to the dropdown.
-/// [hover] is a boolean that will be used to check if the pillbox is hovered.
-/// [pillboxTitle] is a function that will be used to build the title of the pillbox.
-/// [pillboxContent] is a function that will be used to build the content of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own pillbox.
 class PillboxDetails {
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [showDropdown] is a function that will be used to show the dropdown.
+  /// This is embedded function services show the dropdown.
   final void Function() showDropdown;
 
-  /// [isVisibleOverlay] is a [ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a boolean[ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOverlay;
 
-  /// [pillboxLayerLink] is a [LayerLink] that will be used to link the pillbox to the dropdown.
+  /// This is a [LayerLink] that will be used to link the pillbox to the dropdown.
   final LayerLink? pillboxLayerLink;
 
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// [pillboxTitle] is a function that will be used to build the title of the pillbox.
+  /// This is a function returning a [Widget] of the title of the pillbox.
   final Widget Function() pillboxTitle;
 
-  /// [pillboxContent] is a function that will be used to build the content of the pillbox.
+  /// This is a function returning a [Widget] of the content of the pillbox.
   final Widget Function() pillboxContent;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxDetails] class.
-  /// The [PillboxDetails] is a class that contains the details to build the content of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-  /// [showDropdown] is a function that will be used to show the dropdown.
-  /// [isVisibleOverlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-  /// [pillboxLayerLink] is a [LayerLink] that will be used to link the pillbox to the dropdown.
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
-  /// [pillboxTitle] is a function that will be used to build the title of the pillbox.
-  /// [pillboxContent] is a function that will be used to build the content of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   PillboxDetails({
     required this.selectDataController,
     required this.showDropdown,
@@ -125,71 +92,49 @@ class PillboxDetails {
   });
 }
 
-/// The [PillboxContentMultiBuilder] is a function that will be used to build the content of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the content of the pillbox.
-/// [pillboxContentMultiDetails] is a [PillboxContentMultiDetails] that will be used to build the content of the pillbox.
+/// This is a function that will be used to build your own multi content of the pillbox.
 typedef PillboxContentMultiBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the content of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own multi content of the pillbox.
   BuildContext context,
 
-  /// [pillboxContentMultiDetails] is a [PillboxContentMultiDetails] that will be used to build the content of the pillbox.
+  /// [pillboxContentMultiDetails] is a [PillboxContentMultiDetails] that will be used to build your own multi content of the pillbox.
   PillboxContentMultiDetails pillboxContentMultiDetails,
 );
 
-/// The [PillboxContentMultiDetails] is a class that contains the details to build the content of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-/// [hover] is a boolean that will be used to check if the pillbox is hovered.
-/// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-/// [isFocus] is a boolean that will be used to check if the pillbox is focused.
-/// [onFocusChange] is a function that will be used to change the focus of the pillbox.
-/// [selectChip] is a function that will be used to build the chip of the pillbox.
-/// [selectEmptyInfo] is a function that will be used to build the empty info of the pillbox.
-/// [selectOverloadInfo] is a function that will be used to build the overload info of the pillbox.
-/// [pillboxIcon] is a function that will be used to build the icon of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own multi content of the pillbox.
 class PillboxContentMultiDetails {
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a boolean[ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOvarlay;
 
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
+  /// This is a boolean representing if the pillbox is focused.
   bool isFocus;
 
-  /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
+  /// This is embedded function services change the focus of the pillbox.
   final void Function() onFocusChange;
 
-  /// [selectChip] is a function that will be used to build the chip of the pillbox.
+  /// This is a function returning a [Widget] of the the chip of the pillbox.
   final Widget Function(SingleItemCategoryModel singleItemCategory) selectChip;
 
-  /// [selectEmptyInfo] is a function that will be used to build the empty info of the pillbox.
+  /// This is a function returning a [Widget] of the empty info of the pillbox.
   final Widget Function() selectEmptyInfo;
 
-  /// [selectOverloadInfo] is a function that will be used to build the overload info of the pillbox.
+  /// This is a function returning a [Widget] of the overload info of the pillbox.
   final Widget Function(int countSelected) selectOverloadInfo;
 
-  /// [pillboxIcon] is a function that will be used to build the icon of the pillbox.
+  /// This is a function returning a [Widget] of the icon of the pillbox.
   final Widget Function() pillboxIcon;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxContentMultiDetails] class.
-  /// The [PillboxContentMultiDetails] is a class that contains the details to build the content of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
-  /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
-  /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
-  /// [selectChip] is a function that will be used to build the chip of the pillbox.
-  /// [selectEmptyInfo] is a function that will be used to build the empty info of the pillbox.
-  /// [selectOverloadInfo] is a function that will be used to build the overload info of the pillbox.
-  /// [pillboxIcon] is a function that will be used to build the icon of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   PillboxContentMultiDetails({
     required this.selectDataController,
     required this.hover,
@@ -204,66 +149,46 @@ class PillboxContentMultiDetails {
   });
 }
 
-/// The [PillboxContentSingleBuilder] is a function that will be used to build the content of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the content of the pillbox.
-/// [pillboxContentSingleDetails] is a [PillboxContentSingleDetails] that will be used to build the content of the pillbox.
+/// This is a function that will be used to build your own single content of the pillbox.
 typedef PillboxContentSingleBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the content of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own single content of the pillbox.
   BuildContext context,
 
-  /// [pillboxContentSingleDetails] is a [PillboxContentSingleDetails] that will be used to build the content of the pillbox.
+  /// [pillboxContentSingleDetails] is a [PillboxContentSingleDetails] that will be used to build your own single content of the pillbox.
   PillboxContentSingleDetails pillboxContentSingleDetails,
 );
 
-/// The [PillboxContentSingleDetails] is a class that contains the details to build the content of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-/// [hover] is a boolean that will be used to check if the pillbox is hovered.
-/// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-/// [isFocus] is a boolean that will be used to check if the pillbox is focused.
-/// [onFocusChange] is a function that will be used to change the focus of the pillbox.
-/// [selectSingle] is a function that will be used to build the single of the pillbox.
-/// [selectEmptyInfo] is a function that will be used to build the empty info of the pillbox.
-/// [pillboxIcon] is a function that will be used to build the icon of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own single content of the pillbox.
 class PillboxContentSingleDetails {
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a boolean[ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOvarlay;
 
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
+  /// This is a boolean representing if the pillbox is focused.
   bool isFocus;
 
-  /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
+  /// This is embedded function services change the focus of the pillbox.
   final void Function() onFocusChange;
 
-  /// [selectSingle] is a function that will be used to build the single of the pillbox.
+  /// This is a function returning a [Widget] of the single of the pillbox.
   final Widget Function() selectSingle;
 
-  /// [selectEmptyInfo] is a function that will be used to build the empty info of the pillbox.
+  /// This is a function returning a [Widget] of the empty info of the pillbox.
   final Widget Function() selectEmptyInfo;
 
-  /// [pillboxIcon] is a function that will be used to build the icon of the pillbox.
+  /// This is a function returning a [Widget] of the icon of the pillbox.
   final Widget Function() pillboxIcon;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxContentSingleDetails] class.
-  /// The [PillboxContentSingleDetails] is a class that contains the details to build the content of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
-  /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
-  /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
-  /// [selectSingle] is a function that will be used to build the single of the pillbox.
-  /// [selectEmptyInfo] is a function that will be used to build the empty info of the pillbox.
-  /// [pillboxIcon] is a function that will be used to build the icon of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   PillboxContentSingleDetails({
     required this.selectDataController,
     required this.hover,
@@ -277,46 +202,34 @@ class PillboxContentSingleDetails {
   });
 }
 
-/// The [PillboxIconBuilder] is a function that will be used to build the icon of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the icon of the pillbox.
-/// [pillboxIconDetails] is a [PillboxIconDetails] that will be used to build the icon of the pillbox.
+/// This is a function that will be used to build your own icon of the pillbox.
 typedef PillboxIconBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the icon of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own icon of the pillbox.
   BuildContext context,
 
-  /// [pillboxIconDetails] is a [PillboxIconDetails] that will be used to build the icon of the pillbox.
+  /// [pillboxIconDetails] is a [PillboxIconDetails] that will be used to build your own icon of the pillbox.
   PillboxIconDetails pillboxIconDetails,
 );
 
-/// The [PillboxIconDetails] is a class that contains the details to build the icon of the pillbox.
-/// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-/// [hover] is a boolean that will be used to check if the pillbox is hovered.
-/// [isFocus] is a boolean that will be used to check if the pillbox is focused.
-/// [onFocusChange] is a function that will be used to change the focus of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own icon of the pillbox.
 class PillboxIconDetails {
-  /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
+  /// This is a [ValueNotifier] representing if the overlay is visible.
   final ValueNotifier<bool>? isVisibleOvarlay;
 
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
+  /// This is a boolean representing if the pillbox is hovered.
   bool hover;
 
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
+  /// This is a boolean representing if the pillbox is focused.
   bool isFocus;
 
-  /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
+  /// This is embedded function services change the focus of the pillbox.
   final void Function() onFocusChange;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [PillboxIconDetails] class.
-  /// The [PillboxIconDetails] is a class that contains the details to build the icon of the pillbox.
-  /// [isVisibleOvarlay] is a [ValueNotifier] that will be used to show or hide the overlay.
-  /// [hover] is a boolean that will be used to check if the pillbox is hovered.
-  /// [isFocus] is a boolean that will be used to check if the pillbox is focused.
-  /// [onFocusChange] is a function that will be used to change the focus of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   PillboxIconDetails({
     required this.isVisibleOvarlay,
     required this.hover,
@@ -326,36 +239,28 @@ class PillboxIconDetails {
   });
 }
 
-/// The [SelectChipBuilder] is a function that will be used to build the chip of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the chip of the pillbox.
-/// [selectChipDetails] is a [SelectChipDetails] that will be used to build the chip of the pillbox.
+/// This is a function that will be used to build your own select chip of the pillbox.
 typedef SelectChipBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the chip of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own select chip of the pillbox.
   BuildContext context,
 
-  /// [selectChipDetails] is a [SelectChipDetails] that will be used to build the chip of the pillbox.
+  /// [selectChipDetails] is a [SelectChipDetails] that will be used to build your own select chip of the pillbox.
   SelectChipDetails selectChipDetails,
 );
 
-/// The [SelectChipDetails] is a class that contains the details to build the chip of the pillbox.
-/// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the chip of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own select chip of the pillbox.
 class SelectChipDetails {
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the chip of the pillbox.
+  /// This is a [SingleItemCategoryModel] that will be used to build the select chip of the pillbox.
   final SingleItemCategoryModel singleItemCategory;
 
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectChipDetails] class.
-  /// The [SelectChipDetails] is a class that contains the details to build the chip of the pillbox.
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the chip of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const SelectChipDetails({
     required this.singleItemCategory,
     required this.selectDataController,
@@ -363,36 +268,28 @@ class SelectChipDetails {
   });
 }
 
-/// The [SelectSingleBuilder] is a function that will be used to build the single of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the single of the pillbox.
-/// [selectSingleDetails] is a [SelectSingleDetails] that will be used to build the single of the pillbox.
+/// This is a function that will be used to build your own select single of the pillbox.
 typedef SelectSingleBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the single of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own select single of the pillbox.
   BuildContext context,
 
-  /// [selectSingleDetails] is a [SelectSingleDetails] that will be used to build the single of the pillbox.
+  /// [selectSingleDetails] is a [SelectSingleDetails] that will be used to build your own select single of the pillbox.
   SelectSingleDetails selectSingleDetails,
 );
 
-/// The [SelectSingleDetails] is a class that contains the details to build the single of the pillbox.
-/// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the single of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own select single of the pillbox.
 class SelectSingleDetails {
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the single of the pillbox.
+  /// This is a [SingleItemCategoryModel] that will be used to build the select single of the pillbox.
   final SingleItemCategoryModel singleItemCategory;
 
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectSingleDetails] class.
-  /// The [SelectSingleDetails] is a class that contains the details to build the single of the pillbox.
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the single of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const SelectSingleDetails({
     required this.singleItemCategory,
     required this.selectDataController,
@@ -400,127 +297,95 @@ class SelectSingleDetails {
   });
 }
 
-/// The [SelectEmptyInfoBuilder] is a function that will be used to build the empty info of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the empty info of the pillbox.
-/// [selectEmptyInfoDetails] is a [SelectEmptyInfoDetails] that will be used to build the empty info of the pillbox.
+/// This is a function that will be used to build your own empty info of the pillbox.
 typedef SelectEmptyInfoBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the empty info of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own empty info of the pillbox.
   BuildContext context,
 
-  /// [selectEmptyInfoDetails] is a [SelectEmptyInfoDetails] that will be used to build the empty info of the pillbox.
+  /// [selectEmptyInfoDetails] is a [SelectEmptyInfoDetails] that will be used to build your own empty info of the pillbox.
   SelectEmptyInfoDetails selectEmptyInfoDetails,
 );
 
-/// The [SelectEmptyInfoDetails] is a class that contains the details to build the empty info of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own empty info of the pillbox.
 class SelectEmptyInfoDetails {
   /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectEmptyInfoDetails] class.
-  /// The [SelectEmptyInfoDetails] is a class that contains the details to build the empty info of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const SelectEmptyInfoDetails({
     required this.globalSettings,
   });
 }
 
-/// The [SelectOverloadInfoBuilder] is a function that will be used to build the overload info of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the overload info of the pillbox.
-/// [selectOverloadInfoDetails] is a [SelectOverloadInfoDetails] that will be used to build the overload info of the pillbox.
+/// This is a function that will be used to build your own overload info of the pillbox.
 typedef SelectOverloadInfoBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the overload info of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own overload info of the pillbox.
   BuildContext context,
 
-  /// [selectOverloadInfoDetails] is a [SelectOverloadInfoDetails] that will be used to build the overload info of the pillbox.
+  /// [selectOverloadInfoDetails] is a [SelectOverloadInfoDetails] that will be used to build your own overload info of the pillbox.
   SelectOverloadInfoDetails selectOverloadInfoDetails,
 );
 
-/// The [SelectOverloadInfoDetails] is a class that contains the details to build the overload info of the pillbox.
-/// [countSelected] is a [int] that will be used to build the overload info of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own overload info of the pillbox.
 class SelectOverloadInfoDetails {
-  /// [countSelected] is a [int] that will be used to build the overload info of the pillbox.
+  /// This is a int representing the number of selected items.
   int countSelected;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectOverloadInfoDetails] class.
-  /// The [SelectOverloadInfoDetails] is a class that contains the details to build the overload info of the pillbox.
-  /// [countSelected] is a [int] that will be used to build the overload info of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   SelectOverloadInfoDetails({
     required this.countSelected,
     required this.globalSettings,
   });
 }
 
-/// The [DropdownContentOverlayBuilder] is a function that will be used to build the overlay of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the overlay of the pillbox.
-/// [dropdownContentOverlayDetails] is a [DropdownContentOverlayDetails] that will be used to build the overlay of the pillbox.
+/// This is a function that will be used to build your own dropdown content (overlay).
 typedef DropdownContentOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the overlay of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own dropdown content (overlay).
   BuildContext context,
 
-  /// [dropdownContentOverlayDetails] is a [DropdownContentOverlayDetails] that will be used to build the overlay of the pillbox.
+  /// [dropdownContentOverlayDetails] is a [DropdownContentOverlayDetails] that will be used to build your own dropdown content (overlay).
   DropdownContentOverlayDetails dropdownContentOverlayDetails,
 );
 
-/// The [DropdownContentOverlayDetails] is a class that contains the details to build the overlay of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-/// [overlayHide] is a [void] function that will be used to hide the overlay of the pillbox.
-/// [layerLink] is a [LayerLink] that will be used to build the overlay of the pillbox.
-/// [scrollController] is a [ScrollController] that will be used to build the overlay of the pillbox.
-/// [appBarMaxHeight] is a [double] that will be used to build the overlay of the pillbox.
-/// [searchController] is a [SearchController] that will be used to build the overlay of the pillbox.
-/// [searchBarOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
-/// [searchEmptyInfoOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
-/// [listDataViewOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own dropdown content (overlay).
 class DropdownContentOverlayDetails {
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [overlayHide] is a [void] function that will be used to hide the overlay of the pillbox.
+  /// This is embedded function services hide the overlay of the pillbox.
   final void Function() overlayHide;
 
-  /// [layerLink] is a [LayerLink] that will be used to build the overlay of the pillbox.
+  /// This is a [LayerLink] that will be used to link the dropdown to the pillbox.
   final LayerLink layerLink;
 
-  /// [scrollController] is a [ScrollController] that will be used to build the overlay of the pillbox.
+  /// This is a [ScrollController] that will be used to controll the scroll of the dropdown.
   final ScrollController? scrollController;
 
-  /// [appBarMaxHeight] is a [double] that will be used to build the overlay of the pillbox.
+  /// This is a [double] representing the maximum height of the app bar (MaterialAppBar).
   final double? appBarMaxHeight;
 
-  /// [searchController] is a [SearchController] that will be used to build the overlay of the pillbox.
+  /// This is a [SearchController] that will be used to search the data.
   final SearchController searchController;
 
-  /// [searchBarOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
+  /// This is a function returning a [Widget] of the searchBar.
   final Widget Function() searchBarOverlay;
 
-  /// [searchEmptyInfoOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
+  /// This is a function returning a [Widget] of the search empty info.
   final Widget Function() searchEmptyInfoOverlay;
 
-  /// [listDataViewOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
+  /// This is a function returning a [Widget] of the list data view.
   final Widget Function() listDataViewOverlay;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [DropdownContentOverlayDetails] class.
-  /// The [DropdownContentOverlayDetails] is a class that contains the details to build the overlay of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to get the data of the pillbox.
-  /// [overlayHide] is a [void] function that will be used to hide the overlay of the pillbox.
-  /// [layerLink] is a [LayerLink] that will be used to build the overlay of the pillbox.
-  /// [scrollController] is a [ScrollController] that will be used to build the overlay of the pillbox.
-  /// [appBarMaxHeight] is a [double] that will be used to build the overlay of the pillbox.
-  /// [searchController] is a [SearchController] that will be used to build the overlay of the pillbox.
-  /// [searchBarOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
-  /// [searchEmptyInfoOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
-  /// [listDataViewOverlay] is a [Widget] function that will be used to build the overlay of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const DropdownContentOverlayDetails({
     required this.selectDataController,
     required this.overlayHide,
@@ -535,46 +400,34 @@ class DropdownContentOverlayDetails {
   });
 }
 
-/// The [SearchBarOverlayBuilder] is a function that will be used to build the search bar of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the search bar of the pillbox.
-/// [searchBarOverlayDetails] is a [SearchBarOverlayDetails] that will be used to build the search bar of the pillbox.
+/// This is a function that will be used to build your own search bar.
 typedef SearchBarOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the search bar of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own search bar.
   BuildContext context,
 
-  /// [searchBarOverlayDetails] is a [SearchBarOverlayDetails] that will be used to build the search bar of the pillbox.
+  /// [searchBarOverlayDetails] is a [SearchBarOverlayDetails] that will be used to build your own search bar.
   SearchBarOverlayDetails searchBarOverlayDetails,
 );
 
-/// The [SearchBarOverlayDetails] is a class that contains the details to build the search bar of the pillbox.
-/// [searchController] is a [SearchController] that will be used to build the search bar of the pillbox.
-/// [searchBarFocusNode] is a [FocusNode] that will be used to build the search bar of the pillbox.
-/// [searchBarController] is a [TextEditingController] that will be used to build the search bar of the pillbox.
-/// [isFocus] is a [bool] that will be used to build the search bar of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own search bar.
 class SearchBarOverlayDetails {
-  /// [searchController] is a [SearchController] that will be used to build the search bar of the pillbox.
+  /// This is a [SearchController] that will be used to build the search bar.
   final SearchController searchController;
 
-  /// [searchBarFocusNode] is a [FocusNode] that will be used to build the search bar of the pillbox.
+  /// This is a [FocusNode] that will be used to build the search bar.
   final FocusNode searchBarFocusNode;
 
-  /// [searchBarController] is a [TextEditingController] that will be used to build the search bar of the pillbox.
+  /// This is a [TextEditingController] that will be used to build the search bar.
   final TextEditingController searchBarController;
 
-  /// [isFocus] is a [bool] that will be used to build the search bar of the pillbox.
+  /// This is a boolean representing the focus of the search bar.
   bool isFocus;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchBarOverlayDetails] class.
-  /// The [SearchBarOverlayDetails] is a class that contains the details to build the search bar of the pillbox.
-  /// [searchController] is a [SearchController] that will be used to build the search bar of the pillbox.
-  /// [searchBarFocusNode] is a [FocusNode] that will be used to build the search bar of the pillbox.
-  /// [searchBarController] is a [TextEditingController] that will be used to build the search bar of the pillbox.
-  /// [isFocus] is a [bool] that will be used to build the search bar of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   SearchBarOverlayDetails({
     required this.searchController,
     required this.searchBarFocusNode,
@@ -584,77 +437,59 @@ class SearchBarOverlayDetails {
   });
 }
 
-/// The [SearchEmptyInfoOverlayBuilder] is a function that will be used to build the search empty info of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the search empty info of the pillbox.
-/// [searchEmptyInfoOverlayDetails] is a [SearchEmptyInfoOverlayDetails] that will be used to build the search empty info of the pillbox.
+/// This is a function that will be used to build your own search empty info.
 typedef SearchEmptyInfoOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the search empty info of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own search empty info.
   BuildContext context,
 
-  /// [searchEmptyInfoOverlayDetails] is a [SearchEmptyInfoOverlayDetails] that will be used to build the search empty info of the pillbox.
+  /// [searchEmptyInfoOverlayDetails] is a [SearchEmptyInfoOverlayDetails] that will be used to build your own search empty info.
   SearchEmptyInfoOverlayDetails searchEmptyInfoOverlayDetails,
 );
 
-/// The [SearchEmptyInfoOverlayDetails] is a class that contains the details to build the search empty info of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own search empty info.
 class SearchEmptyInfoOverlayDetails {
   /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchEmptyInfoOverlayDetails] class.
-  /// The [SearchEmptyInfoOverlayDetails] is a class that contains the details to build the search empty info of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const SearchEmptyInfoOverlayDetails({
     required this.globalSettings,
   });
 }
 
-/// The [ListDataViewOverlayBuilder] is a function that will be used to build the list data view of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the list data view of the pillbox.
-/// [listDataViewOverlayDetails] is a [ListDataViewOverlayDetails] that will be used to build the list data view of the pillbox.
+/// This is a function that will be used to build your own list data view.
 typedef ListDataViewOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the list data view of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own list data view.
   BuildContext context,
 
-  /// [listDataViewOverlayDetails] is a [ListDataViewOverlayDetails] that will be used to build the list data view of the pillbox.
+  /// [listDataViewOverlayDetails] is a [ListDataViewOverlayDetails] that will be used to build your own list data view.
   ListDataViewOverlayDetails listDataViewOverlayDetails,
 );
 
-/// The [ListDataViewOverlayDetails] is a class that contains the details to build the list data view of the pillbox.
-/// [searchController] is a [SearchController] that will be used to build the list data view of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to build the list data view of the pillbox.
-/// [overlayHide] is a [void Function()] that will be used to build the list data view of the pillbox.
-/// [categoryNameOverlay] is a [Widget Function(SingleCategoryModel singleCategory)] that will be used to build the list data view of the pillbox.
-/// [categoryItemOverlay] is a [Widget Function(SingleItemCategoryModel singleItemCategory)] that will be used to build the list data view of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own list data view.
 class ListDataViewOverlayDetails {
-  /// [searchController] is a [SearchController] that will be used to build the list data view of the pillbox.
+  /// This is a [ScrollController] that will be used to control the scroll in list data view.
   final SearchController searchController;
 
-  /// [selectDataController] is a [SelectDataController] that will be used to build the list data view of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [overlayHide] is a [void Function()] that will be used to build the list data view of the pillbox.
+  /// This is emmbeded function services hide overlay.
   final void Function() overlayHide;
 
-  /// [categoryNameOverlay] is a [Widget Function(SingleCategoryModel singleCategory)] that will be used to build the list data view of the pillbox.
+  /// This is a function returning a [Widget] of the categoryNameOverlay.
   final Widget Function(SingleCategoryModel singleCategory) categoryNameOverlay;
 
-  /// [categoryItemOverlay] is a [Widget Function(SingleItemCategoryModel singleItemCategory)] that will be used to build the list data view of the pillbox.
+  /// This is a function returning a [Widget] of the categoryItemOverlay.
   final Widget Function(SingleItemCategoryModel singleItemCategory)
       categoryItemOverlay;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [ListDataViewOverlayDetails] class.
-  /// The [ListDataViewOverlayDetails] is a class that contains the details to build the list data view of the pillbox.
-  /// [searchController] is a [SearchController] that will be used to build the list data view of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to build the list data view of the pillbox.
-  /// [overlayHide] is a [void Function()] that will be used to build the list data view of the pillbox.
-  /// [categoryNameOverlay] is a [Widget Function(SingleCategoryModel singleCategory)] that will be used to build the list data view of the pillbox.
-  /// [categoryItemOverlay] is a [Widget Function(SingleItemCategoryModel singleItemCategory)] that will be used to build the list data view of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const ListDataViewOverlayDetails({
     required this.searchController,
     required this.selectDataController,
@@ -665,56 +500,40 @@ class ListDataViewOverlayDetails {
   });
 }
 
-/// The [CategoryItemOverlayBuilder] is a function that will be used to build the category name of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
-/// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build the category name of the pillbox.
+/// This is a function that will be used to build your own category name.
 typedef CategoryItemOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own category name.
   BuildContext context,
 
-  /// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build the category name of the pillbox.
+  /// [categoryItemOverlayDetails] is a [CategoryItemOverlayDetails] that will be used to build your own category name.
   CategoryItemOverlayDetails categoryItemOverlayDetails,
 );
 
-/// The [CategoryItemOverlayDetails] is a class that contains the details to build the category name of the pillbox.
-/// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category name of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to build the category name of the pillbox.
-/// [overlayHide] is a [void Function()] that will be used to build the category name of the pillbox.
-/// [hover] is a [bool] that will be used to build the category name of the pillbox.
-/// [isSelected] is a [bool] that will be used to build the category name of the pillbox.
-/// [onTapSingleItemCategory] is a [void Function()] that will be used to build the category name of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// The [CategoryItemOverlayDetails] is a class which contains necessary details to build your own category name.
 class CategoryItemOverlayDetails {
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category name of the pillbox.
+  /// This is a [SingleItemCategoryModel] that will be used to build the category item.
   final SingleItemCategoryModel singleItemCategory;
 
-  /// [selectDataController] is a [SelectDataController] that will be used to build the category name of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [overlayHide] is a [void Function()] that will be used to build the category name of the pillbox.
+  /// This is emmbeded function services hide overlay.
   final void Function() overlayHide;
 
-  /// [hover] is a [bool] that will be used to build the category name of the pillbox.
+  /// This is a boolean representing the hover state of the category item.
   bool hover;
 
-  /// [isSelected] is a [bool] that will be used to build the category name of the pillbox.
+  /// This is a boolean representing the selected state of the category item.
   bool isSelected;
 
-  /// [onTapSingleItemCategory] is a [void Function()] that will be used to build the category name of the pillbox.
+  /// This is emmbeded function services tap on SingleItemCategory.
   final void Function() onTapSingleItemCategory;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [CategoryItemOverlayDetails] class.
-  /// The [CategoryItemOverlayDetails] is a class that contains the details to build the category name of the pillbox.
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category name of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to build the category name of the pillbox.
-  /// [overlayHide] is a [void Function()] that will be used to build the category name of the pillbox.
-  /// [hover] is a [bool] that will be used to build the category name of the pillbox.
-  /// [isSelected] is a [bool] that will be used to build the category name of the pillbox.
-  /// [onTapSingleItemCategory] is a [void Function()] that will be used to build the category name of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   CategoryItemOverlayDetails({
     required this.singleItemCategory,
     required this.selectDataController,
@@ -726,46 +545,34 @@ class CategoryItemOverlayDetails {
   });
 }
 
-/// The [CategoryNameOverlayBuilder] is a function that will be used to build the category name of the pillbox.
-/// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
-/// [categoryNameOverlayDetails] is a [CategoryNameOverlayDetails] that will be used to build the category name of the pillbox.
+/// This is a function that will be used to build your own category name.
 typedef CategoryNameOverlayBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the category name of the pillbox.
+  /// [context] is a [BuildContext] that will be used to build your own category name.
   BuildContext context,
 
-  /// [categoryNameOverlayDetails] is a [CategoryNameOverlayDetails] that will be used to build the category name of the pillbox.
+  /// [categoryNameOverlayDetails] is a [CategoryNameOverlayDetails] that will be used to build your own category name.
   CategoryNameOverlayDetails categoryNameOverlayDetails,
 );
 
-/// The [CategoryNameOverlayDetails] is a class that contains the details to build the category name of the pillbox.
-/// [singleCategory] is a [SingleCategoryModel] that will be used to build the category name of the pillbox.
-/// [selectDataController] is a [SelectDataController] that will be used to build the category name of the pillbox.
-/// [hover] is a [bool] that will be used to build the category name of the pillbox.
-/// [onTapCategory] is a [void Function()] that will be used to build the category name of the pillbox.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own category name.
 class CategoryNameOverlayDetails {
-  /// [singleCategory] is a [SingleCategoryModel] that will be used to build the category name of the pillbox.
+  /// This is a [SingleCategoryModel] that will be used to build the category name.
   final SingleCategoryModel singleCategory;
 
-  /// [selectDataController] is a [SelectDataController] that will be used to build the category name of the pillbox.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [hover] is a [bool] that will be used to build the category name of the pillbox.
+  /// This is a boolean representing the hover state of the category.
   bool hover;
 
-  /// [onTapCategory] is a [void Function()] that will be used to build the category name of the pillbox.
+  /// This is emmbeded function services tap on category name.
   final void Function() onTapCategory;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [CategoryNameOverlayDetails] class.
-  /// The [CategoryNameOverlayDetails] is a class that contains the details to build the category name of the pillbox.
-  /// [singleCategory] is a [SingleCategoryModel] that will be used to build the category name of the pillbox.
-  /// [selectDataController] is a [SelectDataController] that will be used to build the category name of the pillbox.
-  /// [hover] is a [bool] that will be used to build the category name of the pillbox.
-  /// [onTapCategory] is a [void Function()] that will be used to build the category name of the pillbox.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   CategoryNameOverlayDetails({
     required this.singleCategory,
     required this.selectDataController,
@@ -775,49 +582,46 @@ class CategoryNameOverlayDetails {
   });
 }
 
-/// The [DropdownContentModalBuilder] is a function that will be used to build the dropdown content modal.
-/// [context] is a [BuildContext] that will be used to build the dropdown content modal.
-/// [dropdownContentModalDetails] is a [DropdownContentModalDetails] that will be used to build the dropdown content modal.
+/// This is a function that will be used to build your own dropdown content modal.
 typedef DropdownContentModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the dropdown content modal.
+  /// [context] is a [BuildContext] that will be used to build your own dropdown content modal.
   BuildContext context,
 
-  /// [dropdownContentModalDetails] is a [DropdownContentModalDetails] that will be used to build the dropdown content modal.
+  /// [dropdownContentModalDetails] is a [DropdownContentModalDetails] that will be used to build your own dropdown content modal.
   DropdownContentModalDetails dropdownContentModalDetails,
 );
 
-/// The [DropdownContentModalDetails] is a class that contains the details to build the dropdown content modal.
-/// [scrollController] is a [ScrollController] that will be used to build the dropdown content modal.
-/// [selectDataController] is a [SelectDataController] that will be used to build the dropdown content modal.
-/// [searchController] is a [SearchController] that will be used to build the dropdown content modal.
-/// [titleModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-/// [doneButtonModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-/// [searchBarModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-/// [searchEmptyInfoModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-/// [listDataViewModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own dropdown content modal.
 class DropdownContentModalDetails {
+  /// This is a [ScrollController] that will be used to control the scroll in dropdown content modal.
   final ScrollController scrollController;
+
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
+
+  /// This is a [SearchController] that will be used to control the search.
   final SearchController searchController;
+
+  /// This is a function returning a [Widget] of the title modal.
   final Widget Function() titleModal;
+
+  /// This is a function returning a [Widget] of the done button modal.
   final Widget Function() doneButtonModal;
+
+  /// This is a function returning a [Widget] of the search bar modal.
   final Widget Function() searchBarModal;
+
+  /// This is a function returning a [Widget] of the search empty info modal.
   final Widget Function() searchEmptyInfoModal;
+
+  /// This is a function returning a [Widget] of the list data view.
   final Widget Function() listDataViewModal;
+
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [DropdownContentModalDetails] class.
-  /// The [DropdownContentModalDetails] is a class that contains the details to build the dropdown content modal.
-  /// [scrollController] is a [ScrollController] that will be used to build the dropdown content modal.
-  /// [selectDataController] is a [SelectDataController] that will be used to build the dropdown content modal.
-  /// [searchController] is a [SearchController] that will be used to build the dropdown content modal.
-  /// [titleModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-  /// [doneButtonModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-  /// [searchBarModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-  /// [searchEmptyInfoModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-  /// [listDataViewModal] is a [Widget Function()] that will be used to build the dropdown content modal.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const DropdownContentModalDetails({
     required this.scrollController,
     required this.selectDataController,
@@ -831,112 +635,86 @@ class DropdownContentModalDetails {
   });
 }
 
-/// The [DoneButtonModalBuilder] is a function that will be used to build the done button modal.
-/// [context] is a [BuildContext] that will be used to build the done button modal.
-/// [doneButtonModalDetails] is a [DoneButtonModalDetails] that will be used to build the done button modal.
+/// This is a function that will be used to build your own done button modal.
 typedef DoneButtonModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the done button modal.
+  /// [context] is a [BuildContext] that will be used to build your own done button modal.
   BuildContext context,
 
-  /// [doneButtonModalDetails] is a [DoneButtonModalDetails] that will be used to build the done button modal.
+  /// [doneButtonModalDetails] is a [DoneButtonModalDetails] that will be used to build your own done button modal.
   DoneButtonModalDetails doneButtonModalDetails,
 );
 
-/// The [DoneButtonModalDetails] is a class that contains the details to build the done button modal.
-/// [hideModal] is a [void Function()] that will be used to build the done button modal.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own done button modal.
 class DoneButtonModalDetails {
-  /// [hideModal] is a [void Function()] that will be used to build the done button modal.
+  /// This is emmbeded function services hide the modal.
   final void Function() hideModal;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [DoneButtonModalDetails] class.
-  /// The [DoneButtonModalDetails] is a class that contains the details to build the done button modal.
-  /// [hideModal] is a [void Function()] that will be used to build the done button modal.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const DoneButtonModalDetails({
     required this.hideModal,
     required this.globalSettings,
   });
 }
 
-/// The [TitleModalBuilder] is a function that will be used to build the title modal.
-/// [context] is a [BuildContext] that will be used to build the title modal.
-/// [tittleModalDetails] is a [TittleModalDetails] that will be used to build the title modal.
+/// This is a function that will be used to build your own title modal.
 typedef TitleModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the title modal.
+  /// [context] is a [BuildContext] that will be used to build your own title modal.
   BuildContext context,
 
-  /// [tittleModalDetails] is a [TittleModalDetails] that will be used to build the title modal.
+  /// [tittleModalDetails] is a [TittleModalDetails] that will be used to build your own title modal.
   TittleModalDetails tittleModalDetails,
 );
 
-/// The [TittleModalDetails] is a class that contains the details to build the title modal.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own title modal.
 class TittleModalDetails {
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [TittleModalDetails] class.
-  /// The [TittleModalDetails] is a class that contains the details to build the title modal.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const TittleModalDetails({
     required this.globalSettings,
   });
 }
 
-/// The [SearchBarModalBuilder] is a function that will be used to build the search bar modal.
-/// [context] is a [BuildContext] that will be used to build the search bar modal.
-/// [searchBarModalDetails] is a [SearchBarModalDetails] that will be used to build the search bar modal.
+/// This is a function that will be used to build your own search bar modal.
 typedef SearchBarModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the search bar modal.
+  /// [context] is a [BuildContext] that will be used to build your own search bar modal.
   BuildContext context,
 
-  /// [searchBarModalDetails] is a [SearchBarModalDetails] that will be used to build the search bar modal.
+  /// [searchBarModalDetails] is a [SearchBarModalDetails] that will be used to build your own search bar modal.
   SearchBarModalDetails searchBarModalDetails,
 );
 
-/// The [SearchBarModalDetails] is a class that contains the details to build the search bar modal.
-/// [searchController] is a [SearchController] that will be used to build the search bar modal.
-/// [searchBarModalFocusNode] is a [FocusNode] that will be used to build the search bar modal.
-/// [searchBarModalController] is a [TextEditingController] that will be used to build the search bar modal.
-/// [isFocus] is a [bool] that will be used to build the search bar modal.
-/// [focusModalController] is a [void Function()] that will be used to build the search bar modal.
-/// [onChangedSearchBarController] is a [void Function()] that will be used to build the search bar modal.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own search bar modal.
 class SearchBarModalDetails {
-  /// [searchController] is a [SearchController] that will be used to build the search bar modal.
+  /// This is a [SearchController] that will be used to control the search.
   final SearchController searchController;
 
-  /// [searchBarModalFocusNode] is a [FocusNode] that will be used to build the search bar modal.
+  /// This is a [FocusNode] that will be used to control focus of SearchBar.
   final FocusNode searchBarModalFocusNode;
 
-  /// [searchBarModalController] is a [TextEditingController] that will be used to build the search bar modal.
+  /// This is a [TextEditingController] of SearchBar that will be used to build the search bar modal.
   final TextEditingController searchBarModalController;
 
-  /// [isFocus] is a [bool] that will be used to build the search bar modal.
+  /// This is a booelan represents the [searchBarModalFocusNode] is focused or not.
   bool isFocus;
 
-  /// [focusModalController] is a [void Function()] that will be used to build the search bar modal.
+  /// This is embedded function services when the [FocusNode] of SearchBar is changed.
   final void Function() focusModalController;
 
-  /// [onChangedSearchBarController] is a [void Function()] that will be used to build the search bar modal.
+  /// This is emmbeded function services when the [SearchController] is changed.
   final void Function() onChangedSearchBarController;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchBarModalDetails] class.
-  /// The [SearchBarModalDetails] is a class that contains the details to build the search bar modal.
-  /// [searchController] is a [SearchController] that will be used to build the search bar modal.
-  /// [searchBarModalFocusNode] is a [FocusNode] that will be used to build the search bar modal.
-  /// [searchBarModalController] is a [TextEditingController] that will be used to build the search bar modal.
-  /// [isFocus] is a [bool] that will be used to build the search bar modal.
-  /// [focusModalController] is a [void Function()] that will be used to build the search bar modal.
-  /// [onChangedSearchBarController] is a [void Function()] that will be used to build the search bar modal.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   SearchBarModalDetails({
     required this.searchController,
     required this.searchBarModalFocusNode,
@@ -948,77 +726,59 @@ class SearchBarModalDetails {
   });
 }
 
-/// The [SearchEmptyInfoModalBuilder] is a function that will be used to build the search empty info modal.
-/// [context] is a [BuildContext] that will be used to build the search empty info modal.
-/// [searchEmptyInfoModalDetails] is a [SearchEmptyInfoModalDetails] that will be used to build the search empty info modal.
+/// This is a function that will be used to build your own search empty info modal.
 typedef SearchEmptyInfoModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the search empty info modal.
+  /// [context] is a [BuildContext] that will be used to build your own search empty info modal.
   BuildContext context,
 
-  /// [searchEmptyInfoModalDetails] is a [SearchEmptyInfoModalDetails] that will be used to build the search empty info modal.
+  /// [searchEmptyInfoModalDetails] is a [SearchEmptyInfoModalDetails] that will be used to build your own search empty info modal.
   SearchEmptyInfoModalDetails searchEmptyInfoModalDetails,
 );
 
-/// The [SearchEmptyInfoModalDetails] is a class that contains the details to build the search empty info modal.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own search empty info modal.
 class SearchEmptyInfoModalDetails {
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchEmptyInfoModalDetails] class.
-  /// The [SearchEmptyInfoModalDetails] is a class that contains the details to build the search empty info modal.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const SearchEmptyInfoModalDetails({
     required this.globalSettings,
   });
 }
 
-/// The [ListDataViewModalBuilder] is a function that will be used to build the list data view modal.
-/// [context] is a [BuildContext] that will be used to build the list data view modal.
-/// [listDataViewModalDetails] is a [ListDataViewModalDetails] that will be used to build the list data view modal.
+/// This is a function that will be used to build your own list data view modal.
 typedef ListDataViewModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the list data view modal.
+  /// [context] is a [BuildContext] that will be used to build your own list data view modal.
   BuildContext context,
 
-  /// [listDataViewModalDetails] is a [ListDataViewModalDetails] that will be used to build the list data view modal.
+  /// [listDataViewModalDetails] is a [ListDataViewModalDetails] that will be used to build your own list data view modal.
   ListDataViewModalDetails listDataViewModalDetails,
 );
 
-/// The [ListDataViewModalDetails] is a class that contains the details to build the list data view modal.
-/// [scrollController] is a [ScrollController] that will be used to build the list data view modal.
-/// [searchController] is a [SearchController] that will be used to build the list data view modal.
-/// [selectDataController] is a [SelectDataController] that will be used to build the list data view modal.
-/// [categoryNameModal] is a [Widget Function(SingleCategoryModel singleCategory)] that will be used to build the list data view modal.
-/// [categoryItemModal] is a [Widget Function(SingleItemCategoryModel singleItemCategory)] that will be used to build the list data view modal.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own list data view modal.
 class ListDataViewModalDetails {
-  /// [scrollController] is a [ScrollController] that will be used to build the list data view modal.
+  /// This is a [ScrollController] that will be used to control the scroll in the list data view modal.
   final ScrollController scrollController;
 
-  /// [searchController] is a [SearchController] that will be used to build the list data view modal.
+  /// This is a [SearchController] that will be used to control the search.
   final SearchController searchController;
 
-  /// [selectDataController] is a [SelectDataController] that will be used to build the list data view modal.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [categoryNameModal] is a [Widget Function(SingleCategoryModel singleCategory)] that will be used to build the list data view modal.
+  /// This is a function returning a [Widget] of the CategoryNameModal.
   final Widget Function(SingleCategoryModel singleCategory) categoryNameModal;
 
-  /// [categoryItemModal] is a [Widget Function(SingleItemCategoryModel singleItemCategory)] that will be used to build the list data view modal.
+  /// This is a function returning a [Widget] of the CategoryItemModal.
   final Widget Function(SingleItemCategoryModel singleItemCategory)
       categoryItemModal;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [ListDataViewModalDetails] class.
-  /// The [ListDataViewModalDetails] is a class that contains the details to build the list data view modal.
-  /// [scrollController] is a [ScrollController] that will be used to build the list data view modal.
-  /// [searchController] is a [SearchController] that will be used to build the list data view modal.
-  /// [selectDataController] is a [SelectDataController] that will be used to build the list data view modal.
-  /// [categoryNameModal] is a [Widget Function(SingleCategoryModel singleCategory)] that will be used to build the list data view modal.
-  /// [categoryItemModal] is a [Widget Function(SingleItemCategoryModel singleItemCategory)] that will be used to build the list data view modal.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const ListDataViewModalDetails({
     required this.scrollController,
     required this.searchController,
@@ -1029,41 +789,31 @@ class ListDataViewModalDetails {
   });
 }
 
-/// The [CategoryNameModalBuilder] is a function that will be used to build the category name modal.
-/// [context] is a [BuildContext] that will be used to build the category name modal.
-/// [categoryNameModalDetails] is a [CategoryNameModalDetails] that will be used to build the category name modal.
+/// This is a function that will be used to build your own category name modal.
 typedef CategoryNameModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the category name modal.
+  /// [context] is a [BuildContext] that will be used to build your own category name modal.
   BuildContext context,
 
-  /// [categoryNameModalDetails] is a [CategoryNameModalDetails] that will be used to build the category name modal.
+  /// [categoryNameModalDetails] is a [CategoryNameModalDetails] that will be used to build your own category name modal.
   CategoryNameModalDetails categoryNameModalDetails,
 );
 
-/// The [CategoryNameModalDetails] is a class that contains the details to build the category name modal.
-/// [singleCategory] is a [SingleCategoryModel] that will be used to build the category name modal.
-/// [selectDataController] is a [SelectDataController] that will be used to build the category name modal.
-/// [onTapCategory] is a [void Function()] that will be used to build the category name modal.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own category name modal.
 class CategoryNameModalDetails {
-  /// [singleCategory] is a [SingleCategoryModel] that will be used to build the category name modal.
+  /// This is a [SingleCategoryModel] that will be used to build the category name modal.
   final SingleCategoryModel singleCategory;
 
-  /// [selectDataController] is a [SelectDataController] that will be used to build the category name modal.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [onTapCategory] is a [void Function()] that will be used to build the category name modal.
+  /// This is a emmbeded function service tap on CategoryName.
   final void Function() onTapCategory;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [CategoryNameModalDetails] class.
-  /// The [CategoryNameModalDetails] is a class that contains the details to build the category name modal.
-  /// [singleCategory] is a [SingleCategoryModel] that will be used to build the category name modal.
-  /// [selectDataController] is a [SelectDataController] that will be used to build the category name modal.
-  /// [onTapCategory] is a [void Function()] that will be used to build the category name modal.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   const CategoryNameModalDetails({
     required this.singleCategory,
     required this.selectDataController,
@@ -1072,46 +822,34 @@ class CategoryNameModalDetails {
   });
 }
 
-/// The [CategoryItemModalBuilder] is a function that will be used to build the category item modal.
-/// [context] is a [BuildContext] that will be used to build the category item modal.
-/// [categoryItemModalDetails] is a [CategoryItemModalDetails] that will be used to build the category item modal.
+/// This is a function that will be used to build your own category item modal.
 typedef CategoryItemModalBuilder = Widget Function(
-  /// [context] is a [BuildContext] that will be used to build the category item modal.
+  /// [context] is a [BuildContext] that will be used to build your own category item modal.
   BuildContext context,
 
-  /// [categoryItemModalDetails] is a [CategoryItemModalDetails] that will be used to build the category item modal.
+  /// [categoryItemModalDetails] is a [CategoryItemModalDetails] that will be used to build your own category item modal.
   CategoryItemModalDetails categoryItemModalDetails,
 );
 
-/// The [CategoryItemModalDetails] is a class that contains the details to build the category item modal.
-/// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category item modal.
-/// [selectDataController] is a [SelectDataController] that will be used to build the category item modal.
-/// [isSelected] is a [bool] that will be used to build the category item modal.
-/// [onTapSingleItemCategory] is a [void Function()] that will be used to build the category item modal.
-/// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+/// This is a class which contains necessary details to build your own category item modal.
 class CategoryItemModalDetails {
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category item modal.
+  /// This is a [SingleItemCategoryModel] that will be used to build the category item modal.
   final SingleItemCategoryModel singleItemCategory;
 
-  /// [selectDataController] is a [SelectDataController] that will be used to build the category item modal.
+  /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// [isSelected] is a [bool] that will be used to build the category item modal.
+  /// This is a boolean representing whether the category item is selected or not.
   bool isSelected;
 
-  /// [onTapSingleItemCategory] is a [void Function()] that will be used to build the category item modal.
+  /// This is a emmbeded function service tap on SignleItemCategory.
   final void Function() onTapSingleItemCategory;
 
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [CategoryItemModalDetails] class.
-  /// The [CategoryItemModalDetails] is a class that contains the details to build the category item modal.
-  /// [singleItemCategory] is a [SingleItemCategoryModel] that will be used to build the category item modal.
-  /// [selectDataController] is a [SelectDataController] that will be used to build the category item modal.
-  /// [isSelected] is a [bool] that will be used to build the category item modal.
-  /// [onTapSingleItemCategory] is a [void Function()] that will be used to build the category item modal.
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// Remember: You don't need use all of the parameters.
   CategoryItemModalDetails({
     required this.singleItemCategory,
     required this.selectDataController,

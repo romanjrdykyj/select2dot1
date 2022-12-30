@@ -85,7 +85,7 @@ class ListDataViewModal extends StatelessWidget {
                             return CategoryItemModal(
                               singleItemCategory: searchController
                                   .getResults[categoryIndex]
-                                  .getSingleItemCategoryList[itemIndex],
+                                  .singleItemCategoryList[itemIndex],
                               selectDataController: selectDataController,
                               categoryItemModalBuilder:
                                   categoryItemModalBuilder,
@@ -95,7 +95,7 @@ class ListDataViewModal extends StatelessWidget {
                             );
                           },
                           childCount: searchController.getResults[categoryIndex]
-                              .getSingleItemCategoryList.length,
+                              .singleItemCategoryList.length,
                         ),
                       ),
                     ],

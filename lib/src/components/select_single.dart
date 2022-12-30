@@ -40,13 +40,13 @@ class SelectSingle extends StatelessWidget {
       padding: selectSingleSettings.padding,
       child: Row(
         children: [
-          if (singleItemCategory.getAvatarSingleItem != null &&
+          if (singleItemCategory.avatarSingleItem != null &&
               selectSingleSettings.showAvatar)
             Container(
               width: selectSingleSettings.avatarMaxWidth,
               height: selectSingleSettings.avatarMaxHeight,
               margin: selectSingleSettings.avatarMargin,
-              child: FittedBox(child: singleItemCategory.getAvatarSingleItem),
+              child: FittedBox(child: singleItemCategory.avatarSingleItem),
             ),
           Flexible(
             child: Column(
@@ -56,19 +56,19 @@ class SelectSingle extends StatelessWidget {
                 Container(
                   padding: selectSingleSettings.textPadding,
                   child: Text(
-                    singleItemCategory.getNameSingleItem,
+                    singleItemCategory.nameSingleItem,
                     overflow: selectSingleSettings.textOverflow,
                     style: _getTextStyle(),
                   ),
                 ),
-                if (singleItemCategory.getExtraInfoSingleItem != null &&
+                if (singleItemCategory.extraInfoSingleItem != null &&
                     selectSingleSettings.showExtraInfo)
                   Container(
-                    padding: selectSingleSettings.extraInfopadding,
+                    padding: selectSingleSettings.extraInfoPadding,
                     child: Text(
                       // This can't be null anyways
                       // ignore: avoid-non-null-assertion
-                      singleItemCategory.getExtraInfoSingleItem!,
+                      singleItemCategory.extraInfoSingleItem!,
                       overflow: selectSingleSettings.extraInfoTextOverflow,
                       style: _getExtraInfoTextStyle(),
                     ),

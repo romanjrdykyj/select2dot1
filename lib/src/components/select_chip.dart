@@ -43,12 +43,12 @@ class SelectChip extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (selectChipSettings.isAvatarVisible &&
-              singleItemCategory.getAvatarSingleItem != null)
+              singleItemCategory.avatarSingleItem != null)
             Container(
               width: selectChipSettings.avatarMaxWidth,
               height: selectChipSettings.avatarMaxHeight,
               margin: selectChipSettings.avatarMargin,
-              child: FittedBox(child: singleItemCategory.getAvatarSingleItem),
+              child: FittedBox(child: singleItemCategory.avatarSingleItem),
             ),
           Flexible(
             child: MouseRegion(
@@ -57,7 +57,7 @@ class SelectChip extends StatelessWidget {
                 constraints: selectChipSettings.textBoxConstraints,
                 padding: selectChipSettings.textPadding,
                 child: Text(
-                  singleItemCategory.getNameSingleItem,
+                  singleItemCategory.nameSingleItem,
                   overflow: selectChipSettings.textOverflow,
                   style: _getChipTextStyle(),
                 ),

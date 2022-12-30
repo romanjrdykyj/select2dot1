@@ -37,7 +37,7 @@ class CategoryNameModal extends StatelessWidget {
       );
     }
 
-    if (singleCategory.getNameCategory == null) {
+    if (singleCategory.nameCategory == null) {
       return const SizedBox();
     }
 
@@ -46,10 +46,10 @@ class CategoryNameModal extends StatelessWidget {
       child: InkWell(
         onTap: _onTapCategory,
         borderRadius: categoryNameModalSettings.inkWellBorderRadius,
-        splashColor: selectDataController.getIsMultiSelect
+        splashColor: selectDataController.isMultiSelect
             ? categoryNameModalSettings.splashColor
             : Colors.transparent,
-        highlightColor: selectDataController.getIsMultiSelect
+        highlightColor: selectDataController.isMultiSelect
             ? categoryNameModalSettings.highlightColor
             : Colors.transparent,
         child: Container(
@@ -64,7 +64,7 @@ class CategoryNameModal extends StatelessWidget {
                 child: Text(
                   // This can't be null because of the if statement above
                   // ignore: avoid-non-null-assertion
-                  singleCategory.getNameCategory!,
+                  singleCategory.nameCategory!,
                   overflow: categoryNameModalSettings.textOverflow,
                   style: _getTextStyle(),
                 ),
@@ -95,19 +95,19 @@ class CategoryNameModal extends StatelessWidget {
   }
 
   void _onTapCategory() {
-    if (!selectDataController.getIsMultiSelect) {
+    if (!selectDataController.isMultiSelect) {
       return;
     }
 
-    if (singleCategory.getSingleItemCategoryList.every(
-      (element) => selectDataController.getSelectedList.contains(element),
+    if (singleCategory.singleItemCategoryList.every(
+      selectDataController.selectedList.contains,
     )) {
       selectDataController.removeGroupSelectChip(
-        singleCategory.getSingleItemCategoryList,
+        singleCategory.singleItemCategoryList,
       );
     } else {
       selectDataController
-          .addGroupSelectChip(singleCategory.getSingleItemCategoryList);
+          .addGroupSelectChip(singleCategory.singleItemCategoryList);
     }
   }
 }

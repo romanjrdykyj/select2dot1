@@ -61,7 +61,7 @@ class PillboxContent extends StatelessWidget {
   Widget build(BuildContext context) {
     if (defaultTargetPlatform == TargetPlatform.iOS ||
         defaultTargetPlatform == TargetPlatform.android) {
-      return selectDataController.getIsMultiSelect
+      return selectDataController.isMultiSelect
           ? PillboxContentMulti(
               selectDataController: selectDataController,
               hover: hover,
@@ -108,7 +108,7 @@ class PillboxContent extends StatelessWidget {
       // it cant be null because of assert above
       // ignore: avoid-non-null-assertion
       link: pillboxLayerLink!,
-      child: selectDataController.getIsMultiSelect
+      child: selectDataController.isMultiSelect
           ? PillboxContentMulti(
               selectDataController: selectDataController,
               hover: hover,
