@@ -1,3 +1,8 @@
+## 1.0.0
+
+* improve README.md
+* improve API documentation
+
 ## 0.1.2
 
 * improve README.md
