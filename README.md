@@ -141,7 +141,7 @@ Check the [customization](#customization) section for more information.
 
 ### Components View
 
-In this section you can see how the components of Select2dot1 widget look like as well as their hierarchy You can also see how to customize them by [settings](#by-settings) and [builder](#by-builder). For more details hierarchy of components , go to [Tree View Components with Settings](#tree-view-components-with-settings) section.
+In this section you can see how the components of Select2dot1 widget look like as well as their hierarchy. You can also see how to customize them by [settings](#by-settings) and [builder](#by-builder). For more details hierarchy of components , go to [Tree View Components with Settings](#tree-view-components-with-settings) section.
 
 #### **Component Pillbox Configuration 1**
 
@@ -245,7 +245,9 @@ ________________________________________________________________________________
 
 ### Tree View Components with Settings
 
-If you want to see treeview components with all settings you can access [here](https://miro.com/app/live-embed/uXjVP25lfEY=/?moveToViewport=-3198,-1103,6438,2600&embedId=52335582682). [Miro](https://miro.com/) is an absolutely wonderful app that im familiar with, i would highly recommend you checking it outTree View was created by . **If you want customize components of Select2dot1 widget, you can use Tree View to see all components and their settings.**
+If you want to see treeview components with all settings you can access [here](https://miro.com/app/live-embed/uXjVP25lfEY=/?moveToViewport=-3198,-1103,6438,2600&embedId=52335582682). 
+
+[Miro](https://miro.com/) is an absolutely wonderful app that im familiar with, i would highly recommend you checking it outTree View was created by . **If you want customize components of Select2dot1 widget, you can use Tree View to see all components and their settings.**
 
 ## Customization
 
@@ -373,7 +375,7 @@ Select2dot1(
 #### **Use default components**
 
 If you want to change the layout of your component you can utilize other component templates, so you can use the default components that are available.
-**Remember that when using this builder, you must ensure the correctness of the written code yourself.**
+**Remember that when using this builder, you must make sure that the code thats written is correct before you do anything else.**
 
 ```dart
 Select2dot1(
