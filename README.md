@@ -247,7 +247,7 @@ ________________________________________________________________________________
 
 If you want to see treeview components with all settings you can access [here](https://miro.com/app/live-embed/uXjVP25lfEY=/?moveToViewport=-3198,-1103,6438,2600&embedId=52335582682). 
 
-[Miro](https://miro.com/) is an absolutely wonderful app that im familiar with, i would highly recommend you checking it outTree View was created by . **If you want customize components of Select2dot1 widget, you can use Tree View to see all components and their settings.**
+[Miro](https://miro.com/) is an absolutely wonderful app that im familiar with, i would highly recommend you checking it outTree View was created by . **If you want to customize any of the components of Select2dot1 widget, you can use Tree View to see all the components and settings.**
 
 ## Customization
 
@@ -258,9 +258,9 @@ The first option you can try to use is to use settings to customize, if you have
 
 #### **Use global settings to customize all components of Select2dot1 widget**
 
-You can pass global settings to Select2dot1 widget. Global settings will be used by all components of Select2dot1 widget.
+You can pass global settings to Select2dot1 widget. Global settings will be used by the components of Select2dot1 widget.
 
-In this example we will customize mainColor and fontFamily for all components of Select2dot1 widget.
+In the following example you will be shown how to customize mainColor and fontFamily for all the components of Select2dot1 widget.
 
 ```dart
 Select2dot1(
@@ -274,9 +274,9 @@ Select2dot1(
 
 #### **Use single component settings to customize only one component of Select2dot1 widget**
 
-You can pass single component settings to Select2dot1 widget. Single component settings will be used only by one component of Select2dot1 widget.
+You can pass the single component settings to Select2dot1 widget. Single component settings will be used only by one component of Select2dot1 widget.
 
-In this example we will customize only CategoryNameOverlay component and CategoryItemOverlay component in Dropdown (change visible only on desktop overlay).
+In the following example you will be shown how to customize the CategoryNameOverlay component and CategoryItemOverlay component in Dropdown (modification of the design only be done through desktop overlay).
 
 ```dart
 Select2dot1(
