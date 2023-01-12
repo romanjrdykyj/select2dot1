@@ -411,7 +411,7 @@ Select2dot1(
 
 To use Select2dot1 widget you have to pass data to SelectDataController. Data must be on the list of SingleCategoryModel.
 
-SingleCategoryModel is a model which contains data about single category. 
+The SingleCategoryModel is a model which contains data about single category.
 Parameters:
 * nameCategory - name of category (It is optional if you don't want to show group select)
 * singleItemCategoryList - list of SingleItemCategoryModel (It is required)
@@ -426,7 +426,7 @@ Parameters:
 
 ### Value parametr in SingleItemCategoryModel
 
-It used to get specific id of single item. It's necessary when you want to distinguish between single items with the same nameSingleItem.
+It's used to get the specific id of a single item. It's necessary when you want to distinguish between single items with the same nameSingleItem.
 
 ```dart
 static const List<SingleCategoryModel> exampleData = [
@@ -491,12 +491,12 @@ static const List<SingleCategoryModel> exampleData = [
 
 ### SelectDataController
 
-SelectDataController is a controller that is used to manage data in Select2dot1 widget. You can use it to add, remove, select and deselect data. All data that you want to display in Select2dot1 widget must be added to SelectDataController. 
+SelectDataController is a controller that is used to manage the data in Select2dot1 widget. You can use it to add, remove, select and deselect data. All the data that you want to display in Select2dot1 widget must be added to SelectDataController
 **Remember that when isMultiple is false, you can add only one position to initialSelectedData**.
 
 In SelectDataController you can also set: 
 * inital selected data
-* is multiple select or single select
+* multiple select or single select
 
 ```dart
 Select2dot1(
@@ -516,7 +516,7 @@ Select2dot1(
 
 ## Contributing
 
-Pull requests (pull request template is available) are welcome. For major changes, please open an issue first to discuss what you would like to change. More information about contributing you can find [here](https://github.com/romanjrdykyj/select2dot1/blob/main/CONTRIBUTING.md). Remember to follow the [code of conduct](https://github.com/romanjrdykyj/select2dot1/blob/main/CODE_OF_CONDUCT.md).
+Pull requests (the pull request template is available for use) are welcome. For major changes, please open an issue first to discuss what you would like to change. More information about contributing you can find [here](https://github.com/romanjrdykyj/select2dot1/blob/main/CONTRIBUTING.md). Remember to follow the [code of conduct](https://github.com/romanjrdykyj/select2dot1/blob/main/CODE_OF_CONDUCT.md).
 
 ## Issues
 
