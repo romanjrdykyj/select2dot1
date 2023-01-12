@@ -308,7 +308,7 @@ typedef SelectEmptyInfoBuilder = Widget Function(
 
 /// This is a class which contains necessary details to build your own empty info of the pillbox.
 class SelectEmptyInfoDetails {
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SelectEmptyInfoDetails] class.
@@ -448,7 +448,7 @@ typedef SearchEmptyInfoOverlayBuilder = Widget Function(
 
 /// This is a class which contains necessary details to build your own search empty info.
 class SearchEmptyInfoOverlayDetails {
-  /// [globalSettings] is a [GlobalSettings] that will be used to get the global settings.
+  /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
   /// Creating an argument constructor of [SearchEmptyInfoOverlayDetails] class.
@@ -509,7 +509,7 @@ typedef CategoryItemOverlayBuilder = Widget Function(
   CategoryItemOverlayDetails categoryItemOverlayDetails,
 );
 
-/// The [CategoryItemOverlayDetails] is a class which contains necessary details to build your own category name.
+/// This is a class which contains necessary details to build your own category item.
 class CategoryItemOverlayDetails {
   /// This is a [SingleItemCategoryModel] that will be used to build the category item.
   final SingleItemCategoryModel singleItemCategory;

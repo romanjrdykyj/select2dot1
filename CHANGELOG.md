@@ -1,3 +1,7 @@
+## 1.0.1
+
+* improve README.md
+
 ## 1.0.0
 
 * improve README.md
