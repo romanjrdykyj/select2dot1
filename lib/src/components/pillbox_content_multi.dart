@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:select2dot1/src/components/pillbox_icon.dart';
 import 'package:select2dot1/src/components/select_chip.dart';
@@ -113,55 +114,63 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
         child: Row(
           children: [
             Expanded(
-              child: SingleChildScrollView(
-                scrollDirection:
-                    widget.pillboxContentMultiSettings.pillboxLayout ==
-                            PillboxLayout.wrap
-                        ? Axis.vertical
-                        : Axis.horizontal,
-                controller: scrollController,
-                child: Wrap(
-                  spacing: widget.pillboxContentMultiSettings.spacingChip,
-                  runSpacing:
+              child: ScrollConfiguration(
+                behavior: ScrollConfiguration.of(context).copyWith(
+                  dragDevices: {
+                    PointerDeviceKind.touch,
+                    PointerDeviceKind.mouse,
+                  },
+                ),
+                child: SingleChildScrollView(
+                  scrollDirection:
                       widget.pillboxContentMultiSettings.pillboxLayout ==
                               PillboxLayout.wrap
-                          ? widget.pillboxContentMultiSettings.runSpacingChip
-                          : 0.0,
-                  children: widget.selectDataController.selectedList.isNotEmpty
-                      ? widget.selectDataController.selectedList.length >=
-                              widget.pillboxContentMultiSettings.pillboxOverload
-                          ? [
-                              SelectOverloadInfo(
-                                countSelected: widget
-                                    .selectDataController.selectedList.length,
-                                selectOverloadInfoBuilder:
-                                    widget.selectOverloadInfoBuilder,
-                                selectOverloadInfoSettings:
-                                    widget.selectOverloadInfoSettings,
-                                globalSettings: widget.globalSettings,
-                              ),
-                            ]
-                          : widget.selectDataController.selectedList.reversed
-                              .map(
-                                (i) => SelectChip(
-                                  singleItemCategory: i,
-                                  selectDataController:
-                                      widget.selectDataController,
-                                  selectChipBuilder: widget.selectChipBuilder,
-                                  selectChipSettings: widget.selectChipSettings,
+                          ? Axis.vertical
+                          : Axis.horizontal,
+                  controller: scrollController,
+                  child: Wrap(
+                    spacing: widget.pillboxContentMultiSettings.spacingChip,
+                    runSpacing:
+                        widget.pillboxContentMultiSettings.pillboxLayout ==
+                                PillboxLayout.wrap
+                            ? widget.pillboxContentMultiSettings.runSpacingChip
+                            : 0.0,
+                    children: widget.selectDataController.selectedList.isNotEmpty
+                        ? widget.selectDataController.selectedList.length >=
+                                widget.pillboxContentMultiSettings.pillboxOverload
+                            ? [
+                                SelectOverloadInfo(
+                                  countSelected: widget
+                                      .selectDataController.selectedList.length,
+                                  selectOverloadInfoBuilder:
+                                      widget.selectOverloadInfoBuilder,
+                                  selectOverloadInfoSettings:
+                                      widget.selectOverloadInfoSettings,
                                   globalSettings: widget.globalSettings,
                                 ),
-                              )
-                              .toList()
-                      : [
-                          SelectEmptyInfo(
-                            selectEmptyInfoBuilder:
-                                widget.selectEmptyInfoBuilder,
-                            selectEmptyInfoSettings:
-                                widget.selectEmptyInfoSettings,
-                            globalSettings: widget.globalSettings,
-                          ),
-                        ],
+                              ]
+                            : widget.selectDataController.selectedList.reversed
+                                .map(
+                                  (i) => SelectChip(
+                                    singleItemCategory: i,
+                                    selectDataController:
+                                        widget.selectDataController,
+                                    selectChipBuilder: widget.selectChipBuilder,
+                                    selectChipSettings: widget.selectChipSettings,
+                                    globalSettings: widget.globalSettings,
+                                  ),
+                                )
+                                .toList()
+                        : [
+                            SelectEmptyInfo(
+                              selectEmptyInfoBuilder:
+                                  widget.selectEmptyInfoBuilder,
+                              selectEmptyInfoSettings:
+                                  widget.selectEmptyInfoSettings,
+                              globalSettings: widget.globalSettings,
+                            ),
+                          ],
+                  ),
                 ),
               ),
             ),
