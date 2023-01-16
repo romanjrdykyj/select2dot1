@@ -121,6 +121,17 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
                 child: AnimatedBuilder(
                   animation: widget.animationController,
                   builder: (context, child) {
+                    if (widget.dropdownOverlaySettings.animationBuilder !=
+                        null) {
+                      // Its can be null anyway.
+                      // ignore: avoid-non-null-assertion
+                      return widget.dropdownOverlaySettings.animationBuilder!(
+                        context,
+                        child,
+                        widget.animationController,
+                      );
+                    }
+
                     return ScaleTransition(
                       scale: CurvedAnimation(
                         parent: widget.animationController,
