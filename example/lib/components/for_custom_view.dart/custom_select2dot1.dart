@@ -150,6 +150,15 @@ class CustomSelect2dot1 extends StatelessWidget {
               )
             ],
           ),
+          animationBuilder: (context, child, animationController) {
+            return SizeTransition(
+              sizeFactor: CurvedAnimation(
+                parent: animationController,
+                curve: Curves.easeInOutQuart,
+              ),
+              child: child,
+            );
+          },
         ),
         searchBarOverlayBuilder: (context, searchBarOverlayDetails) {
           return Container(

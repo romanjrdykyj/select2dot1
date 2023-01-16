@@ -39,6 +39,13 @@ class DropdownOverlaySettings {
   /// Default value is [Interval(0.5,1,curve: Curves.easeInOutQuart)].
   final Curve sizeAnimationCurve;
 
+  /// The builder of the animation of the dropdown content (overlay).
+  final Widget Function(
+    BuildContext context,
+    Widget? child,
+    AnimationController animationController,
+  )? animationBuilder;
+
   /// Creating an argument constructor of [DropdownOverlaySettings] class.
   const DropdownOverlaySettings({
     this.decoration = const BoxDecoration(
@@ -58,5 +65,6 @@ class DropdownOverlaySettings {
       1,
       curve: Curves.easeInOutQuart,
     ),
+    this.animationBuilder,
   });
 }

@@ -1,3 +1,8 @@
+## 1.0.2
+
+* add animationBuilder to DropdownOverlay (available in DropdownOverlaySeettings)
+* add scroll on drag by mouse
+
 ## 1.0.1
 
 * improve README.md
