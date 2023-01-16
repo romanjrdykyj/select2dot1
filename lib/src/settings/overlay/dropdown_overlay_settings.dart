@@ -40,7 +40,11 @@ class DropdownOverlaySettings {
   final Curve sizeAnimationCurve;
 
   /// The builder of the animation of the dropdown content (overlay).
-  final Widget Function(BuildContext context, Widget? child, AnimationController animationController)? animationBuilder;
+  final Widget Function(
+    BuildContext context,
+    Widget? child,
+    AnimationController animationController,
+  )? animationBuilder;
 
   /// Creating an argument constructor of [DropdownOverlaySettings] class.
   const DropdownOverlaySettings({

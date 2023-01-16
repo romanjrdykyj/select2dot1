@@ -135,9 +135,11 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
                                 PillboxLayout.wrap
                             ? widget.pillboxContentMultiSettings.runSpacingChip
                             : 0.0,
-                    children: widget.selectDataController.selectedList.isNotEmpty
+                    children: widget
+                            .selectDataController.selectedList.isNotEmpty
                         ? widget.selectDataController.selectedList.length >=
-                                widget.pillboxContentMultiSettings.pillboxOverload
+                                widget
+                                    .pillboxContentMultiSettings.pillboxOverload
                             ? [
                                 SelectOverloadInfo(
                                   countSelected: widget
@@ -156,7 +158,8 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
                                     selectDataController:
                                         widget.selectDataController,
                                     selectChipBuilder: widget.selectChipBuilder,
-                                    selectChipSettings: widget.selectChipSettings,
+                                    selectChipSettings:
+                                        widget.selectChipSettings,
                                     globalSettings: widget.globalSettings,
                                   ),
                                 )
