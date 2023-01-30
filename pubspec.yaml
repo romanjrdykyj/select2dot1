@@ -23,6 +23,6 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test: 
     sdk: flutter
-  pubspec_dependency_sorter: ^0.0.2
+  pubspec_dependency_sorter: ">=0.0.2 <2.0.0"
 
 flutter:
