@@ -37,10 +37,45 @@ class ListDataViewModal extends StatelessWidget {
     required this.globalSettings,
   });
 
+    Stream<List<Widget>> dataStreamFunc() async* {
+    List<Widget> listDataViewChildren = [];
+    for (int indexCategory = 0;
+        indexCategory < searchController.getResults.length;
+        indexCategory++) {
+      listDataViewChildren.add(
+        CategoryNameModal(
+          singleCategory: searchController.getResults[indexCategory],
+          selectDataController: selectDataController,
+          categoryNameModalBuilder: categoryNameModalBuilder,
+          categoryNameModalSettings: categoryNameModalSettings,
+          globalSettings: globalSettings,
+        ),
+      );
+      for (int indexItem = 0;
+          indexItem <
+              searchController.getResults[indexCategory]
+                  .singleItemCategoryList.length;
+          indexItem++) {
+        listDataViewChildren.add(
+          CategoryItemModal(
+            singleItemCategory: searchController
+                .getResults[indexCategory].singleItemCategoryList[indexItem],
+            selectDataController: selectDataController,
+            categoryItemModalBuilder: categoryItemModalBuilder,
+            categoryItemModalSettings: categoryItemModalSettings,
+            globalSettings: globalSettings,
+          ),
+        );
+      }
+    }
+
+    yield listDataViewChildren;
+  }
+
   @override
   Widget build(BuildContext context) {
     if (listDataViewModalBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return listDataViewModalBuilder!(
         context,
@@ -55,58 +90,26 @@ class ListDataViewModal extends StatelessWidget {
       );
     }
 
-    return Container(
-      margin: listDataViewModalSettings.margin,
-      padding: listDataViewModalSettings.padding,
-      child: CustomScrollView(
-        shrinkWrap: true,
-        controller: scrollController,
-        slivers: <SliverList>[
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, categoryIndex) => Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CategoryNameModal(
-                    singleCategory: searchController.getResults[categoryIndex],
-                    selectDataController: selectDataController,
-                    categoryNameModalBuilder: categoryNameModalBuilder,
-                    categoryNameModalSettings: categoryNameModalSettings,
-                    globalSettings: globalSettings,
-                  ),
-                  CustomScrollView(
-                    shrinkWrap: true,
-                    primary: false,
-                    slivers: [
-                      SliverList(
-                        delegate: SliverChildBuilderDelegate(
-                          (context, itemIndex) {
-                            return CategoryItemModal(
-                              singleItemCategory: searchController
-                                  .getResults[categoryIndex]
-                                  .singleItemCategoryList[itemIndex],
-                              selectDataController: selectDataController,
-                              categoryItemModalBuilder:
-                                  categoryItemModalBuilder,
-                              categoryItemModalSettings:
-                                  categoryItemModalSettings,
-                              globalSettings: globalSettings,
-                            );
-                          },
-                          childCount: searchController.getResults[categoryIndex]
-                              .singleItemCategoryList.length,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+    return StreamBuilder<Object>(
+      stream: dataStreamFunc(),
+      builder: (context, snapshot) {
+        return Container(
+          margin: listDataViewModalSettings.margin,
+          padding: listDataViewModalSettings.padding,
+          child: CustomScrollView(
+            shrinkWrap: true,
+            controller: scrollController,
+            slivers: <SliverList>[
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) => (snapshot.data as List<Widget>)[index],
+                  childCount: (snapshot.data as List<Widget>).length,
+                ),
               ),
-              childCount: searchController.getResults.length,
-            ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 
