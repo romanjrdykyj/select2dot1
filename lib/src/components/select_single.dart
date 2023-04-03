@@ -24,7 +24,7 @@ class SelectSingle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (selectSingleBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return selectSingleBuilder!(
         context,
@@ -66,7 +66,7 @@ class SelectSingle extends StatelessWidget {
                   Container(
                     padding: selectSingleSettings.extraInfoPadding,
                     child: Text(
-                      // This can't be null anyways
+                      // This can't be null anyways.
                       // ignore: avoid-non-null-assertion
                       singleItemCategory.extraInfoSingleItem!,
                       overflow: selectSingleSettings.extraInfoTextOverflow,

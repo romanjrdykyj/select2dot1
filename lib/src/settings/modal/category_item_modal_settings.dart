@@ -47,11 +47,11 @@ class CategoryItemModalSettings {
   final double? iconSize;
 
   /// The icon data of the icon of the category item of list data view in modal mode.
-  /// Default value is [Icons.check]
+  /// Default value is [Icons.check].
   final IconData? iconData;
 
   /// The padding of the icon of the category item of list data view in modal mode.
-  /// Default value is [EdgeInsets.only(left: 1, right: 3)]
+  /// Default value is [EdgeInsets.only(left: 1, right: 3)].
   final EdgeInsetsGeometry? iconPadding;
 
   /// The duration of the icon animation of the category item of list data view in modal mode.
@@ -141,7 +141,7 @@ class CategoryItemModalSettings {
     this.iconSelectedColor,
     this.iconData = Icons.check,
     this.iconPadding = const EdgeInsets.only(left: 1, right: 3),
-    // its const.
+    // Its const.
     // ignore: no-magic-number
     this.iconSize = 18.0,
     this.iconAnimationDuration = const Duration(milliseconds: 400),
@@ -159,10 +159,10 @@ class CategoryItemModalSettings {
     this.showAvatar = true,
     this.avatarMargin =
         const EdgeInsets.only(top: 6.0, bottom: 6.0, right: 5.0),
-    // its const.
+    // Its const.
     // ignore: no-magic-number
     this.avatarMaxWidth = 40.0,
-    // its const.
+    // Its const.
     // ignore: no-magic-number
     this.avatarMaxHeight = 40.0,
   });

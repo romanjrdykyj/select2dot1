@@ -18,7 +18,7 @@ class DoneButtonModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (doneButtonModalBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return doneButtonModalBuilder!(
         context,
@@ -56,7 +56,7 @@ class DoneButtonModal extends StatelessWidget {
                 Container(
                   padding: doneButtonModalSettings.titlePadding,
                   child: Text(
-                    // It can be null anyways
+                    // It can be null anyways.
                     // ignore: avoid-non-null-assertion
                     doneButtonModalSettings.title!,
                     style: _getTitleTextStyle(),

@@ -41,7 +41,7 @@ class CategoryItemOverlaySettings {
   final double? iconSize;
 
   /// The icon data of the icon.
-  /// Default value is [Icons.check]
+  /// Default value is [Icons.check].
   final IconData? iconData;
 
   /// The padding of the icon.
@@ -138,7 +138,7 @@ class CategoryItemOverlaySettings {
     this.iconSelectedColor,
     this.iconData = Icons.check,
     this.iconPadding = const EdgeInsets.only(left: 4, right: 3),
-    // its const.
+    // Its const.
     // ignore: no-magic-number
     this.iconSize = 16.0,
     this.iconAnimationDuration = const Duration(milliseconds: 400),
@@ -154,10 +154,10 @@ class CategoryItemOverlaySettings {
     this.showAvatar = true,
     this.avatarMargin =
         const EdgeInsets.only(top: 6.0, bottom: 6.0, right: 5.0),
-    // its const.
+    // Its const.
     // ignore: no-magic-number
     this.avatarMaxWidth = 35.0,
-    // its const.
+    // Its const.
     // ignore: no-magic-number
     this.avatarMaxHeight = 35.0,
   });

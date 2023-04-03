@@ -63,7 +63,7 @@ class DoneButtonModalSettings {
     this.titlePadding = const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
     this.icon,
     this.iconColor,
-    // Its specific param for Icon
+    // Its specific param for Icon.
     // ignore: no-magic-number
     this.iconSize = 16.0,
     this.iconPadding,

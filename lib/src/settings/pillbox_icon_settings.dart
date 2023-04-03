@@ -32,7 +32,7 @@ class PillboxIconSettings {
   /// Creating an argument constructor of [PillboxIconSettings] class.
   const PillboxIconSettings({
     this.iconData = Icons.expand_more_rounded,
-    // its specyfic parameter for icon.
+    // Its specyfic parameter for icon.
     // ignore: no-magic-number
     this.size = 16.0,
     this.defaultColor,

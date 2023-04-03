@@ -69,7 +69,7 @@ class _PillboxContentSingleState extends State<PillboxContentSingle> {
   @override
   Widget build(BuildContext context) {
     if (widget.pillboxContentSingleBuilder != null) {
-      // it cant be null because of assert above
+      // It cant be null because of assert above.
       // ignore: avoid-non-null-assertion
       return widget.pillboxContentSingleBuilder!(
         context,
@@ -163,7 +163,7 @@ class _PillboxContentSingleState extends State<PillboxContentSingle> {
 
     if (mounted) {
       setState(() {
-        // it cant be null anyways.
+        // It cant be null anyways.
         // ignore: avoid-non-null-assertion
         isFocus = widget.isVisibleOvarlay!.value;
       });

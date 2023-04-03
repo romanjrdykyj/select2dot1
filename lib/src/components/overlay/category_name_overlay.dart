@@ -31,7 +31,7 @@ class _CategoryNameOverlayState extends State<CategoryNameOverlay> {
   @override
   Widget build(BuildContext context) {
     if (widget.categoryNameOverlayBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.categoryNameOverlayBuilder!(
         context,
@@ -69,7 +69,7 @@ class _CategoryNameOverlayState extends State<CategoryNameOverlay> {
               children: [
                 Flexible(
                   child: Text(
-                    // This can't be null because of the if statement above
+                    // This can't be null because of the if statement above.
                     // ignore: avoid-non-null-assertion
                     widget.singleCategory.nameCategory!,
                     overflow: widget.categoryNameOverlaySettings.textOverflow,

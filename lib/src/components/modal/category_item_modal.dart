@@ -42,7 +42,7 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
     isSelected = _isSelected();
 
     if (widget.categoryItemModalBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.categoryItemModalBuilder!(
         context,
@@ -112,7 +112,7 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
                         padding:
                             widget.categoryItemModalSettings.extraInfoPadding,
                         child: Text(
-                          // This can't be null anyways
+                          // This can't be null anyways.
                           // ignore: avoid-non-null-assertion
                           widget.singleItemCategory.extraInfoSingleItem!,
                           overflow: widget

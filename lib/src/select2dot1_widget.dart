@@ -300,7 +300,7 @@ class _Select2dot1State extends AnimatedState
   final bool kIsMobile = defaultTargetPlatform == TargetPlatform.iOS ||
       defaultTargetPlatform == TargetPlatform.android;
 
-  // its ok.
+  // Its ok.
   // ignore: avoid-late-keyword
   late final LayerLink layerLink;
 
@@ -381,7 +381,7 @@ class _Select2dot1State extends AnimatedState
     }
 
     return NotificationListener<SizeChangedLayoutNotification>(
-      // A little less pedantic style - its okey
+      // A little less pedantic style - its okey.
       // ignore: prefer-extracting-callbacks
       onNotification: (notification) {
         SchedulerBinding.instance.addPostFrameCallback(refreshOverlayState);
@@ -419,7 +419,7 @@ class _Select2dot1State extends AnimatedState
 
   void _dataOutFromPackage() {
     if (widget.onChanged != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore:avoid-non-null-assertion
       widget.onChanged!(
         widget.selectDataController.selectedList,

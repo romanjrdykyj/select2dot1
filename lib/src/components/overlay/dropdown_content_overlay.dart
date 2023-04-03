@@ -67,7 +67,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
   final keySearchBarOverlay = GlobalKey();
   Size sizeSearchBarOverlay = const Size(0, 0);
 
-  // It's good :D
+  // It's good :D.
   // ignore: avoid-late-keyword
   late final SearchController searchController;
 
@@ -92,7 +92,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
   @override
   Widget build(BuildContext context) {
     if (widget.dropdownContentOverlayBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.dropdownContentOverlayBuilder!(
         context,
@@ -120,7 +120,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           NotificationListener<SizeChangedLayoutNotification>(
-            // A little less pedantic style - its okey
+            // A little less pedantic style - its okey.
             // ignore: prefer-extracting-callbacks
             onNotification: (notification) {
               _calculateSearchBarOverlaySize();
@@ -201,7 +201,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
         boxShadow: [
           BoxShadow(
             color: widget.globalSettings.inActiveColor,
-            // its constant.
+            // Its constant.
             // ignore: no-magic-number
             blurRadius: 2.0,
             offset: const Offset(0, 2),

@@ -68,7 +68,7 @@ class DropdownContentModal extends StatefulWidget {
 }
 
 class _DropdownContentModalState extends State<DropdownContentModal> {
-  // It's good :D
+  // It's good :D.
   // ignore: avoid-late-keyword
   late final SearchController searchController;
 
@@ -89,7 +89,7 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
   @override
   Widget build(BuildContext context) {
     if (widget.dropdownContentModalBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.dropdownContentModalBuilder!(
         context,

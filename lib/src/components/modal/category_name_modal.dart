@@ -24,7 +24,7 @@ class CategoryNameModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (categoryNameModalBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return categoryNameModalBuilder!(
         context,
@@ -62,7 +62,7 @@ class CategoryNameModal extends StatelessWidget {
             children: [
               Flexible(
                 child: Text(
-                  // This can't be null because of the if statement above
+                  // This can't be null because of the if statement above.
                   // ignore: avoid-non-null-assertion
                   singleCategory.nameCategory!,
                   overflow: categoryNameModalSettings.textOverflow,

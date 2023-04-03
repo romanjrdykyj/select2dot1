@@ -10,7 +10,7 @@ class SelectDataController extends ChangeNotifier {
 
   /// This is initial selected data.
   /// This data will be add to the [selectedList] when the class is created.
-  /// if [isMultiSelect] is false, must be null or length <= 1.
+  /// If [isMultiSelect] is false, must be null or length <= 1.
   final List<SingleItemCategoryModel>? initSelected;
 
   /// This is a boolean to set multi select or single select.
@@ -23,7 +23,7 @@ class SelectDataController extends ChangeNotifier {
   /// SelectDataController is a class that will be used to control select data.
   /// Use this constructor to create a [SelectDataController] object.
   /// [data] is required.
-  /// if [isMultiSelect] is false, [initSelected] must be null or length <= 1.
+  /// If [isMultiSelect] is false, [initSelected] must be null or length <= 1.
   SelectDataController({
     required this.data,
     this.isMultiSelect = true,
@@ -51,7 +51,7 @@ class SelectDataController extends ChangeNotifier {
     for (var singleItem in singleItemList) {
       if (_singeItemContainsInData(singleItem) &&
           !_singleItemContainsInSelected(singleItem)) {
-        // its ok.
+        // Its ok.
         // ignore: avoid-ignoring-return-values
         data.any(
           (element) => element.singleItemCategoryList.any((element) {
@@ -79,7 +79,7 @@ class SelectDataController extends ChangeNotifier {
     for (var singleItem in singleItemList) {
       if (_singeItemContainsInData(singleItem) &&
           _singleItemContainsInSelected(singleItem)) {
-        // its ok.
+        // Its ok.
         // ignore: avoid-ignoring-return-values
         selectedList.remove(singleItem);
       }
@@ -129,7 +129,7 @@ class SelectDataController extends ChangeNotifier {
     }
 
     if (_singleItemContainsInSelected(singleItem)) {
-      // its ok.
+      // Its ok.
       // ignore: avoid-ignoring-return-values
       selectedList.remove(singleItem);
       notifyListeners();

@@ -45,7 +45,7 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
     isSelected = _isSelected();
 
     if (widget.categoryItemOverlayBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.categoryItemOverlayBuilder!(
         context,
@@ -121,7 +121,7 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
                           padding: widget
                               .categoryItemOverlaySettings.extraInfoPadding,
                           child: Text(
-                            // This can't be null anyways
+                            // This can't be null anyways.
                             // ignore: avoid-non-null-assertion
                             widget.singleItemCategory.extraInfoSingleItem!,
                             overflow: widget.categoryItemOverlaySettings

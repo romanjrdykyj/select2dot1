@@ -107,7 +107,7 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
           maintainSemantics: true,
           maintainState: true,
           child: NotificationListener<SizeChangedLayoutNotification>(
-            // A little less pedantic style - its okey
+            // A little less pedantic style - its okey.
             // ignore: prefer-extracting-callbacks
             onNotification: (notification) {
               _calculateDropdownOverlayContentSize();

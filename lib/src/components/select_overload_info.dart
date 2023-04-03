@@ -20,7 +20,7 @@ class SelectOverloadInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (selectOverloadInfoBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return selectOverloadInfoBuilder!(
         context,

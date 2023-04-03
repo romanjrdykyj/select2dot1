@@ -114,7 +114,7 @@ class _PillboxState extends State<Pillbox> {
   @override
   Widget build(BuildContext context) {
     if (widget.pillboxBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.pillboxBuilder!(
         context,
@@ -141,7 +141,7 @@ class _PillboxState extends State<Pillbox> {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         hoverColor: Colors.transparent,
-        // its ok.
+        // Its ok.
         // ignore: no-equal-arguments
         focusColor: Colors.transparent,
         child: Column(
