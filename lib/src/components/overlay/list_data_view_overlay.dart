@@ -52,8 +52,51 @@ class ListDataViewOverlay extends StatefulWidget {
 class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
   final ScrollController scrollController = ScrollController();
 
-  Stream<List<Widget>> dataStreamFunc() async* {
+  // It's okey.
+  // ignore: avoid-late-keyword
+  late Stream<List<Widget>> streamController = dataStreamFunc(isInit: true);
+
+  int oldlength = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.searchController.addListener(searchListener);
+  }
+
+  @override
+  void dispose() {
+    widget.searchController.removeListener(searchListener);
+    super.dispose();
+  }
+
+  void searchListener() {
+    streamController = dataStreamFunc();
+  }
+
+  Stream<List<Widget>> dataStreamFunc({bool isInit = false}) async* {
+    var listDataViewChildren = await Future.wait([
+      dataFuture(),
+      if (!isInit)
+        Future.delayed(
+          const Duration(milliseconds: 500),
+        ), // TODO: dodac do ustawien.
+    ]);
+
+    if (isInit) {
+      oldlength = listDataViewChildren.first.length;
+      yield listDataViewChildren.first as List<Widget>;
+    }
+
+    if (oldlength != listDataViewChildren.first.length) {
+      oldlength = listDataViewChildren.first.length;
+      yield listDataViewChildren.first as List<Widget>;
+    }
+  }
+
+  Future<List<Widget>> dataFuture() async {
     List<Widget> listDataViewChildren = [];
+
     for (int indexCategory = 0;
         indexCategory < widget.searchController.getResults.length;
         indexCategory++) {
@@ -85,7 +128,7 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
       }
     }
 
-    yield listDataViewChildren;
+    return listDataViewChildren;
   }
 
   @override
@@ -106,56 +149,64 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
       );
     }
 
-    return StreamBuilder<Object>(
-      stream: dataStreamFunc(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircularProgressIndicator.adaptive(),
-              ),
-            ],
-          );
-        }
+    return AnimatedSize(
+      duration: const Duration(milliseconds: 300), // TODO: dodac do ustawien.
+      curve: Curves.easeInOutQuart, // TODO: dodac do ustawien.
+      child: StreamBuilder<Object>(
+        stream: streamController,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Padding(
+                  padding: EdgeInsets.all(
+                    8.0,
+                  ), // TODO: dodac do ustawien i caly widget w sumie!
+                  child: CircularProgressIndicator.adaptive(),
+                ),
+              ],
+            );
+          }
 
-        return Container(
-          margin: widget.listDataViewOverlaySettings.margin,
-          padding: widget.listDataViewOverlaySettings.padding,
-          child: RawScrollbar(
-            trackVisibility: widget.listDataViewOverlaySettings.trackVisibility,
-            thumbVisibility: widget.listDataViewOverlaySettings.thumbVisibility,
-            controller: scrollController,
-            thumbColor: widget.listDataViewOverlaySettings.thumbColor ??
-                widget.globalSettings.activeColor,
-            trackColor: widget.listDataViewOverlaySettings.trackColor,
-            trackBorderColor:
-                widget.listDataViewOverlaySettings.trackBorderColor,
-            shape: widget.listDataViewOverlaySettings.shapeScrollbar,
-            radius: widget.listDataViewOverlaySettings.radiusScrollbar,
-            thickness: widget.listDataViewOverlaySettings.thicknessScrollbar,
-            child: ScrollConfiguration(
-              behavior:
-                  ScrollConfiguration.of(context).copyWith(scrollbars: false),
-              child: CustomScrollView(
-                shrinkWrap: true,
-                controller: scrollController,
-                slivers: <SliverList>[
-                  SliverList(
-                    delegate: SliverChildBuilderDelegate(
-                      (context, index) =>
-                          (snapshot.data as List<Widget>)[index],
-                      childCount: (snapshot.data as List<Widget>).length,
+          return Container(
+            margin: widget.listDataViewOverlaySettings.margin,
+            padding: widget.listDataViewOverlaySettings.padding,
+            child: RawScrollbar(
+              trackVisibility:
+                  widget.listDataViewOverlaySettings.trackVisibility,
+              thumbVisibility:
+                  widget.listDataViewOverlaySettings.thumbVisibility,
+              controller: scrollController,
+              thumbColor: widget.listDataViewOverlaySettings.thumbColor ??
+                  widget.globalSettings.activeColor,
+              trackColor: widget.listDataViewOverlaySettings.trackColor,
+              trackBorderColor:
+                  widget.listDataViewOverlaySettings.trackBorderColor,
+              shape: widget.listDataViewOverlaySettings.shapeScrollbar,
+              radius: widget.listDataViewOverlaySettings.radiusScrollbar,
+              thickness: widget.listDataViewOverlaySettings.thicknessScrollbar,
+              child: ScrollConfiguration(
+                behavior:
+                    ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                child: CustomScrollView(
+                  shrinkWrap: true,
+                  controller: scrollController,
+                  slivers: <SliverList>[
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) =>
+                            (snapshot.data as List<Widget>)[index],
+                        childCount: (snapshot.data as List<Widget>).length,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 
