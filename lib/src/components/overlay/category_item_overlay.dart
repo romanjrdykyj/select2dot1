@@ -34,16 +34,20 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
   @override
   void initState() {
     super.initState();
-    if (widget.selectDataController.selectedList
-        .contains(widget.singleItemCategory)) {
-      isSelected = true;
-    }
+    widget.selectDataController.addListener(_selectDataListener);
+
+    isSelected = _isSelected();
+  }
+
+  @override
+  void dispose() {
+    widget.selectDataController.removeListener(_selectDataListener);
+
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    isSelected = _isSelected();
-
     if (widget.categoryItemOverlayBuilder != null) {
       // This can't be null anyways.
       // ignore: avoid-non-null-assertion
@@ -227,5 +231,13 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
     }
 
     return false;
+  }
+
+  void _selectDataListener() {
+    if (mounted) {
+      setState(() {
+        isSelected = _isSelected();
+      });
+    }
   }
 }

@@ -51,12 +51,9 @@ class ListDataViewOverlay extends StatefulWidget {
 
 class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
   final ScrollController scrollController = ScrollController();
-
   // It's okey.
   // ignore: avoid-late-keyword
   late Stream<List<Widget>> streamController = dataStreamFunc(isInit: true);
-
-  int oldlength = 0;
 
   @override
   void initState() {
@@ -83,15 +80,7 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
         ), // TODO: dodac do ustawien.
     ]);
 
-    if (isInit) {
-      oldlength = listDataViewChildren.first.length;
-      yield listDataViewChildren.first as List<Widget>;
-    }
-
-    if (oldlength != listDataViewChildren.first.length) {
-      oldlength = listDataViewChildren.first.length;
-      yield listDataViewChildren.first as List<Widget>;
-    }
+    yield listDataViewChildren.first as List<Widget>;
   }
 
   Future<List<Widget>> dataFuture() async {
