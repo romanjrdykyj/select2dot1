@@ -76,12 +76,10 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
   void initState() {
     super.initState();
     searchController = SearchController(widget.selectDataController.data);
-    searchController.addListener(_refreshState);
   }
 
   @override
   void dispose() {
-    searchController.removeListener(_refreshState);
     searchController.dispose();
     super.dispose();
   }
@@ -168,14 +166,6 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
         ],
       ),
     );
-  }
-
-  void _refreshState() {
-    if (mounted) {
-      // It's just call setState!
-      // ignore: no-empty-block
-      setState(() {});
-    }
   }
 
   Widget _titleModal() => TitleModal(

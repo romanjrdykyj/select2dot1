@@ -78,15 +78,13 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
     if (widget.dropdownContentOverlayBuilder == null) {
       _calculateSearchBarOverlaySize();
     }
-    searchController.addListener(_refreshState);
   }
 
   @override
   void dispose() {
-    super.dispose();
-
-    searchController.removeListener(_refreshState);
     searchController.dispose();
+
+    super.dispose();
   }
 
   @override
@@ -246,14 +244,6 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
           : widget.dropdownOverlaySettings.minHeight;
     } else {
       return widget.dropdownOverlaySettings.maxHeight;
-    }
-  }
-
-  void _refreshState() {
-    if (mounted) {
-      // It's just call setState!
-      // ignore: no-empty-block
-      setState(() {});
     }
   }
 

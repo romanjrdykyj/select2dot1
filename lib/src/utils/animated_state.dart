@@ -21,7 +21,8 @@ abstract class AnimatedState extends State<Select2dot1>
 
   @override
   void dispose() {
-    super.dispose();
     _animationController.dispose();
+
+    super.dispose();
   }
 }

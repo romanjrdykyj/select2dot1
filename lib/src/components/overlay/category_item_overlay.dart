@@ -234,6 +234,8 @@ class _CategoryItemOverlayState extends State<CategoryItemOverlay> {
   }
 
   void _selectDataListener() {
+    if(isSelected == _isSelected()) return;
+
     if (mounted) {
       setState(() {
         isSelected = _isSelected();

@@ -11,7 +11,7 @@ import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
 import 'package:select2dot1/src/utils/event_args.dart';
 
-class ListDataViewModal extends StatelessWidget {
+class ListDataViewModal extends StatefulWidget {
   final ScrollController scrollController;
   final SearchController searchController;
   final SelectDataController selectDataController;
@@ -37,55 +37,41 @@ class ListDataViewModal extends StatelessWidget {
     required this.globalSettings,
   });
 
-    Stream<List<Widget>> dataStreamFunc() async* {
-    List<Widget> listDataViewChildren = [];
-    for (int indexCategory = 0;
-        indexCategory < searchController.getResults.length;
-        indexCategory++) {
-      listDataViewChildren.add(
-        CategoryNameModal(
-          singleCategory: searchController.getResults[indexCategory],
-          selectDataController: selectDataController,
-          categoryNameModalBuilder: categoryNameModalBuilder,
-          categoryNameModalSettings: categoryNameModalSettings,
-          globalSettings: globalSettings,
-        ),
-      );
-      for (int indexItem = 0;
-          indexItem <
-              searchController.getResults[indexCategory]
-                  .singleItemCategoryList.length;
-          indexItem++) {
-        listDataViewChildren.add(
-          CategoryItemModal(
-            singleItemCategory: searchController
-                .getResults[indexCategory].singleItemCategoryList[indexItem],
-            selectDataController: selectDataController,
-            categoryItemModalBuilder: categoryItemModalBuilder,
-            categoryItemModalSettings: categoryItemModalSettings,
-            globalSettings: globalSettings,
-          ),
-        );
-      }
-    }
+  @override
+  State<ListDataViewModal> createState() => _ListDataViewModalState();
+}
 
-    yield listDataViewChildren;
+class _ListDataViewModalState extends State<ListDataViewModal> {
+  // It's okey.
+  // ignore: avoid-late-keyword
+  late Stream<List<Widget>> streamController = dataStreamFunc(isInit: true);
+
+  @override
+  void initState() {
+    super.initState();
+    widget.searchController.addListener(searchListener);
+  }
+
+  @override
+  void dispose() {
+    widget.searchController.removeListener(searchListener);
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    if (listDataViewModalBuilder != null) {
+    if (widget.listDataViewModalBuilder != null) {
       // This can't be null anyways.
       // ignore: avoid-non-null-assertion
-      return listDataViewModalBuilder!(
+      return widget.listDataViewModalBuilder!(
         context,
         ListDataViewModalDetails(
-          scrollController: scrollController,
-          searchController: searchController,
-          selectDataController: selectDataController,
+          scrollController: widget.scrollController,
+          searchController: widget.searchController,
+          selectDataController: widget.selectDataController,
           categoryNameModal: _categoryNameModal,
           categoryItemModal: _categoryItemModal,
-          globalSettings: globalSettings,
+          globalSettings: widget.globalSettings,
         ),
       );
     }
@@ -93,12 +79,24 @@ class ListDataViewModal extends StatelessWidget {
     return StreamBuilder<Object>(
       stream: dataStreamFunc(),
       builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: Padding(
+                padding: EdgeInsets.all(
+                  8.0,
+                ), // TODO: dodac do ustawien i caly widget w sumie!
+                child: CircularProgressIndicator.adaptive(),
+              ),
+            );
+          }
+
+
         return Container(
-          margin: listDataViewModalSettings.margin,
-          padding: listDataViewModalSettings.padding,
+          margin: widget.listDataViewModalSettings.margin,
+          padding: widget.listDataViewModalSettings.padding,
           child: CustomScrollView(
             shrinkWrap: true,
-            controller: scrollController,
+            controller: widget.scrollController,
             slivers: <SliverList>[
               SliverList(
                 delegate: SliverChildBuilderDelegate(
@@ -113,19 +111,75 @@ class ListDataViewModal extends StatelessWidget {
     );
   }
 
+  void searchListener() {
+    if (mounted) {
+      setState(() {
+        streamController = dataStreamFunc();
+      });
+    }
+  }
+
+  Stream<List<Widget>> dataStreamFunc({bool isInit = false}) async* {
+    var listDataViewChildren = await Future.wait([
+      dataFuture(),
+      if (!isInit)
+        Future.delayed(
+          const Duration(milliseconds: 500),
+        ), // TODO: dodac do ustawien.
+    ]);
+
+    yield listDataViewChildren.first as List<Widget>;
+  }
+
+  Future<List<Widget>> dataFuture() async {
+    List<Widget> listDataViewChildren = [];
+
+    for (int indexCategory = 0;
+        indexCategory < widget.searchController.getResults.length;
+        indexCategory++) {
+      listDataViewChildren.add(
+        CategoryNameModal(
+          singleCategory: widget.searchController.getResults[indexCategory],
+          selectDataController: widget.selectDataController,
+          categoryNameModalBuilder: widget.categoryNameModalBuilder,
+          categoryNameModalSettings: widget.categoryNameModalSettings,
+          globalSettings: widget.globalSettings,
+        ),
+      );
+      for (int indexItem = 0;
+          indexItem <
+              widget.searchController.getResults[indexCategory]
+                  .singleItemCategoryList.length;
+          indexItem++) {
+        listDataViewChildren.add(
+          CategoryItemModal(
+            singleItemCategory: widget.searchController
+                .getResults[indexCategory].singleItemCategoryList[indexItem],
+            selectDataController: widget.selectDataController,
+            categoryItemModalBuilder: widget.categoryItemModalBuilder,
+            categoryItemModalSettings: widget.categoryItemModalSettings,
+            globalSettings: widget.globalSettings,
+          ),
+        );
+      }
+    }
+
+    return listDataViewChildren;
+  }
+
   Widget _categoryNameModal(SingleCategoryModel i) => CategoryNameModal(
         singleCategory: i,
-        selectDataController: selectDataController,
-        categoryNameModalBuilder: categoryNameModalBuilder,
-        categoryNameModalSettings: categoryNameModalSettings,
-        globalSettings: globalSettings,
+        selectDataController: widget.selectDataController,
+        categoryNameModalBuilder: widget.categoryNameModalBuilder,
+        categoryNameModalSettings: widget.categoryNameModalSettings,
+        globalSettings: widget.globalSettings,
       );
 
   Widget _categoryItemModal(SingleItemCategoryModel i) => CategoryItemModal(
         singleItemCategory: i,
-        selectDataController: selectDataController,
-        categoryItemModalBuilder: categoryItemModalBuilder,
-        categoryItemModalSettings: categoryItemModalSettings,
-        globalSettings: globalSettings,
+        selectDataController: widget.selectDataController,
+        categoryItemModalBuilder: widget.categoryItemModalBuilder,
+        categoryItemModalSettings: widget.categoryItemModalSettings,
+        globalSettings: widget.globalSettings,
       );
 }

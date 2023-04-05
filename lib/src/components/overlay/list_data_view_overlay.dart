@@ -67,59 +67,6 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
     super.dispose();
   }
 
-  void searchListener() {
-    streamController = dataStreamFunc();
-  }
-
-  Stream<List<Widget>> dataStreamFunc({bool isInit = false}) async* {
-    var listDataViewChildren = await Future.wait([
-      dataFuture(),
-      if (!isInit)
-        Future.delayed(
-          const Duration(milliseconds: 500),
-        ), // TODO: dodac do ustawien.
-    ]);
-
-    yield listDataViewChildren.first as List<Widget>;
-  }
-
-  Future<List<Widget>> dataFuture() async {
-    List<Widget> listDataViewChildren = [];
-
-    for (int indexCategory = 0;
-        indexCategory < widget.searchController.getResults.length;
-        indexCategory++) {
-      listDataViewChildren.add(
-        CategoryNameOverlay(
-          singleCategory: widget.searchController.getResults[indexCategory],
-          selectDataController: widget.selectDataController,
-          categoryNameOverlayBuilder: widget.categoryNameOverlayBuilder,
-          categoryNameOverlaySettings: widget.categoryNameOverlaySettings,
-          globalSettings: widget.globalSettings,
-        ),
-      );
-      for (int indexItem = 0;
-          indexItem <
-              widget.searchController.getResults[indexCategory]
-                  .singleItemCategoryList.length;
-          indexItem++) {
-        listDataViewChildren.add(
-          CategoryItemOverlay(
-            singleItemCategory: widget.searchController
-                .getResults[indexCategory].singleItemCategoryList[indexItem],
-            selectDataController: widget.selectDataController,
-            overlayHide: widget.overlayHide,
-            categoryItemOverlayBuilder: widget.categoryItemOverlayBuilder,
-            categoryItemOverlaySettings: widget.categoryItemOverlaySettings,
-            globalSettings: widget.globalSettings,
-          ),
-        );
-      }
-    }
-
-    return listDataViewChildren;
-  }
-
   @override
   Widget build(BuildContext context) {
     if (widget.listDataViewOverlayBuilder != null) {
@@ -197,6 +144,63 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
         },
       ),
     );
+  }
+
+    void searchListener() {
+    if (mounted) {
+      setState(() {
+        streamController = dataStreamFunc();
+      });
+    }
+  }
+
+  Stream<List<Widget>> dataStreamFunc({bool isInit = false}) async* {
+    var listDataViewChildren = await Future.wait([
+      dataFuture(),
+      if (!isInit)
+        Future.delayed(
+          const Duration(milliseconds: 500),
+        ), // TODO: dodac do ustawien.
+    ]);
+
+    yield listDataViewChildren.first as List<Widget>;
+  }
+
+  Future<List<Widget>> dataFuture() async {
+    List<Widget> listDataViewChildren = [];
+
+    for (int indexCategory = 0;
+        indexCategory < widget.searchController.getResults.length;
+        indexCategory++) {
+      listDataViewChildren.add(
+        CategoryNameOverlay(
+          singleCategory: widget.searchController.getResults[indexCategory],
+          selectDataController: widget.selectDataController,
+          categoryNameOverlayBuilder: widget.categoryNameOverlayBuilder,
+          categoryNameOverlaySettings: widget.categoryNameOverlaySettings,
+          globalSettings: widget.globalSettings,
+        ),
+      );
+      for (int indexItem = 0;
+          indexItem <
+              widget.searchController.getResults[indexCategory]
+                  .singleItemCategoryList.length;
+          indexItem++) {
+        listDataViewChildren.add(
+          CategoryItemOverlay(
+            singleItemCategory: widget.searchController
+                .getResults[indexCategory].singleItemCategoryList[indexItem],
+            selectDataController: widget.selectDataController,
+            overlayHide: widget.overlayHide,
+            categoryItemOverlayBuilder: widget.categoryItemOverlayBuilder,
+            categoryItemOverlaySettings: widget.categoryItemOverlaySettings,
+            globalSettings: widget.globalSettings,
+          ),
+        );
+      }
+    }
+
+    return listDataViewChildren;
   }
 
   Widget _categoryNameOverlay(SingleCategoryModel i) => CategoryNameOverlay(

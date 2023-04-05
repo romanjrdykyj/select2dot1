@@ -77,13 +77,11 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
     _calculateDropdownOverlayContentSize();
     _calculateDirectAnchor();
     widget.scrollController?.addListener(_calculateDirectAnchor);
-    widget.selectDataController.addListener(_refreshState);
   }
 
   @override
   void dispose() {
     widget.scrollController?.removeListener(_calculateDirectAnchor);
-    widget.selectDataController.removeListener(_refreshState);
 
     super.dispose();
   }
@@ -249,13 +247,5 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
         }
       }
     });
-  }
-
-  void _refreshState() {
-    if (mounted) {
-      // It's just call setState!
-      // ignore: no-empty-block
-      setState(() {});
-    }
   }
 }
