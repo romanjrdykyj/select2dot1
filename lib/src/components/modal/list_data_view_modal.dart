@@ -77,7 +77,7 @@ class _ListDataViewModalState extends State<ListDataViewModal> {
     }
 
     return StreamBuilder<Object>(
-      stream: dataStreamFunc(),
+      stream: streamController,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
