@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:select2dot1/src/components/overlay/category_item_overlay.dart';
 import 'package:select2dot1/src/components/overlay/category_name_overlay.dart';
+import 'package:select2dot1/src/components/overlay/search_empty_info_overlay.dart';
 import 'package:select2dot1/src/controllers/search_controller.dart';
 import 'package:select2dot1/src/controllers/select_data_controller.dart';
 import 'package:select2dot1/src/models/single_category_model.dart';
@@ -93,7 +94,7 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center, // TODO: dodac do ustawien!
               children: const [
                 Padding(
                   padding: EdgeInsets.all(
@@ -102,6 +103,16 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
                   child: CircularProgressIndicator.adaptive(),
                 ),
               ],
+            );
+          }
+
+          if ((snapshot.data as List).isEmpty) {
+            return SearchEmptyInfoOverlay(
+              searchEmptyInfoOverlayBuilder:
+                  widget.searchEmptyInfoOverlayBuilder,
+              searchEmptyInfoOverlaySettings:
+                  widget.searchEmptyInfoOverlaySettings,
+              globalSettings: widget.globalSettings,
             );
           }
 
@@ -146,7 +157,7 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
     );
   }
 
-    void searchListener() {
+  void searchListener() {
     if (mounted) {
       setState(() {
         streamController = dataStreamFunc();

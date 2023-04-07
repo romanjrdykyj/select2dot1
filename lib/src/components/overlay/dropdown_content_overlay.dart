@@ -141,15 +141,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
               minHeight: widget.dropdownOverlaySettings.minHeight,
               maxHeight: _calculateMaxHeight(),
             ),
-            child: searchController.getResults.isEmpty
-                ? SearchEmptyInfoOverlay(
-                    searchEmptyInfoOverlayBuilder:
-                        widget.searchEmptyInfoOverlayBuilder,
-                    searchEmptyInfoOverlaySettings:
-                        widget.searchEmptyInfoOverlaySettings,
-                    globalSettings: widget.globalSettings,
-                  )
-                : ListDataViewOverlay(
+            child: ListDataViewOverlay(
                     searchController: searchController,
                     selectDataController: widget.selectDataController,
                     overlayHide: widget.overlayHide,

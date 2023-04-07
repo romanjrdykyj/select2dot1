@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:select2dot1/src/components/modal/category_item_modal.dart';
 import 'package:select2dot1/src/components/modal/category_name_modal.dart';
+import 'package:select2dot1/src/components/modal/search_empty_info_modal.dart';
 import 'package:select2dot1/src/controllers/search_controller.dart';
 import 'package:select2dot1/src/controllers/select_data_controller.dart';
 import 'package:select2dot1/src/models/single_category_model.dart';
@@ -9,12 +10,15 @@ import 'package:select2dot1/src/settings/global_settings.dart';
 import 'package:select2dot1/src/settings/modal/category_item_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
+import 'package:select2dot1/src/settings/modal/search_empty_info_modal_settings.dart';
 import 'package:select2dot1/src/utils/event_args.dart';
 
 class ListDataViewModal extends StatefulWidget {
   final ScrollController scrollController;
   final SearchController searchController;
   final SelectDataController selectDataController;
+  final SearchEmptyInfoModalBuilder? searchEmptyInfoModalBuilder;
+  final SearchEmptyInfoModalSettings searchEmptyInfoModalSettings;
   final ListDataViewModalBuilder? listDataViewModalBuilder;
   final ListDataViewModalSettings listDataViewModalSettings;
   final CategoryItemModalBuilder? categoryItemModalBuilder;
@@ -28,6 +32,8 @@ class ListDataViewModal extends StatefulWidget {
     required this.scrollController,
     required this.searchController,
     required this.selectDataController,
+    required this.searchEmptyInfoModalBuilder,
+    required this.searchEmptyInfoModalSettings,
     required this.listDataViewModalBuilder,
     required this.listDataViewModalSettings,
     required this.categoryItemModalBuilder,
@@ -80,16 +86,23 @@ class _ListDataViewModalState extends State<ListDataViewModal> {
       stream: streamController,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: Padding(
-                padding: EdgeInsets.all(
-                  8.0,
-                ), // TODO: dodac do ustawien i caly widget w sumie!
-                child: CircularProgressIndicator.adaptive(),
-              ),
-            );
-          }
+          return const Center(
+            child: Padding(
+              padding: EdgeInsets.all(
+                8.0,
+              ), // TODO: dodac do ustawien i caly widget w sumie!
+              child: CircularProgressIndicator.adaptive(),
+            ),
+          );
+        }
 
+        if ((snapshot.data as List).isEmpty) {
+          return SearchEmptyInfoModal(
+            searchEmptyInfoModalBuilder: widget.searchEmptyInfoModalBuilder,
+            searchEmptyInfoModalSettings: widget.searchEmptyInfoModalSettings,
+            globalSettings: widget.globalSettings,
+          );
+        }
 
         return Container(
           margin: widget.listDataViewModalSettings.margin,

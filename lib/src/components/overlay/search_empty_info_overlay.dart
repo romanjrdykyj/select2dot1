@@ -28,12 +28,17 @@ class SearchEmptyInfoOverlay extends StatelessWidget {
       );
     }
 
-    return Container(
-      padding: searchEmptyInfoOverlaySettings.padding,
-      child: Text(
-        searchEmptyInfoOverlaySettings.text,
-        style: _getTextStyle(),
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center, // TODO: dodac do ustawien.
+      children: [
+        Container(
+          padding: searchEmptyInfoOverlaySettings.padding,
+          child: Text(
+            searchEmptyInfoOverlaySettings.text,
+            style: _getTextStyle(),
+          ),
+        ),
+      ],
     );
   }
 

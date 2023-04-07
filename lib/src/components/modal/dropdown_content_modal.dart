@@ -138,29 +138,21 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
               padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom,
               ),
-              child: searchController.getResults.isEmpty
-                  ? SearchEmptyInfoModal(
-                      searchEmptyInfoModalBuilder:
-                          widget.searchEmptyInfoModalBuilder,
-                      searchEmptyInfoModalSettings:
-                          widget.searchEmptyInfoModalSettings,
-                      globalSettings: widget.globalSettings,
-                    )
-                  : ListDataViewModal(
-                      scrollController: widget.scrollController,
-                      searchController: searchController,
-                      selectDataController: widget.selectDataController,
-                      listDataViewModalBuilder: widget.listDataViewModalBuilder,
-                      listDataViewModalSettings:
-                          widget.listDataViewModalSettings,
-                      categoryItemModalBuilder: widget.categoryItemModalBuilder,
-                      categoryItemModalSettings:
-                          widget.categoryItemModalSettings,
-                      categoryNameModalBuilder: widget.categoryNameModalBuilder,
-                      categoryNameModalSettings:
-                          widget.categoryNameModalSettings,
-                      globalSettings: widget.globalSettings,
-                    ),
+              child: ListDataViewModal(
+                scrollController: widget.scrollController,
+                searchController: searchController,
+                selectDataController: widget.selectDataController,
+                searchEmptyInfoModalBuilder: widget.searchEmptyInfoModalBuilder,
+                searchEmptyInfoModalSettings:
+                    widget.searchEmptyInfoModalSettings,
+                listDataViewModalBuilder: widget.listDataViewModalBuilder,
+                listDataViewModalSettings: widget.listDataViewModalSettings,
+                categoryItemModalBuilder: widget.categoryItemModalBuilder,
+                categoryItemModalSettings: widget.categoryItemModalSettings,
+                categoryNameModalBuilder: widget.categoryNameModalBuilder,
+                categoryNameModalSettings: widget.categoryNameModalSettings,
+                globalSettings: widget.globalSettings,
+              ),
             ),
           ),
         ],
@@ -198,6 +190,8 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
         scrollController: widget.scrollController,
         searchController: searchController,
         selectDataController: widget.selectDataController,
+        searchEmptyInfoModalBuilder: widget.searchEmptyInfoModalBuilder,
+        searchEmptyInfoModalSettings: widget.searchEmptyInfoModalSettings,
         listDataViewModalBuilder: widget.listDataViewModalBuilder,
         listDataViewModalSettings: widget.listDataViewModalSettings,
         categoryItemModalBuilder: widget.categoryItemModalBuilder,
