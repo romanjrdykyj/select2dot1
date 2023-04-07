@@ -7,6 +7,7 @@ import 'package:select2dot1/src/settings/overlay/category_item_overlay_settings.
 import 'package:select2dot1/src/settings/overlay/category_name_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/dropdown_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/list_data_view_overlay_settings.dart';
+import 'package:select2dot1/src/settings/overlay/loading_data_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_bar_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_empty_info_overlay_settings.dart';
 import 'package:select2dot1/src/settings/pillbox_content_multi_settings.dart';
@@ -25,6 +26,8 @@ class DropdownOverlay extends StatefulWidget {
   final bool isSearchable;
   final SearchBarOverlayBuilder? searchBarOverlayBuilder;
   final SearchBarOverlaySettings searchBarOverlaySettings;
+  final LoadingDataOverlayBuilder? loadingDataOverlayBuilder;
+  final LoadingDataOverlaySettings loadingDataOverlaySettings;
   final SearchEmptyInfoOverlayBuilder? searchEmptyInfoOverlayBuilder;
   final SearchEmptyInfoOverlaySettings searchEmptyInfoOverlaySettings;
   final ListDataViewOverlayBuilder? listDataViewOverlayBuilder;
@@ -49,6 +52,8 @@ class DropdownOverlay extends StatefulWidget {
     required this.isSearchable,
     required this.searchBarOverlayBuilder,
     required this.searchBarOverlaySettings,
+    required this.loadingDataOverlayBuilder,
+    required this.loadingDataOverlaySettings,
     required this.searchEmptyInfoOverlayBuilder,
     required this.searchEmptyInfoOverlaySettings,
     required this.listDataViewOverlayBuilder,
@@ -159,6 +164,9 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
                     isSearchable: widget.isSearchable,
                     searchBarOverlayBuilder: widget.searchBarOverlayBuilder,
                     searchBarOverlaySettings: widget.searchBarOverlaySettings,
+                    loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
+                    loadingDataOverlaySettings:
+                        widget.loadingDataOverlaySettings,
                     searchEmptyInfoOverlayBuilder:
                         widget.searchEmptyInfoOverlayBuilder,
                     searchEmptyInfoOverlaySettings:

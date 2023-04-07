@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'package:select2dot1/src/components/overlay/category_item_overlay.dart';
 import 'package:select2dot1/src/components/overlay/category_name_overlay.dart';
+import 'package:select2dot1/src/components/overlay/loading_data_overlay.dart';
 import 'package:select2dot1/src/components/overlay/search_empty_info_overlay.dart';
 import 'package:select2dot1/src/controllers/search_controller.dart';
 import 'package:select2dot1/src/controllers/select_data_controller.dart';
@@ -13,6 +14,7 @@ import 'package:select2dot1/src/settings/global_settings.dart';
 import 'package:select2dot1/src/settings/overlay/category_item_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/category_name_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/list_data_view_overlay_settings.dart';
+import 'package:select2dot1/src/settings/overlay/loading_data_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_empty_info_overlay_settings.dart';
 import 'package:select2dot1/src/utils/event_args.dart';
 
@@ -20,6 +22,8 @@ class ListDataViewOverlay extends StatefulWidget {
   final SearchController searchController;
   final SelectDataController selectDataController;
   final void Function() overlayHide;
+  final LoadingDataOverlayBuilder? loadingDataOverlayBuilder;
+  final LoadingDataOverlaySettings loadingDataOverlaySettings;
   final SearchEmptyInfoOverlayBuilder? searchEmptyInfoOverlayBuilder;
   final SearchEmptyInfoOverlaySettings searchEmptyInfoOverlaySettings;
   final ListDataViewOverlayBuilder? listDataViewOverlayBuilder;
@@ -35,6 +39,8 @@ class ListDataViewOverlay extends StatefulWidget {
     required this.searchController,
     required this.selectDataController,
     required this.overlayHide,
+    required this.loadingDataOverlayBuilder,
+    required this.loadingDataOverlaySettings,
     required this.searchEmptyInfoOverlayBuilder,
     required this.searchEmptyInfoOverlaySettings,
     required this.listDataViewOverlayBuilder,
@@ -81,28 +87,25 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
           overlayHide: widget.overlayHide,
           categoryNameOverlay: _categoryNameOverlay,
           categoryItemOverlay: _categoryItemOverlay,
+          searchEmptyInfoOverlay: _searchEmptyInfoOverlay,
+          loadingDataOverlay: _loadingDataOverlay,
           globalSettings: widget.globalSettings,
         ),
       );
     }
 
     return AnimatedSize(
-      duration: const Duration(milliseconds: 300), // TODO: dodac do ustawien.
-      curve: Curves.easeInOutQuart, // TODO: dodac do ustawien.
+      duration:
+          widget.listDataViewOverlaySettings.durationAnimationListDataView,
+      curve: widget.listDataViewOverlaySettings.curveAnimationListDataView,
       child: StreamBuilder<Object>(
         stream: streamController,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.center, // TODO: dodac do ustawien!
-              children: const [
-                Padding(
-                  padding: EdgeInsets.all(
-                    8.0,
-                  ), // TODO: dodac do ustawien i caly widget w sumie!
-                  child: CircularProgressIndicator.adaptive(),
-                ),
-              ],
+            return LoadingDataOverlay(
+              loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
+              loadingDataOverlaySettings: widget.loadingDataOverlaySettings,
+              globalSettings: widget.globalSettings,
             );
           }
 
@@ -170,8 +173,8 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
       dataFuture(),
       if (!isInit)
         Future.delayed(
-          const Duration(milliseconds: 500),
-        ), // TODO: dodac do ustawien.
+          widget.listDataViewOverlaySettings.minLoadDuration,
+        ),
     ]);
 
     yield listDataViewChildren.first as List<Widget>;
@@ -228,6 +231,18 @@ class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
         overlayHide: widget.overlayHide,
         categoryItemOverlayBuilder: widget.categoryItemOverlayBuilder,
         categoryItemOverlaySettings: widget.categoryItemOverlaySettings,
+        globalSettings: widget.globalSettings,
+      );
+
+  Widget _searchEmptyInfoOverlay() => SearchEmptyInfoOverlay(
+        searchEmptyInfoOverlayBuilder: widget.searchEmptyInfoOverlayBuilder,
+        searchEmptyInfoOverlaySettings: widget.searchEmptyInfoOverlaySettings,
+        globalSettings: widget.globalSettings,
+      );
+
+  Widget _loadingDataOverlay() => LoadingDataOverlay(
+        loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
+        loadingDataOverlaySettings: widget.loadingDataOverlaySettings,
         globalSettings: widget.globalSettings,
       );
 }

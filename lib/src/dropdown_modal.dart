@@ -7,6 +7,7 @@ import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart
 import 'package:select2dot1/src/settings/modal/done_button_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/dropdown_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
+import 'package:select2dot1/src/settings/modal/loading_data_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_bar_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_empty_info_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/title_modal_settings.dart';
@@ -24,6 +25,8 @@ class DropdownModal extends StatelessWidget {
   final bool isSearchable;
   final SearchBarModalBuilder? searchBarModalBuilder;
   final SearchBarModalSettings searchBarModalSettings;
+  final LoadingDataModalBuilder? loadingDataModalBuilder;
+  final LoadingDataModalSettings loadingDataModalSettings;
   final SearchEmptyInfoModalBuilder? searchEmptyInfoModalBuilder;
   final SearchEmptyInfoModalSettings searchEmptyInfoModalSettings;
   final ListDataViewModalBuilder? listDataViewModalBuilder;
@@ -46,6 +49,8 @@ class DropdownModal extends StatelessWidget {
     required this.isSearchable,
     required this.searchBarModalBuilder,
     required this.searchBarModalSettings,
+    required this.loadingDataModalBuilder,
+    required this.loadingDataModalSettings,
     required this.searchEmptyInfoModalBuilder,
     required this.searchEmptyInfoModalSettings,
     required this.listDataViewModalBuilder,
@@ -78,6 +83,8 @@ class DropdownModal extends StatelessWidget {
             isSearchable: isSearchable,
             searchBarModalBuilder: searchBarModalBuilder,
             searchBarModalSettings: searchBarModalSettings,
+            loadingDataModalBuilder: loadingDataModalBuilder,
+            loadingDataModalSettings: loadingDataModalSettings,
             searchEmptyInfoModalBuilder: searchEmptyInfoModalBuilder,
             searchEmptyInfoModalSettings: searchEmptyInfoModalSettings,
             scrollController: scrollController,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:select2dot1/src/components/modal/done_button_modal.dart';
 import 'package:select2dot1/src/components/modal/list_data_view_modal.dart';
 import 'package:select2dot1/src/components/modal/search_bar_modal.dart';
-import 'package:select2dot1/src/components/modal/search_empty_info_modal.dart';
 import 'package:select2dot1/src/components/modal/title_modal.dart';
 import 'package:select2dot1/src/controllers/search_controller.dart';
 import 'package:select2dot1/src/controllers/select_data_controller.dart';
@@ -12,6 +11,7 @@ import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart
 import 'package:select2dot1/src/settings/modal/done_button_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/dropdown_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
+import 'package:select2dot1/src/settings/modal/loading_data_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_bar_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_empty_info_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/title_modal_settings.dart';
@@ -29,6 +29,8 @@ class DropdownContentModal extends StatefulWidget {
   final bool isSearchable;
   final SearchBarModalBuilder? searchBarModalBuilder;
   final SearchBarModalSettings searchBarModalSettings;
+  final LoadingDataModalBuilder? loadingDataModalBuilder;
+  final LoadingDataModalSettings loadingDataModalSettings;
   final SearchEmptyInfoModalBuilder? searchEmptyInfoModalBuilder;
   final SearchEmptyInfoModalSettings searchEmptyInfoModalSettings;
   final ListDataViewModalBuilder? listDataViewModalBuilder;
@@ -52,6 +54,8 @@ class DropdownContentModal extends StatefulWidget {
     required this.isSearchable,
     required this.searchBarModalBuilder,
     required this.searchBarModalSettings,
+    required this.loadingDataModalBuilder,
+    required this.loadingDataModalSettings,
     required this.searchEmptyInfoModalBuilder,
     required this.searchEmptyInfoModalSettings,
     required this.listDataViewModalBuilder,
@@ -98,7 +102,6 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
           titleModal: _titleModal,
           doneButtonModal: _doneButtonModal,
           searchBarModal: _searchBarModal,
-          searchEmptyInfoModal: _searchEmptyInfoModal,
           listDataViewModal: _listDataViewModal,
           globalSettings: widget.globalSettings,
         ),
@@ -142,6 +145,8 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
                 scrollController: widget.scrollController,
                 searchController: searchController,
                 selectDataController: widget.selectDataController,
+                loadingDataModalBuilder: widget.loadingDataModalBuilder,
+                loadingDataModalSettings: widget.loadingDataModalSettings,
                 searchEmptyInfoModalBuilder: widget.searchEmptyInfoModalBuilder,
                 searchEmptyInfoModalSettings:
                     widget.searchEmptyInfoModalSettings,
@@ -180,16 +185,12 @@ class _DropdownContentModalState extends State<DropdownContentModal> {
         globalSettings: widget.globalSettings,
       );
 
-  Widget _searchEmptyInfoModal() => SearchEmptyInfoModal(
-        searchEmptyInfoModalBuilder: widget.searchEmptyInfoModalBuilder,
-        searchEmptyInfoModalSettings: widget.searchEmptyInfoModalSettings,
-        globalSettings: widget.globalSettings,
-      );
-
   Widget _listDataViewModal() => ListDataViewModal(
         scrollController: widget.scrollController,
         searchController: searchController,
         selectDataController: widget.selectDataController,
+        loadingDataModalBuilder: widget.loadingDataModalBuilder,
+        loadingDataModalSettings: widget.loadingDataModalSettings,
         searchEmptyInfoModalBuilder: widget.searchEmptyInfoModalBuilder,
         searchEmptyInfoModalSettings: widget.searchEmptyInfoModalSettings,
         listDataViewModalBuilder: widget.listDataViewModalBuilder,

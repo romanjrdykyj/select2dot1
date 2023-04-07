@@ -29,7 +29,7 @@ class SearchEmptyInfoOverlay extends StatelessWidget {
     }
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center, // TODO: dodac do ustawien.
+      mainAxisAlignment: searchEmptyInfoOverlaySettings.rowMainAxisAlignment,
       children: [
         Container(
           padding: searchEmptyInfoOverlaySettings.padding,

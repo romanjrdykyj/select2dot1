@@ -16,6 +16,7 @@ import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart
 import 'package:select2dot1/src/settings/modal/done_button_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/dropdown_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
+import 'package:select2dot1/src/settings/modal/loading_data_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_bar_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_empty_info_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/title_modal_settings.dart';
@@ -23,6 +24,7 @@ import 'package:select2dot1/src/settings/overlay/category_item_overlay_settings.
 import 'package:select2dot1/src/settings/overlay/category_name_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/dropdown_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/list_data_view_overlay_settings.dart';
+import 'package:select2dot1/src/settings/overlay/loading_data_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_bar_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_empty_info_overlay_settings.dart';
 import 'package:select2dot1/src/settings/pillbox_content_multi_settings.dart';
@@ -125,6 +127,9 @@ class Select2dot1 extends StatefulWidget {
   /// This is a builder that is used to build the search bar of the widget in overlay mode.
   final SearchBarOverlayBuilder? searchBarOverlayBuilder;
 
+  /// This is a builder that is used to build the loading data of dropdown content in overlay mode.
+  final LoadingDataOverlayBuilder? loadingDataOverlayBuilder;
+
   /// This is a builder that is used to build the search empty info of dropdown content in overlay mode.
   final SearchEmptyInfoOverlayBuilder? searchEmptyInfoOverlayBuilder;
 
@@ -148,6 +153,9 @@ class Select2dot1 extends StatefulWidget {
 
   /// This is a builder that is used to build the search bar of the widget in modal mode.
   final SearchBarModalBuilder? searchBarModalBuilder;
+
+  /// This is a builder that is used to build the loading data of dropdown content in modal mode.
+  final LoadingDataModalBuilder? loadingDataModalBuilder;
 
   /// This is a builder that is used to build the search empty info of dropdown content in modal mode.
   final SearchEmptyInfoModalBuilder? searchEmptyInfoModalBuilder;
@@ -191,6 +199,9 @@ class Select2dot1 extends StatefulWidget {
   /// This is a class which contains all the settings of the search bar of the widget in overlay mode.
   final SearchBarOverlaySettings searchBarOverlaySettings;
 
+  /// This is a class which contains all the settings of the loading data of dropdown content in overlay mode.
+  final LoadingDataOverlaySettings loadingDataOverlaySettings;
+
   /// This is a class which contains all the settings of the search empty info of dropdown content in overlay mode.
   final SearchEmptyInfoOverlaySettings searchEmptyInfoOverlaySettings;
 
@@ -214,6 +225,9 @@ class Select2dot1 extends StatefulWidget {
 
   /// This is a class which contains all the settings of the search bar of the widget in modal mode.
   final SearchBarModalSettings searchBarModalSettings;
+
+  /// This is a class which contains all the settings of the loading data of dropdown content in modal mode.
+  final LoadingDataModalSettings loadingDataModalSettings;
 
   /// This is a class which contains all the settings of the search empty info of dropdown content in modal mode.
   final SearchEmptyInfoModalSettings searchEmptyInfoModalSettings;
@@ -254,6 +268,7 @@ class Select2dot1 extends StatefulWidget {
     this.selectOverloadInfoBuilder,
     this.dropdownContentOverlayBuilder,
     this.searchBarOverlayBuilder,
+    this.loadingDataOverlayBuilder,
     this.searchEmptyInfoOverlayBuilder,
     this.listDataViewOverlayBuilder,
     this.categoryNameOverlayBuilder,
@@ -262,6 +277,7 @@ class Select2dot1 extends StatefulWidget {
     this.titleModalBuilder,
     this.doneButtonModalBuilder,
     this.searchBarModalBuilder,
+    this.loadingDataModalBuilder,
     this.searchEmptyInfoModalBuilder,
     this.listDataViewModalBuilder,
     this.categoryNameModalBuilder,
@@ -276,6 +292,7 @@ class Select2dot1 extends StatefulWidget {
     this.selectOverloadInfoSettings = const SelectOverloadInfoSettings(),
     this.dropdownOverlaySettings = const DropdownOverlaySettings(),
     this.searchBarOverlaySettings = const SearchBarOverlaySettings(),
+    this.loadingDataOverlaySettings = const LoadingDataOverlaySettings(),
     this.searchEmptyInfoOverlaySettings =
         const SearchEmptyInfoOverlaySettings(),
     this.listDataViewOverlaySettings = const ListDataViewOverlaySettings(),
@@ -285,6 +302,7 @@ class Select2dot1 extends StatefulWidget {
     this.titleModalSettings = const TitleModalSettings(),
     this.doneButtonModalSettings = const DoneButtonModalSettings(),
     this.searchBarModalSettings = const SearchBarModalSettings(),
+    this.loadingDataModalSettings = const LoadingDataModalSettings(),
     this.searchEmptyInfoModalSettings = const SearchEmptyInfoModalSettings(),
     this.listDataViewModalSettings = const ListDataViewModalSettings(),
     this.categoryNameModalSettings = const CategoryNameModalSettings(),
@@ -330,6 +348,8 @@ class _Select2dot1State extends AnimatedState
           isSearchable: widget.isSearchable,
           searchBarOverlayBuilder: widget.searchBarOverlayBuilder,
           searchBarOverlaySettings: widget.searchBarOverlaySettings,
+          loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
+          loadingDataOverlaySettings: widget.loadingDataOverlaySettings,
           searchEmptyInfoOverlayBuilder: widget.searchEmptyInfoOverlayBuilder,
           searchEmptyInfoOverlaySettings: widget.searchEmptyInfoOverlaySettings,
           listDataViewOverlayBuilder: widget.listDataViewOverlayBuilder,

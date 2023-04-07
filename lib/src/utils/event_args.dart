@@ -375,9 +375,6 @@ class DropdownContentOverlayDetails {
   /// This is a function returning a [Widget] of the searchBar.
   final Widget Function() searchBarOverlay;
 
-  /// This is a function returning a [Widget] of the search empty info.
-  final Widget Function() searchEmptyInfoOverlay;
-
   /// This is a function returning a [Widget] of the list data view.
   final Widget Function() listDataViewOverlay;
 
@@ -394,7 +391,6 @@ class DropdownContentOverlayDetails {
     required this.appBarMaxHeight,
     required this.searchController,
     required this.searchBarOverlay,
-    required this.searchEmptyInfoOverlay,
     required this.listDataViewOverlay,
     required this.globalSettings,
   });
@@ -485,6 +481,12 @@ class ListDataViewOverlayDetails {
   final Widget Function(SingleItemCategoryModel singleItemCategory)
       categoryItemOverlay;
 
+  /// This is a function returning a [Widget] of the search empty info modal.
+  final Widget Function() searchEmptyInfoOverlay;
+
+  /// This is a function returning a [Widget] of the loading data modal.
+  final Widget Function() loadingDataOverlay;
+
   /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
@@ -496,6 +498,8 @@ class ListDataViewOverlayDetails {
     required this.overlayHide,
     required this.categoryNameOverlay,
     required this.categoryItemOverlay,
+    required this.searchEmptyInfoOverlay,
+    required this.loadingDataOverlay,
     required this.globalSettings,
   });
 }
@@ -611,9 +615,6 @@ class DropdownContentModalDetails {
   /// This is a function returning a [Widget] of the search bar modal.
   final Widget Function() searchBarModal;
 
-  /// This is a function returning a [Widget] of the search empty info modal.
-  final Widget Function() searchEmptyInfoModal;
-
   /// This is a function returning a [Widget] of the list data view.
   final Widget Function() listDataViewModal;
 
@@ -629,7 +630,6 @@ class DropdownContentModalDetails {
     required this.titleModal,
     required this.doneButtonModal,
     required this.searchBarModal,
-    required this.searchEmptyInfoModal,
     required this.listDataViewModal,
     required this.globalSettings,
   });
@@ -774,6 +774,12 @@ class ListDataViewModalDetails {
   final Widget Function(SingleItemCategoryModel singleItemCategory)
       categoryItemModal;
 
+  /// This is a function returning a [Widget] of the search empty info modal.
+  final Widget Function() searchEmptyInfoModal;
+
+  /// This is a function returning a [Widget] of the loading data modal.
+  final Widget Function() loadingDataModal;
+
   /// This is a [GlobalSettings] that will be used to get the global settings.
   final GlobalSettings globalSettings;
 
@@ -785,6 +791,8 @@ class ListDataViewModalDetails {
     required this.selectDataController,
     required this.categoryNameModal,
     required this.categoryItemModal,
+    required this.searchEmptyInfoModal,
+    required this.loadingDataModal,
     required this.globalSettings,
   });
 }
@@ -855,6 +863,44 @@ class CategoryItemModalDetails {
     required this.selectDataController,
     required this.isSelected,
     required this.onTapSingleItemCategory,
+    required this.globalSettings,
+  });
+}
+
+typedef LoadingDataOverlayBuilder = Widget Function(
+  /// [context] is a [BuildContext] that will be used to build your own category item modal.
+  BuildContext context,
+
+  /// [loadingDataOverlayDetails] is a [LoadingDataOverlayDetails] that will be used to build your own category item modal.
+  LoadingDataOverlayDetails loadingDataOverlayDetails,
+);
+
+class LoadingDataOverlayDetails {
+  /// This is a [GlobalSettings] that will be used to get the global settings.
+  final GlobalSettings globalSettings;
+
+  /// Creating an argument constructor of [LoadingDataOverlayDetails] class.
+  /// Remember: You don't need use all of the parameters.
+  const LoadingDataOverlayDetails({
+    required this.globalSettings,
+  });
+}
+
+typedef LoadingDataModalBuilder = Widget Function(
+  /// [context] is a [BuildContext] that will be used to build your own category item modal.
+  BuildContext context,
+
+  /// [loadingDataModalDetails] is a [LoadingDataModalDetails] that will be used to build your own category item modal.
+  LoadingDataModalDetails loadingDataModalDetails,
+);
+
+class LoadingDataModalDetails {
+  /// This is a [GlobalSettings] that will be used to get the global settings.
+  final GlobalSettings globalSettings;
+
+  /// Creating an argument constructor of [LoadingDataOverlayDetails] class.
+  /// Remember: You don't need use all of the parameters.
+  const LoadingDataModalDetails({
     required this.globalSettings,
   });
 }

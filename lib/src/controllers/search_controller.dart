@@ -4,7 +4,8 @@ import 'package:select2dot1/src/models/single_item_category_model.dart';
 
 /// SearchController is a class that will be used to search data.
 class SearchController extends ChangeNotifier {
-  int oldLength = 0; // TODO: opisac to!.
+  /// Old length memory of search results.
+  int oldLength = 0;
 
   /// Data to search.
   /// It is required.
@@ -21,9 +22,9 @@ class SearchController extends ChangeNotifier {
   /// [data] is data to search. [data] is required.
   SearchController(this._data)
       : _results = _data.toList() // Fix pass by reference.
-        {
-          oldLength = countLength();
-        }
+  {
+    oldLength = countLength();
+  }
 
   /// Find search data results function.
   /// This function will be used to find search data results.
@@ -54,18 +55,18 @@ class SearchController extends ChangeNotifier {
       }
     }
     int newLength = countLength();
-    if(oldLength != newLength) {
+    if (oldLength != newLength) {
       notifyListeners();
     }
   }
 
-  // TODO: opisac to.
+  /// Count length of search results function.
   int countLength() {
     int length = 0;
     for (var category in _results) {
       length += category.singleItemCategoryList.length;
     }
-    
+
     return length;
   }
 }

@@ -25,6 +25,8 @@ mixin ModalController on AnimatedState {
             isSearchable: widget.isSearchable,
             searchBarModalBuilder: widget.searchBarModalBuilder,
             searchBarModalSettings: widget.searchBarModalSettings,
+            loadingDataModalBuilder: widget.loadingDataModalBuilder,
+            loadingDataModalSettings: widget.loadingDataModalSettings,
             searchEmptyInfoModalBuilder: widget.searchEmptyInfoModalBuilder,
             searchEmptyInfoModalSettings: widget.searchEmptyInfoModalSettings,
             listDataViewModalBuilder: widget.listDataViewModalBuilder,

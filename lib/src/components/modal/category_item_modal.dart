@@ -210,7 +210,7 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
   }
 
   void _selectDataListener() {
-    if(isSelected == _isSelected()) return;
+    if (isSelected == _isSelected()) return;
 
     if (mounted) {
       setState(() {
