@@ -38,8 +38,10 @@ Author site: https://romanjrdykyj.site
     - [Component Pillbox Configuration 4](#component-pillbox-configuration-4)
     - [Component Dropdown Overlay Configuration 1](#component-dropdown-overlay-configuration-1)
     - [Component Dropdown Overlay Configuration 2](#component-dropdown-overlay-configuration-2)
+    - [Component Dropdown Overlay Configuration 3](#component-dropdown-overlay-configuration-3)
     - [Component Dropdown Modal Configuration 1](#component-dropdown-modal-configuration-1)
     - [Component Dropdown Modal Configuration 2](#component-dropdown-modal-configuration-2)
+    - [Component Dropdown Modal Configuration 3](#component-dropdown-modal-configuration-3)
   - [TreeView Components with Settings](#tree-view-components-with-settings)
 - [Customization](#customization)
   - [By Settings](#by-settings)
@@ -213,7 +215,19 @@ ________________________________________________________________________________
 
 1. DropdownOverlay, DropdownContentOverlay
 2. SearchBarOverlay
-3. SearchEmptyOverlay
+3. ListDataViewOverlay
+4. SearchEmptyOverlay
+
+____________________________________________________________________________________________
+
+#### **Component Dropdown Overlay Configuration 3**
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_3.png)
+
+1. DropdownOverlay, DropdownContentOverlay
+2. SearchBarOverlay
+3. ListDataViewOverlay
+4. LoadingDataOverlay
 
 ____________________________________________________________________________________________
 
@@ -239,7 +253,21 @@ ________________________________________________________________________________
 2. TitleModal
 3. ButtonModal
 4. SearchBarModal
-5. SearchEmptyModal
+5. ListDataViewModal
+6. SearchEmptyModal
+
+____________________________________________________________________________________________
+
+#### **Component Dropdown Modal Configuration 3**
+
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_3.png)
+
+1. showModalBottomSheet, DropdownModal, DropdownContentModal
+2. TitleModal
+3. ButtonModal
+4. SearchBarModal
+5. ListDataViewModal
+6. LoadingDataModal
 
 ____________________________________________________________________________________________
 
