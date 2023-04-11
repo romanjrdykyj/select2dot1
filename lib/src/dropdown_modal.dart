@@ -7,12 +7,13 @@ import 'package:select2dot1/src/settings/modal/category_name_modal_settings.dart
 import 'package:select2dot1/src/settings/modal/done_button_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/dropdown_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/list_data_view_modal_settings.dart';
+import 'package:select2dot1/src/settings/modal/loading_data_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_bar_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/search_empty_info_modal_settings.dart';
 import 'package:select2dot1/src/settings/modal/title_modal_settings.dart';
 import 'package:select2dot1/src/utils/event_args.dart';
 
-class DropdownModal extends StatefulWidget {
+class DropdownModal extends StatelessWidget {
   final SelectDataController selectDataController;
   final DropdownContentModalBuilder? dropdownContentModalBuilder;
   final DropdownModalSettings dropdownModalSettings;
@@ -24,6 +25,8 @@ class DropdownModal extends StatefulWidget {
   final bool isSearchable;
   final SearchBarModalBuilder? searchBarModalBuilder;
   final SearchBarModalSettings searchBarModalSettings;
+  final LoadingDataModalBuilder? loadingDataModalBuilder;
+  final LoadingDataModalSettings loadingDataModalSettings;
   final SearchEmptyInfoModalBuilder? searchEmptyInfoModalBuilder;
   final SearchEmptyInfoModalSettings searchEmptyInfoModalSettings;
   final ListDataViewModalBuilder? listDataViewModalBuilder;
@@ -46,6 +49,8 @@ class DropdownModal extends StatefulWidget {
     required this.isSearchable,
     required this.searchBarModalBuilder,
     required this.searchBarModalSettings,
+    required this.loadingDataModalBuilder,
+    required this.loadingDataModalSettings,
     required this.searchEmptyInfoModalBuilder,
     required this.searchEmptyInfoModalSettings,
     required this.listDataViewModalBuilder,
@@ -58,64 +63,41 @@ class DropdownModal extends StatefulWidget {
   });
 
   @override
-  State<DropdownModal> createState() => _DropdownModalState();
-}
-
-class _DropdownModalState extends State<DropdownModal> {
-  @override
-  void initState() {
-    super.initState();
-    widget.selectDataController.addListener(_refreshState);
-  }
-
-  @override
-  void dispose() {
-    widget.selectDataController.removeListener(_refreshState);
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-      initialChildSize: widget.dropdownModalSettings.initialChildSize,
-      minChildSize: widget.dropdownModalSettings.minChildSize,
-      maxChildSize: widget.dropdownModalSettings.maxChildSize,
+      initialChildSize: dropdownModalSettings.initialChildSize,
+      minChildSize: dropdownModalSettings.minChildSize,
+      maxChildSize: dropdownModalSettings.maxChildSize,
       expand: false,
       builder: (BuildContext context, ScrollController scrollController) {
         return Material(
           color: Colors.transparent,
           child: DropdownContentModal(
-            selectDataController: widget.selectDataController,
-            dropdownContentModalBuilder: widget.dropdownContentModalBuilder,
-            dropdownModalSettings: widget.dropdownModalSettings,
-            titleModalBuilder: widget.titleModalBuilder,
-            titleModalSettings: widget.titleModalSettings,
-            doneButtonModalBuilder: widget.doneButtonModalBuilder,
-            doneButtonModalSettings: widget.doneButtonModalSettings,
-            isSearchable: widget.isSearchable,
-            searchBarModalBuilder: widget.searchBarModalBuilder,
-            searchBarModalSettings: widget.searchBarModalSettings,
-            searchEmptyInfoModalBuilder: widget.searchEmptyInfoModalBuilder,
-            searchEmptyInfoModalSettings: widget.searchEmptyInfoModalSettings,
+            selectDataController: selectDataController,
+            dropdownContentModalBuilder: dropdownContentModalBuilder,
+            dropdownModalSettings: dropdownModalSettings,
+            titleModalBuilder: titleModalBuilder,
+            titleModalSettings: titleModalSettings,
+            doneButtonModalBuilder: doneButtonModalBuilder,
+            doneButtonModalSettings: doneButtonModalSettings,
+            isSearchable: isSearchable,
+            searchBarModalBuilder: searchBarModalBuilder,
+            searchBarModalSettings: searchBarModalSettings,
+            loadingDataModalBuilder: loadingDataModalBuilder,
+            loadingDataModalSettings: loadingDataModalSettings,
+            searchEmptyInfoModalBuilder: searchEmptyInfoModalBuilder,
+            searchEmptyInfoModalSettings: searchEmptyInfoModalSettings,
             scrollController: scrollController,
-            listDataViewModalBuilder: widget.listDataViewModalBuilder,
-            listDataViewModalSettings: widget.listDataViewModalSettings,
-            categoryItemModalBuilder: widget.categoryItemModalBuilder,
-            categoryItemModalSettings: widget.categoryItemModalSettings,
-            categoryNameModalBuilder: widget.categoryNameModalBuilder,
-            categoryNameModalSettings: widget.categoryNameModalSettings,
-            globalSettings: widget.globalSettings,
+            listDataViewModalBuilder: listDataViewModalBuilder,
+            listDataViewModalSettings: listDataViewModalSettings,
+            categoryItemModalBuilder: categoryItemModalBuilder,
+            categoryItemModalSettings: categoryItemModalSettings,
+            categoryNameModalBuilder: categoryNameModalBuilder,
+            categoryNameModalSettings: categoryNameModalSettings,
+            globalSettings: globalSettings,
           ),
         );
       },
     );
-  }
-
-  void _refreshState() {
-    if (mounted) {
-      // It's just call setState!
-      // ignore: no-empty-block
-      setState(() {});
-    }
   }
 }

@@ -14,6 +14,10 @@ class SearchEmptyInfoOverlaySettings {
   /// Default value is [EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0)].
   final EdgeInsetsGeometry? padding;
 
+  /// The main axis alignment of the search empty info of dropdown content in overlay mode.
+  /// Default value is [MainAxisAlignment.center].
+  final MainAxisAlignment rowMainAxisAlignment;
+
   /// Default text style of the search empty info of dropdown content in overlay mode.
   static const defaultTextStyle = TextStyle(
     fontSize: 16,
@@ -25,5 +29,6 @@ class SearchEmptyInfoOverlaySettings {
     this.text = 'No results found',
     this.textStyle = defaultTextStyle,
     this.padding = const EdgeInsets.symmetric(horizontal: 12.0, vertical: 10.0),
+    this.rowMainAxisAlignment = MainAxisAlignment.center,
   });
 }

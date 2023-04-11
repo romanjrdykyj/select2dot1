@@ -43,7 +43,7 @@ class _PillboxTitleState extends State<PillboxTitle> {
   @override
   Widget build(BuildContext context) {
     if (widget.pillboxTitleBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.pillboxTitleBuilder!(
         context,
@@ -64,7 +64,7 @@ class _PillboxTitleState extends State<PillboxTitle> {
     return Container(
       padding: widget.pillboxTitleSettings.titlePadding,
       child: Text(
-        // This can't be null anyways
+        // This can't be null anyways.
         // ignore: avoid-non-null-assertion
         widget.pillboxTitleSettings.title!,
         style: _getTitleTextStyle(),
@@ -104,7 +104,7 @@ class _PillboxTitleState extends State<PillboxTitle> {
 
     if (mounted) {
       setState(() {
-        // it cant be null anyways.
+        // It cant be null anyways.
         // ignore: avoid-non-null-assertion
         isFocus = widget.isVisibleOvarlay!.value;
       });

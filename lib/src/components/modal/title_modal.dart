@@ -18,7 +18,7 @@ class TitleModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (titleModalBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return titleModalBuilder!(
         context,
@@ -35,7 +35,7 @@ class TitleModal extends StatelessWidget {
     return Container(
       padding: titleModalSettings.titlePadding,
       child: Text(
-        // It can be null anyways
+        // It can be null anyways.
         // ignore: avoid-non-null-assertion
         titleModalSettings.title!,
         overflow: titleModalSettings.titleOverflow,

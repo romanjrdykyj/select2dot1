@@ -31,10 +31,16 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
   @override
   void initState() {
     super.initState();
-    if (widget.selectDataController.selectedList
-        .contains(widget.singleItemCategory)) {
-      isSelected = true;
-    }
+    widget.selectDataController.addListener(_selectDataListener);
+
+    isSelected = _isSelected();
+  }
+
+  @override
+  void dispose() {
+    widget.selectDataController.removeListener(_selectDataListener);
+
+    super.dispose();
   }
 
   @override
@@ -42,7 +48,7 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
     isSelected = _isSelected();
 
     if (widget.categoryItemModalBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.categoryItemModalBuilder!(
         context,
@@ -112,7 +118,7 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
                         padding:
                             widget.categoryItemModalSettings.extraInfoPadding,
                         child: Text(
-                          // This can't be null anyways
+                          // This can't be null anyways.
                           // ignore: avoid-non-null-assertion
                           widget.singleItemCategory.extraInfoSingleItem!,
                           overflow: widget
@@ -201,5 +207,15 @@ class _CategoryItemModalState extends State<CategoryItemModal> {
     }
 
     return false;
+  }
+
+  void _selectDataListener() {
+    if (isSelected == _isSelected()) return;
+
+    if (mounted) {
+      setState(() {
+        isSelected = _isSelected();
+      });
+    }
   }
 }

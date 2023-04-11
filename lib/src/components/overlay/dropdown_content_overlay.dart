@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:select2dot1/src/components/overlay/list_data_view_overlay.dart';
 import 'package:select2dot1/src/components/overlay/search_bar_overlay.dart';
-import 'package:select2dot1/src/components/overlay/search_empty_info_overlay.dart';
 import 'package:select2dot1/src/controllers/search_controller.dart';
 import 'package:select2dot1/src/controllers/select_data_controller.dart';
 import 'package:select2dot1/src/settings/global_settings.dart';
@@ -10,6 +9,7 @@ import 'package:select2dot1/src/settings/overlay/category_item_overlay_settings.
 import 'package:select2dot1/src/settings/overlay/category_name_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/dropdown_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/list_data_view_overlay_settings.dart';
+import 'package:select2dot1/src/settings/overlay/loading_data_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_bar_overlay_settings.dart';
 import 'package:select2dot1/src/settings/overlay/search_empty_info_overlay_settings.dart';
 import 'package:select2dot1/src/utils/event_args.dart';
@@ -25,6 +25,8 @@ class DropdownContentOverlay extends StatefulWidget {
   final bool isSearchable;
   final SearchBarOverlayBuilder? searchBarOverlayBuilder;
   final SearchBarOverlaySettings searchBarOverlaySettings;
+  final LoadingDataOverlayBuilder? loadingDataOverlayBuilder;
+  final LoadingDataOverlaySettings loadingDataOverlaySettings;
   final SearchEmptyInfoOverlayBuilder? searchEmptyInfoOverlayBuilder;
   final SearchEmptyInfoOverlaySettings searchEmptyInfoOverlaySettings;
   final ListDataViewOverlayBuilder? listDataViewOverlayBuilder;
@@ -47,6 +49,8 @@ class DropdownContentOverlay extends StatefulWidget {
     required this.isSearchable,
     required this.searchBarOverlayBuilder,
     required this.searchBarOverlaySettings,
+    required this.loadingDataOverlayBuilder,
+    required this.loadingDataOverlaySettings,
     required this.searchEmptyInfoOverlayBuilder,
     required this.searchEmptyInfoOverlaySettings,
     required this.listDataViewOverlayBuilder,
@@ -67,7 +71,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
   final keySearchBarOverlay = GlobalKey();
   Size sizeSearchBarOverlay = const Size(0, 0);
 
-  // It's good :D
+  // It's good :D.
   // ignore: avoid-late-keyword
   late final SearchController searchController;
 
@@ -78,21 +82,19 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
     if (widget.dropdownContentOverlayBuilder == null) {
       _calculateSearchBarOverlaySize();
     }
-    searchController.addListener(_refreshState);
   }
 
   @override
   void dispose() {
-    super.dispose();
-
-    searchController.removeListener(_refreshState);
     searchController.dispose();
+
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     if (widget.dropdownContentOverlayBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.dropdownContentOverlayBuilder!(
         context,
@@ -104,7 +106,6 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
           appBarMaxHeight: widget.appBarMaxHeight,
           searchController: searchController,
           searchBarOverlay: _searchBarOverlay,
-          searchEmptyInfoOverlay: _searchEmptyInfoOverlay,
           listDataViewOverlay: _listDataViewOverlay,
           globalSettings: widget.globalSettings,
         ),
@@ -120,7 +121,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           NotificationListener<SizeChangedLayoutNotification>(
-            // A little less pedantic style - its okey
+            // A little less pedantic style - its okey.
             // ignore: prefer-extracting-callbacks
             onNotification: (notification) {
               _calculateSearchBarOverlaySize();
@@ -143,36 +144,24 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
               minHeight: widget.dropdownOverlaySettings.minHeight,
               maxHeight: _calculateMaxHeight(),
             ),
-            child: searchController.getResults.isEmpty
-                ? SearchEmptyInfoOverlay(
-                    searchEmptyInfoOverlayBuilder:
-                        widget.searchEmptyInfoOverlayBuilder,
-                    searchEmptyInfoOverlaySettings:
-                        widget.searchEmptyInfoOverlaySettings,
-                    globalSettings: widget.globalSettings,
-                  )
-                : ListDataViewOverlay(
-                    searchController: searchController,
-                    selectDataController: widget.selectDataController,
-                    overlayHide: widget.overlayHide,
-                    searchEmptyInfoOverlayBuilder:
-                        widget.searchEmptyInfoOverlayBuilder,
-                    searchEmptyInfoOverlaySettings:
-                        widget.searchEmptyInfoOverlaySettings,
-                    listDataViewOverlayBuilder:
-                        widget.listDataViewOverlayBuilder,
-                    listDataViewOverlaySettings:
-                        widget.listDataViewOverlaySettings,
-                    categoryNameOverlayBuilder:
-                        widget.categoryNameOverlayBuilder,
-                    categoryNameOverlaySettings:
-                        widget.categoryNameOverlaySettings,
-                    categoryItemOverlayBuilder:
-                        widget.categoryItemOverlayBuilder,
-                    categoryItemOverlaySettings:
-                        widget.categoryItemOverlaySettings,
-                    globalSettings: widget.globalSettings,
-                  ),
+            child: ListDataViewOverlay(
+              searchController: searchController,
+              selectDataController: widget.selectDataController,
+              overlayHide: widget.overlayHide,
+              loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
+              loadingDataOverlaySettings: widget.loadingDataOverlaySettings,
+              searchEmptyInfoOverlayBuilder:
+                  widget.searchEmptyInfoOverlayBuilder,
+              searchEmptyInfoOverlaySettings:
+                  widget.searchEmptyInfoOverlaySettings,
+              listDataViewOverlayBuilder: widget.listDataViewOverlayBuilder,
+              listDataViewOverlaySettings: widget.listDataViewOverlaySettings,
+              categoryNameOverlayBuilder: widget.categoryNameOverlayBuilder,
+              categoryNameOverlaySettings: widget.categoryNameOverlaySettings,
+              categoryItemOverlayBuilder: widget.categoryItemOverlayBuilder,
+              categoryItemOverlaySettings: widget.categoryItemOverlaySettings,
+              globalSettings: widget.globalSettings,
+            ),
           ),
         ],
       ),
@@ -201,7 +190,7 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
         boxShadow: [
           BoxShadow(
             color: widget.globalSettings.inActiveColor,
-            // its constant.
+            // Its constant.
             // ignore: no-magic-number
             blurRadius: 2.0,
             offset: const Offset(0, 2),
@@ -249,14 +238,6 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
     }
   }
 
-  void _refreshState() {
-    if (mounted) {
-      // It's just call setState!
-      // ignore: no-empty-block
-      setState(() {});
-    }
-  }
-
   Widget _searchBarOverlay() => SearchBarOverlay(
         searchController: searchController,
         isSearchable: widget.isSearchable,
@@ -265,16 +246,12 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
         globalSettings: widget.globalSettings,
       );
 
-  Widget _searchEmptyInfoOverlay() => SearchEmptyInfoOverlay(
-        searchEmptyInfoOverlayBuilder: widget.searchEmptyInfoOverlayBuilder,
-        searchEmptyInfoOverlaySettings: widget.searchEmptyInfoOverlaySettings,
-        globalSettings: widget.globalSettings,
-      );
-
   Widget _listDataViewOverlay() => ListDataViewOverlay(
         searchController: searchController,
         selectDataController: widget.selectDataController,
         overlayHide: widget.overlayHide,
+        loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
+        loadingDataOverlaySettings: widget.loadingDataOverlaySettings,
         searchEmptyInfoOverlayBuilder: widget.searchEmptyInfoOverlayBuilder,
         searchEmptyInfoOverlaySettings: widget.searchEmptyInfoOverlaySettings,
         listDataViewOverlayBuilder: widget.listDataViewOverlayBuilder,

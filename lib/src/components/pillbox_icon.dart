@@ -42,7 +42,7 @@ class _PillboxIconState extends State<PillboxIcon> {
   @override
   Widget build(BuildContext context) {
     if (widget.pillboxIconBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.pillboxIconBuilder!(
         context,
@@ -92,7 +92,7 @@ class _PillboxIconState extends State<PillboxIcon> {
 
     if (mounted) {
       setState(() {
-        // it cant be null anyways.
+        // It cant be null anyways.
         // ignore: avoid-non-null-assertion
         isFocus = widget.isVisibleOvarlay!.value;
       });

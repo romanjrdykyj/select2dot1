@@ -18,7 +18,7 @@ class SearchEmptyInfoOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (searchEmptyInfoOverlayBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return searchEmptyInfoOverlayBuilder!(
         context,
@@ -28,12 +28,17 @@ class SearchEmptyInfoOverlay extends StatelessWidget {
       );
     }
 
-    return Container(
-      padding: searchEmptyInfoOverlaySettings.padding,
-      child: Text(
-        searchEmptyInfoOverlaySettings.text,
-        style: _getTextStyle(),
-      ),
+    return Row(
+      mainAxisAlignment: searchEmptyInfoOverlaySettings.rowMainAxisAlignment,
+      children: [
+        Container(
+          padding: searchEmptyInfoOverlaySettings.padding,
+          child: Text(
+            searchEmptyInfoOverlaySettings.text,
+            style: _getTextStyle(),
+          ),
+        ),
+      ],
     );
   }
 

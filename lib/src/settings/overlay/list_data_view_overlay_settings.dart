@@ -45,6 +45,18 @@ class ListDataViewOverlaySettings {
   /// Default value is [null].
   final OutlinedBorder? shapeScrollbar;
 
+  /// Minimum duration of loading data.
+  /// Default value is [500 milliseconds].
+  final Duration minLoadDuration;
+
+  /// Duration of animation of the list data view of dropdown content in overlay mode.
+  /// Default value is [300 milliseconds].
+  final Duration durationAnimationListDataView;
+
+  /// Curve of animation of the list data view of dropdown content in overlay mode.
+  /// Default value is [Curves.easeInOutQuart].
+  final Curve curveAnimationListDataView;
+
   /// Creating an argument constructor of [ListDataViewOverlaySettings] class.
   const ListDataViewOverlaySettings({
     this.margin,
@@ -57,5 +69,8 @@ class ListDataViewOverlaySettings {
     this.radiusScrollbar = const Radius.circular(5.0),
     this.thicknessScrollbar,
     this.shapeScrollbar,
+    this.minLoadDuration = const Duration(milliseconds: 500),
+    this.durationAnimationListDataView = const Duration(milliseconds: 300),
+    this.curveAnimationListDataView = Curves.easeInOutQuart,
   });
 }

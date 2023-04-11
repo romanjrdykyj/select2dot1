@@ -18,7 +18,7 @@ class SelectEmptyInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (selectEmptyInfoBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return selectEmptyInfoBuilder!(
         context,

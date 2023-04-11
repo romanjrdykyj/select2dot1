@@ -41,13 +41,13 @@ class DropdownModalSettings {
 
   /// Creating an argument constructor of [DropdownModalSettings] class.
   const DropdownModalSettings({
-    // its specific param for DraggableScrollableSheet
+    // Its specific param for DraggableScrollableSheet.
     // ignore: no-magic-number
     this.initialChildSize = 0.7,
-    // its specific param for DraggableScrollableSheet
+    // Its specific param for DraggableScrollableSheet.
     // ignore: no-magic-number
     this.minChildSize = 0.2,
-    // its specific param for DraggableScrollableSheet
+    // Its specific param for DraggableScrollableSheet.
     // ignore: no-magic-number
     this.maxChildSize = 0.9,
     this.shape = kShapeBorder,

@@ -105,7 +105,7 @@ class PillboxContent extends StatelessWidget {
     );
 
     return CompositedTransformTarget(
-      // it cant be null because of assert above
+      // It cant be null because of assert above.
       // ignore: avoid-non-null-assertion
       link: pillboxLayerLink!,
       child: selectDataController.isMultiSelect

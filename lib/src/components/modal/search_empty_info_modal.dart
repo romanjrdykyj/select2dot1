@@ -18,7 +18,7 @@ class SearchEmptyInfoModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (searchEmptyInfoModalBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return searchEmptyInfoModalBuilder!(
         context,

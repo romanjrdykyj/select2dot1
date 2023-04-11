@@ -76,10 +76,10 @@ class SelectSingleSettings {
     this.extraInfoPadding,
     this.showAvatar = true,
     this.avatarMargin = const EdgeInsets.only(right: 5.0),
-    // its specyfic parameters
+    // Its specyfic parameters.
     // ignore: no-magic-number
     this.avatarMaxWidth = 32,
-    // its specyfic parameters
+    // Its specyfic parameters.
     // ignore: no-magic-number
     this.avatarMaxHeight = 32,
   });

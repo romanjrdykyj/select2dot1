@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:select2dot1/src/utils/animated_state.dart';
 
 mixin OverlayController on AnimatedState {
-  // it has to be late.
+  // It has to be late.
   // ignore: avoid-late-keyword
   late final OverlayEntry? _overlayEntry;
 
@@ -38,14 +38,14 @@ mixin OverlayController on AnimatedState {
       assert(_overlay != null);
 
       if (_barrierOverlay != null) {
-        // This can't be null anyways
+        // This can't be null anyways.
         // ignore:avoid-non-null-assertion
         _overlay?.insert(_barrierOverlay!);
         _isVisibleOvarlay.value = true;
       }
 
       if (_dropdownOverlay != null) {
-        // This can't be null anyways
+        // This can't be null anyways.
         // ignore:avoid-non-null-assertion
         _overlay?.insert(_dropdownOverlay!);
         // I dont have to get return value from this function.
@@ -75,10 +75,10 @@ mixin OverlayController on AnimatedState {
     if (_overlay == null) {
       return;
     }
-    // This can't be null, assert is above
+    // This can't be null, assert is above.
     // ignore: avoid-non-null-assertion
     if (_overlay!.mounted) {
-      // Just refresh
+      // Just refresh.
       // ignore: no-empty-block
       _overlay?.setState(() {});
     }

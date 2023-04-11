@@ -53,7 +53,7 @@ class _SearchBarModalState extends State<SearchBarModal> {
   @override
   Widget build(BuildContext context) {
     if (widget.searchBarModalBuilder != null && widget.isSearchable) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.searchBarModalBuilder!(
         context,
@@ -110,7 +110,7 @@ class _SearchBarModalState extends State<SearchBarModal> {
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: widget.globalSettings.mainColor,
-            // its specyfic parameters.
+            // Its specyfic parameters.
             // ignore: no-magic-number
             width: 2,
           ),
@@ -136,7 +136,7 @@ class _SearchBarModalState extends State<SearchBarModal> {
     if (inputDecoration.hintStyle == null) {
       inputDecoration = inputDecoration.copyWith(
         hintStyle: TextStyle(
-          // its const.
+          // Its const.
           // ignore: no-magic-number
           fontSize: 16,
           fontWeight: FontWeight.w400,
@@ -184,7 +184,7 @@ class _SearchBarModalState extends State<SearchBarModal> {
                 BoxShadow(
                   color: widget.globalSettings.mainColor,
                   spreadRadius: 1.0,
-                  // its specyfic parameters.
+                  // Its specyfic parameters.
                   // ignore: no-magic-number
                   blurRadius: 3.0,
                 ),

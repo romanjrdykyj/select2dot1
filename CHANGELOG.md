@@ -1,3 +1,7 @@
+## 2.0.0
+
+* performance improvement (change ListDataView)
+
 ## 1.0.2
 
 * add animationBuilder to DropdownOverlay (available in DropdownOverlaySeettings)

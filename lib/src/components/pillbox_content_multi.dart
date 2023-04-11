@@ -82,7 +82,7 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
   @override
   Widget build(BuildContext context) {
     if (widget.pillboxContentMultiBuilder != null) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.pillboxContentMultiBuilder!(
         context,
@@ -231,7 +231,7 @@ class _PillboxContentMultiState extends State<PillboxContentMulti> {
 
     if (mounted) {
       setState(() {
-        // it cant be null anyways.
+        // It cant be null anyways.
         // ignore: avoid-non-null-assertion
         isFocus = widget.isVisibleOvarlay!.value;
       });

@@ -54,7 +54,7 @@ class _SearchBarOverlayState extends State<SearchBarOverlay> {
   @override
   Widget build(BuildContext context) {
     if (widget.searchBarOverlayBuilder != null && widget.isSearchable) {
-      // This can't be null anyways
+      // This can't be null anyways.
       // ignore: avoid-non-null-assertion
       return widget.searchBarOverlayBuilder!(
         context,
@@ -129,7 +129,7 @@ class _SearchBarOverlayState extends State<SearchBarOverlay> {
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
             color: widget.globalSettings.mainColor,
-            // its specyfic parameters.
+            // Its specyfic parameters.
             // ignore: no-magic-number
             width: 2,
           ),
@@ -156,7 +156,7 @@ class _SearchBarOverlayState extends State<SearchBarOverlay> {
     if (inputDecoration.hintStyle == null) {
       inputDecoration = inputDecoration.copyWith(
         hintStyle: TextStyle(
-          // its const.
+          // Its const.
           // ignore: no-magic-number
           fontSize: 16,
           fontWeight: FontWeight.w100,
@@ -204,7 +204,7 @@ class _SearchBarOverlayState extends State<SearchBarOverlay> {
                 BoxShadow(
                   color: widget.globalSettings.mainColor,
                   spreadRadius: 1.0,
-                  // its specyfic parameters.
+                  // Its specyfic parameters.
                   // ignore: no-magic-number
                   blurRadius: 3.0,
                 ),
@@ -239,7 +239,7 @@ class ClearAction extends Action<ClearIntent> {
   ClearAction(this.searchBarOverlayController);
 
   @override
-  // its nessasary to override this method.
+  // Its nessasary to override this method.
   // ignore: no-object-declaration
   Object? invoke(covariant ClearIntent intent) {
     searchBarOverlayController.clear();
