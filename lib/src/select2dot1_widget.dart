@@ -315,6 +315,9 @@ class Select2dot1 extends StatefulWidget {
 
 class _Select2dot1State extends AnimatedState
     with OverlayController, ModalController {
+  // Its ok.
+  //ignore: avoid-late-keyword
+  late final SelectDataController selectDataController;
   final bool kIsMobile = defaultTargetPlatform == TargetPlatform.iOS ||
       defaultTargetPlatform == TargetPlatform.android;
 
@@ -327,8 +330,9 @@ class _Select2dot1State extends AnimatedState
     super.initState();
     double? appBarMaxHeightTemp = Scaffold.maybeOf(context)?.appBarMaxHeight;
 
+    selectDataController = widget.selectDataController;
     if (widget.onChanged != null) {
-      widget.selectDataController.addListener(_dataOutFromPackage);
+      selectDataController.addListener(_dataOutFromPackage);
     }
 
     if (!kIsMobile) {
@@ -336,7 +340,7 @@ class _Select2dot1State extends AnimatedState
 
       setOverlyEntry = OverlayEntry(
         builder: (context) => DropdownOverlay(
-          selectDataController: widget.selectDataController,
+          selectDataController: selectDataController,
           overlayHide: hideOverlay,
           animationController: getAnimationController,
           layerLink: layerLink,
@@ -367,16 +371,24 @@ class _Select2dot1State extends AnimatedState
   @override
   void dispose() {
     if (widget.onChanged != null) {
-      widget.selectDataController.removeListener(_dataOutFromPackage);
+      selectDataController.removeListener(_dataOutFromPackage);
     }
     super.dispose();
   }
 
   @override
+  void didUpdateWidget(covariant Select2dot1 oldWidget) {
+    selectDataController.copyWith(widget.selectDataController);
+    super.didUpdateWidget(oldWidget);
+  }
+
+
+
+  @override
   Widget build(BuildContext context) {
     if (kIsMobile) {
       return Pillbox.modal(
-        selectDataController: widget.selectDataController,
+        selectDataController: selectDataController,
         onTap: () => showModal(context),
         isVisibleOverlay: getIsVisibleOvarlay,
         pillboxTitleBuilder: widget.pillboxTitleBuilder,
@@ -410,7 +422,7 @@ class _Select2dot1State extends AnimatedState
       },
       child: SizeChangedLayoutNotifier(
         child: Pillbox.overlay(
-          selectDataController: widget.selectDataController,
+          selectDataController: selectDataController,
           onTap: showOverlay,
           isVisibleOverlay: getIsVisibleOvarlay,
           pillboxLayerLink: layerLink,
@@ -442,7 +454,7 @@ class _Select2dot1State extends AnimatedState
       // This can't be null anyways.
       // ignore:avoid-non-null-assertion
       widget.onChanged!(
-        widget.selectDataController.selectedList,
+        selectDataController.selectedList,
       );
     }
   }

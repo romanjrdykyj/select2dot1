@@ -6,16 +6,16 @@ import 'package:select2dot1/src/models/single_item_category_model.dart';
 class SelectDataController extends ChangeNotifier {
   /// All data pass to the package.
   /// It is required.
-  final List<SingleCategoryModel> data;
+  List<SingleCategoryModel> data;
 
   /// This is initial selected data.
   /// This data will be add to the [selectedList] when the class is created.
   /// If [isMultiSelect] is false, must be null or length <= 1.
-  final List<SingleItemCategoryModel>? initSelected;
+  List<SingleItemCategoryModel>? initSelected;
 
   /// This is a boolean to set multi select or single select.
   /// Default is true.
-  final bool isMultiSelect;
+  bool isMultiSelect;
 
   /// This is a list of [SingleItemCategoryModel] selected items.
   final List<SingleItemCategoryModel> selectedList = [];
@@ -35,6 +35,20 @@ class SelectDataController extends ChangeNotifier {
     addGroupSelectChip(initSelected);
   }
 
+
+  void copyWith(SelectDataController selectDataController) {
+    data = selectDataController.data;
+    isMultiSelect = selectDataController.isMultiSelect;
+    initSelected = selectDataController.initSelected;
+    selectedList.clear();
+    if(initSelected != null) {
+      addGroupSelectChip(initSelected);
+    }
+    notifyListeners();
+  }
+
+  
+
   /// Function to clear all selected items.
   void clearSelectedList() {
     selectedList.clear();
@@ -46,6 +60,10 @@ class SelectDataController extends ChangeNotifier {
   void addGroupSelectChip(List<SingleItemCategoryModel>? singleItemList) {
     if (singleItemList == null) {
       return;
+    }
+
+    if(!isMultiSelect) {
+      setSingleSelect(singleItemList.first);
     }
 
     for (var singleItem in singleItemList) {
