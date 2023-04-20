@@ -1,6 +1,8 @@
 // NOTE: Select2dot1 is a export file for the library.
 // ignore_for_file: prefer-match-file-name
 
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -378,11 +380,18 @@ class _Select2dot1State extends AnimatedState
 
   @override
   void didUpdateWidget(covariant Select2dot1 oldWidget) {
-    selectDataController.copyWith(widget.selectDataController);
+    if (identical(
+      oldWidget.selectDataController,
+      widget.selectDataController,
+    )) {
+      log(
+        'Warning: Dont create SelectDataController in build! On more info see SelectDataController section on pub.dev',
+        name: 'Select2dot1Package',
+      );
+      selectDataController.copyWith(widget.selectDataController);
+    }
     super.didUpdateWidget(oldWidget);
   }
-
-
 
   @override
   Widget build(BuildContext context) {

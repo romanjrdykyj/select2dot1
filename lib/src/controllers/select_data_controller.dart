@@ -35,7 +35,7 @@ class SelectDataController extends ChangeNotifier {
     addGroupSelectChip(initSelected);
   }
 
-
+  /// Function to set an SelectDataController to another SelectDataController with the same reference.
   void copyWith(SelectDataController selectDataController) {
     data = selectDataController.data;
     isMultiSelect = selectDataController.isMultiSelect;
@@ -46,8 +46,6 @@ class SelectDataController extends ChangeNotifier {
     }
     notifyListeners();
   }
-
-  
 
   /// Function to clear all selected items.
   void clearSelectedList() {
