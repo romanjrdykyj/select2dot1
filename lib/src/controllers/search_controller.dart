@@ -54,6 +54,7 @@ class SearchController extends ChangeNotifier {
         );
       }
     }
+
     int newLength = countLength();
     if (oldLength != newLength) {
       notifyListeners();

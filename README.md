@@ -519,6 +519,25 @@ static const List<SingleCategoryModel> exampleData = [
 
 ### SelectDataController
 
+************
+ATTENTION: **For better performance create SelectDataController as field in class not in build**
+
+```dart
+class _BasicExample1State extends State<BasicExample1> {
+  final SelectDataController selectDataController = SelectDataController(
+    data: ExampleData.exampleData1,
+  );
+
+    @override
+  Widget build(BuildContext context) {
+    // Do not create SelectDataController in build method!
+    // return Select2dot1(selectDataController: SelectDataController(data: ExampleData.exampleData1))
+    return Select2dot1(selectDataController: selectDataController);
+  } 
+}
+```
+************
+
 SelectDataController is a controller that is used to manage the data in Select2dot1 widget. You can use it to add, remove, select and deselect data. All the data that you want to display in Select2dot1 widget must be added to SelectDataController
 **Remember that when isMultiple is false, you can add only one position to initialSelectedData**.
 

@@ -1,6 +1,8 @@
 // NOTE: Select2dot1 is a export file for the library.
 // ignore_for_file: prefer-match-file-name
 
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -315,6 +317,9 @@ class Select2dot1 extends StatefulWidget {
 
 class _Select2dot1State extends AnimatedState
     with OverlayController, ModalController {
+  // Its ok.
+  //ignore: avoid-late-keyword
+  late final SelectDataController selectDataController;
   final bool kIsMobile = defaultTargetPlatform == TargetPlatform.iOS ||
       defaultTargetPlatform == TargetPlatform.android;
 
@@ -327,8 +332,9 @@ class _Select2dot1State extends AnimatedState
     super.initState();
     double? appBarMaxHeightTemp = Scaffold.maybeOf(context)?.appBarMaxHeight;
 
+    selectDataController = widget.selectDataController;
     if (widget.onChanged != null) {
-      widget.selectDataController.addListener(_dataOutFromPackage);
+      selectDataController.addListener(_dataOutFromPackage);
     }
 
     if (!kIsMobile) {
@@ -336,7 +342,7 @@ class _Select2dot1State extends AnimatedState
 
       setOverlyEntry = OverlayEntry(
         builder: (context) => DropdownOverlay(
-          selectDataController: widget.selectDataController,
+          selectDataController: selectDataController,
           overlayHide: hideOverlay,
           animationController: getAnimationController,
           layerLink: layerLink,
@@ -367,16 +373,31 @@ class _Select2dot1State extends AnimatedState
   @override
   void dispose() {
     if (widget.onChanged != null) {
-      widget.selectDataController.removeListener(_dataOutFromPackage);
+      selectDataController.removeListener(_dataOutFromPackage);
     }
     super.dispose();
+  }
+
+  @override
+  void didUpdateWidget(covariant Select2dot1 oldWidget) {
+    if (!identical(
+      oldWidget.selectDataController,
+      widget.selectDataController,
+    )) {
+      log(
+        'Warning: Do not create SelectDataController in build! For more information, see the SelectDataController section in pub.dev',
+        name: 'Select2dot1Package',
+      );
+      selectDataController.copyWith(widget.selectDataController);
+    }
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
   Widget build(BuildContext context) {
     if (kIsMobile) {
       return Pillbox.modal(
-        selectDataController: widget.selectDataController,
+        selectDataController: selectDataController,
         onTap: () => showModal(context),
         isVisibleOverlay: getIsVisibleOvarlay,
         pillboxTitleBuilder: widget.pillboxTitleBuilder,
@@ -410,7 +431,7 @@ class _Select2dot1State extends AnimatedState
       },
       child: SizeChangedLayoutNotifier(
         child: Pillbox.overlay(
-          selectDataController: widget.selectDataController,
+          selectDataController: selectDataController,
           onTap: showOverlay,
           isVisibleOverlay: getIsVisibleOvarlay,
           pillboxLayerLink: layerLink,
@@ -442,7 +463,7 @@ class _Select2dot1State extends AnimatedState
       // This can't be null anyways.
       // ignore:avoid-non-null-assertion
       widget.onChanged!(
-        widget.selectDataController.selectedList,
+        selectDataController.selectedList,
       );
     }
   }

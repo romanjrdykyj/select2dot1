@@ -20,7 +20,7 @@ class SingleItemCategoryModel {
   final Widget? avatarSingleItem;
 
   @override
-  int get hashCode => nameSingleItem.hashCode;
+  int get hashCode => nameSingleItem.hashCode ^ value.hashCode;
 
   /// Creating an argument constructor of [SingleItemCategoryModel] class.
   const SingleItemCategoryModel({
