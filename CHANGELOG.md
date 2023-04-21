@@ -1,3 +1,8 @@
+## 2.0.1
+
+* improvment SelectDataController
+* better documentation for SelectDataController
+
 ## 2.0.0
 
 * performance improvement (change ListDataView)
