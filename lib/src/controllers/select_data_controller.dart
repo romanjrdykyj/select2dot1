@@ -8,14 +8,14 @@ class SelectDataController extends ChangeNotifier {
   /// It is required.
   List<SingleCategoryModel> data;
 
-  /// This is initial selected data.
-  /// This data will be add to the [selectedList] when the class is created.
-  /// If [isMultiSelect] is false, must be null or length <= 1.
-  List<SingleItemCategoryModel>? initSelected;
-
   /// This is a boolean to set multi select or single select.
   /// Default is true.
   bool isMultiSelect;
+
+  /// This is initial selected data.
+  /// This data will be add to the [selectedList] when the class is created.
+  /// If [isMultiSelect] is false, must be null or length <= 1.
+  final List<SingleItemCategoryModel>? initSelected;
 
   /// This is a list of [SingleItemCategoryModel] selected items.
   final List<SingleItemCategoryModel> selectedList = [];
@@ -39,11 +39,6 @@ class SelectDataController extends ChangeNotifier {
   void copyWith(SelectDataController selectDataController) {
     data = selectDataController.data;
     isMultiSelect = selectDataController.isMultiSelect;
-    initSelected = selectDataController.initSelected;
-    selectedList.clear();
-    if(initSelected != null) {
-      addGroupSelectChip(initSelected);
-    }
     notifyListeners();
   }
 
@@ -60,27 +55,12 @@ class SelectDataController extends ChangeNotifier {
       return;
     }
 
-    if(!isMultiSelect) {
+    if (!isMultiSelect) {
       setSingleSelect(singleItemList.first);
     }
 
     for (var singleItem in singleItemList) {
-      if (_singeItemContainsInData(singleItem) &&
-          !_singleItemContainsInSelected(singleItem)) {
-        // Its ok.
-        // ignore: avoid-ignoring-return-values
-        data.any(
-          (element) => element.singleItemCategoryList.any((element) {
-            if (element == singleItem) {
-              selectedList.add(element);
-
-              return true;
-            }
-
-            return false;
-          }),
-        );
-      }
+      addSelectChip(singleItem);
     }
     notifyListeners();
   }
@@ -93,28 +73,8 @@ class SelectDataController extends ChangeNotifier {
     }
 
     for (var singleItem in singleItemList) {
-      if (_singeItemContainsInData(singleItem) &&
-          _singleItemContainsInSelected(singleItem)) {
-        // Its ok.
-        // ignore: avoid-ignoring-return-values
-        selectedList.remove(singleItem);
-      }
+      removeSingleSelectedChip(singleItem);
     }
-    notifyListeners();
-  }
-
-  /// Set single [SingleItemCategoryModel] to the [selectedList],
-  /// when items are in the [data] and not in the [selectedList].
-  void setSingleSelect(SingleItemCategoryModel? singleItem) {
-    if (singleItem == null) {
-      return;
-    }
-    if (!_singeItemContainsInData(singleItem)) {
-      return;
-    }
-
-    selectedList.clear();
-    selectedList.add(singleItem);
     notifyListeners();
   }
 
@@ -122,9 +82,6 @@ class SelectDataController extends ChangeNotifier {
   /// when items are in the [data] and not in the [selectedList].
   void addSelectChip(SingleItemCategoryModel? singleItem) {
     if (singleItem == null) {
-      return;
-    }
-    if (!_singeItemContainsInData(singleItem)) {
       return;
     }
 
@@ -140,9 +97,6 @@ class SelectDataController extends ChangeNotifier {
     if (singleItem == null) {
       return;
     }
-    if (!_singeItemContainsInData(singleItem)) {
-      return;
-    }
 
     if (_singleItemContainsInSelected(singleItem)) {
       // Its ok.
@@ -152,6 +106,18 @@ class SelectDataController extends ChangeNotifier {
     }
   }
 
+  /// Set single [SingleItemCategoryModel] to the [selectedList],
+  /// when items are in the [data] and not in the [selectedList].
+  void setSingleSelect(SingleItemCategoryModel? singleItem) {
+    if (singleItem == null) {
+      return;
+    }
+
+    selectedList.clear();
+    selectedList.add(singleItem);
+    notifyListeners();
+  }
+
   /// Check if the [SingleItemCategoryModel] is in the [selectedList].
   bool _singleItemContainsInSelected(SingleItemCategoryModel? singleItem) {
     if (singleItem == null) {
@@ -159,16 +125,5 @@ class SelectDataController extends ChangeNotifier {
     }
 
     return selectedList.contains(singleItem);
-  }
-
-  /// Check if the [SingleItemCategoryModel] is in the [data].
-  bool _singeItemContainsInData(SingleItemCategoryModel? singleItem) {
-    if (singleItem == null) {
-      return false;
-    }
-
-    return data.any(
-      (element) => element.singleItemCategoryList.contains(singleItem),
-    );
   }
 }

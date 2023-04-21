@@ -380,12 +380,12 @@ class _Select2dot1State extends AnimatedState
 
   @override
   void didUpdateWidget(covariant Select2dot1 oldWidget) {
-    if (identical(
+    if (!identical(
       oldWidget.selectDataController,
       widget.selectDataController,
     )) {
       log(
-        'Warning: Dont create SelectDataController in build! On more info see SelectDataController section on pub.dev',
+        'Warning: Do not create SelectDataController in build! For more information, see the SelectDataController section in pub.dev',
         name: 'Select2dot1Package',
       );
       selectDataController.copyWith(widget.selectDataController);
