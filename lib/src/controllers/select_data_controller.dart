@@ -86,7 +86,7 @@ class SelectDataController extends ChangeNotifier {
     }
 
     if (!_singleItemContainsInSelected(singleItem)) {
-      selectedList.add(singleItem);
+      selectedList.add(getSingleItemCategoryFromData(singleItem));
       notifyListeners();
     }
   }
@@ -114,7 +114,7 @@ class SelectDataController extends ChangeNotifier {
     }
 
     selectedList.clear();
-    selectedList.add(singleItem);
+    selectedList.add(getSingleItemCategoryFromData(singleItem));
     notifyListeners();
   }
 
@@ -125,5 +125,21 @@ class SelectDataController extends ChangeNotifier {
     }
 
     return selectedList.contains(singleItem);
+  }
+
+  SingleItemCategoryModel getSingleItemCategoryFromData(
+    SingleItemCategoryModel patternSingleItem,
+  ) {
+    return data
+        .firstWhere(
+          (element) =>
+              element.singleItemCategoryList.contains(patternSingleItem),
+          orElse: () => const SingleCategoryModel(singleItemCategoryList: []),
+        )
+        .singleItemCategoryList
+        .firstWhere(
+          (element) => element == patternSingleItem,
+          orElse: () => patternSingleItem,
+        );
   }
 }

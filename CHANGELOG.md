@@ -1,3 +1,7 @@
+## 2.0.2
+
+* improvment SelectDataController
+
 ## 2.0.1
 
 * improvment SelectDataController
