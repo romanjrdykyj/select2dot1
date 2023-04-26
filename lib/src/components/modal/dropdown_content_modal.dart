@@ -74,12 +74,13 @@ class DropdownContentModal extends StatefulWidget {
 class _DropdownContentModalState extends State<DropdownContentModal> {
   // It's good :D.
   // ignore: avoid-late-keyword
-  late final SearchController searchController;
+  late final SearchControllerSelect2dot1 searchController;
 
   @override
   void initState() {
     super.initState();
-    searchController = SearchController(widget.selectDataController.data);
+    searchController =
+        SearchControllerSelect2dot1(widget.selectDataController.data);
   }
 
   @override

@@ -1,3 +1,7 @@
+## 2.0.3
+
+* change name SearchController (Dart 3 Compatibility)
+
 ## 2.0.2
 
 * improvment SelectDataController

@@ -3,7 +3,9 @@ import 'package:select2dot1/src/models/single_category_model.dart';
 import 'package:select2dot1/src/models/single_item_category_model.dart';
 
 /// SearchController is a class that will be used to search data.
-class SearchController extends ChangeNotifier {
+// Its okay.
+// ignore: prefer-match-file-name
+class SearchControllerSelect2dot1 extends ChangeNotifier {
   /// Old length memory of search results.
   int oldLength = 0;
 
@@ -18,9 +20,9 @@ class SearchController extends ChangeNotifier {
   /// Getter for [_results] find by [findSearchDataResults].
   List<SingleCategoryModel> get getResults => _results;
 
-  /// Creating an argument constructor of [SearchController] class.
+  /// Creating an argument constructor of [SearchControllerSelect2dot1] class.
   /// [data] is data to search. [data] is required.
-  SearchController(this._data)
+  SearchControllerSelect2dot1(this._data)
       : _results = _data.toList() // Fix pass by reference.
   {
     oldLength = countLength();

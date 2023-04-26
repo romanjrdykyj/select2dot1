@@ -73,12 +73,13 @@ class _DropdownContentOverlayState extends State<DropdownContentOverlay> {
 
   // It's good :D.
   // ignore: avoid-late-keyword
-  late final SearchController searchController;
+  late final SearchControllerSelect2dot1 searchController;
 
   @override
   void initState() {
     super.initState();
-    searchController = SearchController(widget.selectDataController.data);
+    searchController =
+        SearchControllerSelect2dot1(widget.selectDataController.data);
     if (widget.dropdownContentOverlayBuilder == null) {
       _calculateSearchBarOverlaySize();
     }
