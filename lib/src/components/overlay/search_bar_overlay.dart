@@ -6,7 +6,7 @@ import 'package:select2dot1/src/settings/overlay/search_bar_overlay_settings.dar
 import 'package:select2dot1/src/utils/event_args.dart';
 
 class SearchBarOverlay extends StatefulWidget {
-  final SearchController searchController;
+  final SearchControllerSelect2dot1 searchController;
   final bool isSearchable;
   final SearchBarOverlayBuilder? searchBarOverlayBuilder;
   final SearchBarOverlaySettings searchBarOverlaySettings;

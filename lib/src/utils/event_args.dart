@@ -369,8 +369,8 @@ class DropdownContentOverlayDetails {
   /// This is a [double] representing the maximum height of the app bar (MaterialAppBar).
   final double? appBarMaxHeight;
 
-  /// This is a [SearchController] that will be used to search the data.
-  final SearchController searchController;
+  /// This is a [SearchControllerSelect2dot1] that will be used to search the data.
+  final SearchControllerSelect2dot1 searchController;
 
   /// This is a function returning a [Widget] of the searchBar.
   final Widget Function() searchBarOverlay;
@@ -407,8 +407,8 @@ typedef SearchBarOverlayBuilder = Widget Function(
 
 /// This is a class which contains necessary details to build your own search bar.
 class SearchBarOverlayDetails {
-  /// This is a [SearchController] that will be used to build the search bar.
-  final SearchController searchController;
+  /// This is a [SearchControllerSelect2dot1] that will be used to build the search bar.
+  final SearchControllerSelect2dot1 searchController;
 
   /// This is a [FocusNode] that will be used to build the search bar.
   final FocusNode searchBarFocusNode;
@@ -466,7 +466,7 @@ typedef ListDataViewOverlayBuilder = Widget Function(
 /// This is a class which contains necessary details to build your own list data view.
 class ListDataViewOverlayDetails {
   /// This is a [ScrollController] that will be used to control the scroll in list data view.
-  final SearchController searchController;
+  final SearchControllerSelect2dot1 searchController;
 
   /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
@@ -603,8 +603,8 @@ class DropdownContentModalDetails {
   /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;
 
-  /// This is a [SearchController] that will be used to control the search.
-  final SearchController searchController;
+  /// This is a [SearchControllerSelect2dot1] that will be used to control the search.
+  final SearchControllerSelect2dot1 searchController;
 
   /// This is a function returning a [Widget] of the title modal.
   final Widget Function() titleModal;
@@ -692,8 +692,8 @@ typedef SearchBarModalBuilder = Widget Function(
 
 /// This is a class which contains necessary details to build your own search bar modal.
 class SearchBarModalDetails {
-  /// This is a [SearchController] that will be used to control the search.
-  final SearchController searchController;
+  /// This is a [SearchControllerSelect2dot1] that will be used to control the search.
+  final SearchControllerSelect2dot1 searchController;
 
   /// This is a [FocusNode] that will be used to control focus of SearchBar.
   final FocusNode searchBarModalFocusNode;
@@ -707,7 +707,7 @@ class SearchBarModalDetails {
   /// This is embedded function services when the [FocusNode] of SearchBar is changed.
   final void Function() focusModalController;
 
-  /// This is emmbeded function services when the [SearchController] is changed.
+  /// This is emmbeded function services when the [SearchControllerSelect2dot1] is changed.
   final void Function() onChangedSearchBarController;
 
   /// This is a [GlobalSettings] that will be used to get the global settings.
@@ -761,8 +761,8 @@ class ListDataViewModalDetails {
   /// This is a [ScrollController] that will be used to control the scroll in the list data view modal.
   final ScrollController scrollController;
 
-  /// This is a [SearchController] that will be used to control the search.
-  final SearchController searchController;
+  /// This is a [SearchControllerSelect2dot1] that will be used to control the search.
+  final SearchControllerSelect2dot1 searchController;
 
   /// This is a [SelectDataController] that will be used to control the selection of the category item and get data from it.
   final SelectDataController selectDataController;

@@ -19,7 +19,7 @@ import 'package:select2dot1/src/settings/overlay/search_empty_info_overlay_setti
 import 'package:select2dot1/src/utils/event_args.dart';
 
 class ListDataViewOverlay extends StatefulWidget {
-  final SearchController searchController;
+  final SearchControllerSelect2dot1 searchController;
   final SelectDataController selectDataController;
   final void Function() overlayHide;
   final LoadingDataOverlayBuilder? loadingDataOverlayBuilder;
