@@ -119,71 +119,74 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
               return true;
             },
             child: SizeChangedLayoutNotifier(
-              child: Material(
-                color: Colors.transparent,
-                child: AnimatedBuilder(
-                  animation: widget.animationController,
-                  builder: (context, child) {
-                    if (widget.dropdownOverlaySettings.animationBuilder !=
-                        null) {
-                      // Its can be null anyway.
-                      // ignore: avoid-non-null-assertion
-                      return widget.dropdownOverlaySettings.animationBuilder!(
-                        context,
-                        child,
-                        widget.animationController,
-                      );
-                    }
-
-                    return ScaleTransition(
-                      scale: CurvedAnimation(
-                        parent: widget.animationController,
-                        curve:
-                            widget.dropdownOverlaySettings.sizeAnimationCurve,
-                      ),
-                      child: FadeTransition(
-                        opacity: CurvedAnimation(
+              child: ClipRRect(
+                borderRadius: widget.dropdownOverlaySettings.decoration.borderRadius,
+                child: Material(
+                  color: Colors.transparent,
+                  child: AnimatedBuilder(
+                    animation: widget.animationController,
+                    builder: (context, child) {
+                      if (widget.dropdownOverlaySettings.animationBuilder !=
+                          null) {
+                        // Its can be null anyway.
+                        // ignore: avoid-non-null-assertion
+                        return widget.dropdownOverlaySettings.animationBuilder!(
+                          context,
+                          child,
+                          widget.animationController,
+                        );
+                      }
+              
+                      return ScaleTransition(
+                        scale: CurvedAnimation(
                           parent: widget.animationController,
                           curve:
-                              widget.dropdownOverlaySettings.fadeAnimationCurve,
+                              widget.dropdownOverlaySettings.sizeAnimationCurve,
                         ),
-                        child: child,
-                      ),
-                    );
-                  },
-                  child: DropdownContentOverlay(
-                    key: keyDropdownOverlayContent,
-                    selectDataController: widget.selectDataController,
-                    overlayHide: widget.overlayHide,
-                    layerLink: widget.layerLink,
-                    scrollController: widget.scrollController,
-                    appBarMaxHeight: widget.appBarMaxHeight,
-                    dropdownContentOverlayBuilder:
-                        widget.dropdownContentOverlayBuilder,
-                    dropdownOverlaySettings: widget.dropdownOverlaySettings,
-                    isSearchable: widget.isSearchable,
-                    searchBarOverlayBuilder: widget.searchBarOverlayBuilder,
-                    searchBarOverlaySettings: widget.searchBarOverlaySettings,
-                    loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
-                    loadingDataOverlaySettings:
-                        widget.loadingDataOverlaySettings,
-                    searchEmptyInfoOverlayBuilder:
-                        widget.searchEmptyInfoOverlayBuilder,
-                    searchEmptyInfoOverlaySettings:
-                        widget.searchEmptyInfoOverlaySettings,
-                    listDataViewOverlayBuilder:
-                        widget.listDataViewOverlayBuilder,
-                    listDataViewOverlaySettings:
-                        widget.listDataViewOverlaySettings,
-                    categoryNameOverlayBuilder:
-                        widget.categoryNameOverlayBuilder,
-                    categoryNameOverlaySettings:
-                        widget.categoryNameOverlaySettings,
-                    categoryItemOverlayBuilder:
-                        widget.categoryItemOverlayBuilder,
-                    categoryItemOverlaySettings:
-                        widget.categoryItemOverlaySettings,
-                    globalSettings: widget.globalSettings,
+                        child: FadeTransition(
+                          opacity: CurvedAnimation(
+                            parent: widget.animationController,
+                            curve:
+                                widget.dropdownOverlaySettings.fadeAnimationCurve,
+                          ),
+                          child: child,
+                        ),
+                      );
+                    },
+                    child: DropdownContentOverlay(
+                      key: keyDropdownOverlayContent,
+                      selectDataController: widget.selectDataController,
+                      overlayHide: widget.overlayHide,
+                      layerLink: widget.layerLink,
+                      scrollController: widget.scrollController,
+                      appBarMaxHeight: widget.appBarMaxHeight,
+                      dropdownContentOverlayBuilder:
+                          widget.dropdownContentOverlayBuilder,
+                      dropdownOverlaySettings: widget.dropdownOverlaySettings,
+                      isSearchable: widget.isSearchable,
+                      searchBarOverlayBuilder: widget.searchBarOverlayBuilder,
+                      searchBarOverlaySettings: widget.searchBarOverlaySettings,
+                      loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
+                      loadingDataOverlaySettings:
+                          widget.loadingDataOverlaySettings,
+                      searchEmptyInfoOverlayBuilder:
+                          widget.searchEmptyInfoOverlayBuilder,
+                      searchEmptyInfoOverlaySettings:
+                          widget.searchEmptyInfoOverlaySettings,
+                      listDataViewOverlayBuilder:
+                          widget.listDataViewOverlayBuilder,
+                      listDataViewOverlaySettings:
+                          widget.listDataViewOverlaySettings,
+                      categoryNameOverlayBuilder:
+                          widget.categoryNameOverlayBuilder,
+                      categoryNameOverlaySettings:
+                          widget.categoryNameOverlaySettings,
+                      categoryItemOverlayBuilder:
+                          widget.categoryItemOverlayBuilder,
+                      categoryItemOverlaySettings:
+                          widget.categoryItemOverlaySettings,
+                      globalSettings: widget.globalSettings,
+                    ),
                   ),
                 ),
               ),
