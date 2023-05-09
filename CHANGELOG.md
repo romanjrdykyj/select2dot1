@@ -1,3 +1,7 @@
+## 2.0.4
+
+* fix mod custom layout (dropdownOverlay)
+
 ## 2.0.3
 
 * change name SearchController (Dart 3 Compatibility)
