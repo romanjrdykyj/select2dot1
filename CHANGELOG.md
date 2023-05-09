@@ -1,3 +1,7 @@
+## 2.0.6
+
+* improve layout example
+
 ## 2.0.5
 
 * clean code (fix Pass static analysis - flutter format .)

@@ -138,25 +138,30 @@ class CustomSelect2dot1 extends StatelessWidget {
         },
         dropdownOverlaySettings: DropdownOverlaySettings(
           maxHeight: 330,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.zero,
-            color: const Color(0xFF001029),
-            border: const Border(),
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 10,
-                color: Colors.black.withOpacity(0.2),
-                offset: const Offset(0, 3),
-              )
-            ],
+            color: Color(0xFF001029),
+            border: Border(),
+            boxShadow: [],
           ),
           animationBuilder: (context, child, animationController) {
-            return SizeTransition(
-              sizeFactor: CurvedAnimation(
-                parent: animationController,
-                curve: Curves.easeInOutQuart,
+            return Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 10,
+                    color: Colors.black.withOpacity(0.2),
+                    offset: const Offset(0, 3),
+                  ),
+                ],
               ),
-              child: child,
+              child: SizeTransition(
+                sizeFactor: CurvedAnimation(
+                  parent: animationController,
+                  curve: Curves.easeInOutQuart,
+                ),
+                child: child,
+              ),
             );
           },
         ),
