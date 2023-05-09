@@ -1,3 +1,7 @@
+## 2.0.5
+
+* clean code (fix Pass static analysis - flutter format .)
+
 ## 2.0.4
 
 * fix mod custom layout (dropdownOverlay)
