@@ -120,7 +120,8 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
             },
             child: SizeChangedLayoutNotifier(
               child: ClipRRect(
-                borderRadius: widget.dropdownOverlaySettings.decoration.borderRadius,
+                borderRadius:
+                    widget.dropdownOverlaySettings.decoration.borderRadius,
                 child: Material(
                   color: Colors.transparent,
                   child: AnimatedBuilder(
@@ -136,7 +137,7 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
                           widget.animationController,
                         );
                       }
-              
+
                       return ScaleTransition(
                         scale: CurvedAnimation(
                           parent: widget.animationController,
@@ -146,8 +147,8 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
                         child: FadeTransition(
                           opacity: CurvedAnimation(
                             parent: widget.animationController,
-                            curve:
-                                widget.dropdownOverlaySettings.fadeAnimationCurve,
+                            curve: widget
+                                .dropdownOverlaySettings.fadeAnimationCurve,
                           ),
                           child: child,
                         ),
@@ -166,7 +167,8 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
                       isSearchable: widget.isSearchable,
                       searchBarOverlayBuilder: widget.searchBarOverlayBuilder,
                       searchBarOverlaySettings: widget.searchBarOverlaySettings,
-                      loadingDataOverlayBuilder: widget.loadingDataOverlayBuilder,
+                      loadingDataOverlayBuilder:
+                          widget.loadingDataOverlayBuilder,
                       loadingDataOverlaySettings:
                           widget.loadingDataOverlaySettings,
                       searchEmptyInfoOverlayBuilder:
