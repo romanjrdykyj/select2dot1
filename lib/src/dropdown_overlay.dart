@@ -21,6 +21,9 @@ class DropdownOverlay extends StatefulWidget {
   final double? appBarMaxHeight;
   final ScrollController? scrollController;
   final PillboxLayout pillboxLayout;
+  // Its okay.
+  // ignore: prefer-correct-identifier-length
+  final ScrollController? dropdownContentOverlayScrollController;
   final DropdownContentOverlayBuilder? dropdownContentOverlayBuilder;
   final DropdownOverlaySettings dropdownOverlaySettings;
   final bool isSearchable;
@@ -47,6 +50,7 @@ class DropdownOverlay extends StatefulWidget {
     required this.appBarMaxHeight,
     required this.scrollController,
     required this.pillboxLayout,
+    required this.dropdownContentOverlayScrollController,
     required this.dropdownContentOverlayBuilder,
     required this.dropdownOverlaySettings,
     required this.isSearchable,
@@ -158,6 +162,8 @@ class _DropdownOverlayState extends State<DropdownOverlay> {
                     layerLink: widget.layerLink,
                     scrollController: widget.scrollController,
                     appBarMaxHeight: widget.appBarMaxHeight,
+                    dropdownContentOverlayScrollController:
+                        widget.dropdownContentOverlayScrollController,
                     dropdownContentOverlayBuilder:
                         widget.dropdownContentOverlayBuilder,
                     dropdownOverlaySettings: widget.dropdownOverlaySettings,

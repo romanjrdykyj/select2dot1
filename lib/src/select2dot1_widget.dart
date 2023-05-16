@@ -92,6 +92,14 @@ class Select2dot1 extends StatefulWidget {
   /// Pass it if you want adjustable dropdown anchor.
   final ScrollController? scrollController;
 
+  // Its okay.
+  // ignore: prefer-correct-identifier-length
+  final ScrollController? dropdownContentOverlayScrollController;
+
+  // Its okay.
+  // ignore: prefer-correct-identifier-length
+  final DraggableScrollableController? dropdownContentModalScrollController;
+
   /// This is a boolean value that indicates whether the widget is searchable or not.
   /// Default value is [true].
   final bool isSearchable;
@@ -258,6 +266,8 @@ class Select2dot1 extends StatefulWidget {
     required this.selectDataController,
     this.onChanged,
     this.scrollController,
+    this.dropdownContentOverlayScrollController,
+    this.dropdownContentModalScrollController,
     this.isSearchable = true,
     this.pillboxTitleBuilder,
     this.pillboxBuilder,
@@ -349,6 +359,8 @@ class _Select2dot1State extends AnimatedState
           appBarMaxHeight: appBarMaxHeightTemp,
           scrollController: widget.scrollController,
           pillboxLayout: widget.pillboxContentMultiSettings.pillboxLayout,
+          dropdownContentOverlayScrollController:
+              widget.dropdownContentOverlayScrollController,
           dropdownContentOverlayBuilder: widget.dropdownContentOverlayBuilder,
           dropdownOverlaySettings: widget.dropdownOverlaySettings,
           isSearchable: widget.isSearchable,
