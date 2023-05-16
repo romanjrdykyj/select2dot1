@@ -15,6 +15,8 @@ import 'package:select2dot1/src/utils/event_args.dart';
 
 class DropdownModal extends StatefulWidget {
   final SelectDataController selectDataController;
+  // Its okay.
+  // ignore: prefer-correct-identifier-length
   final DraggableScrollableController? dropdownContentModalScrollController;
   final DropdownContentModalBuilder? dropdownContentModalBuilder;
   final DropdownModalSettings dropdownModalSettings;

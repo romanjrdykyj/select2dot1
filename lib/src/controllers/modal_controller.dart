@@ -16,6 +16,8 @@ mixin ModalController on AnimatedState {
         builder: (context) {
           return DropdownModal(
             selectDataController: widget.selectDataController,
+            dropdownContentModalScrollController:
+                widget.dropdownContentModalScrollController,
             dropdownContentModalBuilder: widget.dropdownContentModalBuilder,
             dropdownModalSettings: widget.dropdownModalSettings,
             titleModalBuilder: widget.titleModalBuilder,

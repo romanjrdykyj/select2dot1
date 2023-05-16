@@ -1,3 +1,7 @@
+## 2.0.7
+
+* add scrollController for dropdownContent in Select2dot1 properties
+
 ## 2.0.6
 
 * improve layout example
