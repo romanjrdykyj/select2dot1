@@ -22,6 +22,9 @@ class ListDataViewOverlay extends StatefulWidget {
   final SearchControllerSelect2dot1 searchController;
   final SelectDataController selectDataController;
   final void Function() overlayHide;
+  // Its okay.
+  // ignore: prefer-correct-identifier-length
+  final ScrollController? dropdownContentOverlayScrollController;
   final LoadingDataOverlayBuilder? loadingDataOverlayBuilder;
   final LoadingDataOverlaySettings loadingDataOverlaySettings;
   final SearchEmptyInfoOverlayBuilder? searchEmptyInfoOverlayBuilder;
@@ -39,6 +42,7 @@ class ListDataViewOverlay extends StatefulWidget {
     required this.searchController,
     required this.selectDataController,
     required this.overlayHide,
+    required this.dropdownContentOverlayScrollController,
     required this.loadingDataOverlayBuilder,
     required this.loadingDataOverlaySettings,
     required this.searchEmptyInfoOverlayBuilder,
@@ -57,7 +61,10 @@ class ListDataViewOverlay extends StatefulWidget {
 }
 
 class _ListDataViewOverlayState extends State<ListDataViewOverlay> {
-  final ScrollController scrollController = ScrollController();
+  // Its okay, because its initialized in the same line.
+  // ignore: avoid-late-keyword
+  late final ScrollController scrollController =
+      widget.dropdownContentOverlayScrollController ?? ScrollController();
   // It's okey.
   // ignore: avoid-late-keyword
   late Stream<List<Widget>> streamController = dataStreamFunc(isInit: true);
