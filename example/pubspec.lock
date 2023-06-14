@@ -9,22 +9,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
-  async_extension:
-    dependency: transitive
-    description:
-      name: async_extension
-      sha256: "891a2ea770693a70cdf5155f5a0b5e81b0e3a2d3d631d112cffbca4807186468"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
-  async_task:
-    dependency: transitive
-    description:
-      name: async_task
-      sha256: "4c3b1b4f4ccce1555d10d31a74136e099e7db7a0c1c4852fc53116cb00970508"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.20"
   boolean_selector:
     dependency: transitive
     description:
@@ -65,14 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
-  ffi:
-    dependency: transitive
-    description:
-      name: ffi
-      sha256: ed5337a5660c506388a9f012be0288fb38b49020ce2b45fe1f8b8323fe429f99
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -91,14 +67,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  fuzzysearch:
-    dependency: transitive
-    description:
-      name: fuzzysearch
-      sha256: d1f1d2098e0689c40a1c57abc953c30a12336232077ae669d2fd6ef2a4eb39f4
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.3"
   js:
     dependency: transitive
     description:
@@ -107,14 +75,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.7"
-  latinize:
-    dependency: transitive
-    description:
-      name: latinize
-      sha256: "559eaa76d4641d977680b64080806174efabddebac365fc26d1c333aabb4070e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.0-nullsafety.0"
   lints:
     dependency: transitive
     description:
@@ -161,7 +121,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "2.0.8"
+    version: "2.0.7"
   sky_engine:
     dependency: transitive
     description: flutter

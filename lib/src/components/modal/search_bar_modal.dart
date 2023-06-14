@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:select2dot1/src/controllers/search_controller.dart';
 import 'package:select2dot1/src/settings/global_settings.dart';
@@ -207,9 +205,7 @@ class _SearchBarModalState extends State<SearchBarModal> {
   }
 
   void _onChangedSearchBarModalController() {
-    unawaited(
-      widget.searchController
-          .findSearchDataResults(searchBarModalController.text),
-    );
+    widget.searchController
+        .findSearchDataResults(searchBarModalController.text);
   }
 }
