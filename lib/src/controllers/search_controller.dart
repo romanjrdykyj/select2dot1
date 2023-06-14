@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fuzzysearch/fuzzysearch.dart';
 import 'package:select2dot1/src/models/single_category_model.dart';
 import 'package:select2dot1/src/models/single_item_category_model.dart';
 
@@ -32,7 +31,7 @@ class SearchControllerSelect2dot1 extends ChangeNotifier {
   /// Find search data results function.
   /// This function will be used to find search data results.
   /// [value] is required string pattern to search.
-  Future<void> findSearchDataResults(String value) async {
+  void findSearchDataResults(String value) {
     // Will be improve in next version.
     oldLength = countLength();
     _results.clear();
@@ -40,23 +39,11 @@ class SearchControllerSelect2dot1 extends ChangeNotifier {
     for (var category in _data) {
       List<SingleItemCategoryModel> tempSingleItemCategoryList = [];
 
-      Fuzzy<SingleItemCategoryModel> fuse = Fuzzy.withIdentifiers(
-        {
-          for (var singleItem in category.singleItemCategoryList)
-            singleItem.nameSingleItem: singleItem,
-        },
-        options: FuzzyOptions(
-          findAllMatches: true,
-          tokenize: true,
-          threshold: 0.5,
-        ),
-      );
-      List<Result<SingleItemCategoryModel>> results = await fuse.search(value);
-      for (var element in results) {
-        if (element.identifier != null) {
-          // Null check done above.
-          // ignore: avoid-non-null-assertion
-          tempSingleItemCategoryList.add(element.identifier!);
+      for (var singleItemCategory in category.singleItemCategoryList) {
+        if (singleItemCategory.nameSingleItem
+            .toLowerCase()
+            .startsWith(value.toLowerCase())) {
+          tempSingleItemCategoryList.add(singleItemCategory);
         }
       }
 
