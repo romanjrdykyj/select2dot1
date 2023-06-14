@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:select2dot1/src/controllers/search_controller.dart';
@@ -225,7 +227,9 @@ class _SearchBarOverlayState extends State<SearchBarOverlay> {
   }
 
   void _onChangedSearchBarOverlayController() {
-    widget.searchController.findSearchDataResults(searchBarController.text);
+    unawaited(
+      widget.searchController.findSearchDataResults(searchBarController.text),
+    );
   }
 }
 

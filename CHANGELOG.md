@@ -1,3 +1,7 @@
+## 2.0.8
+
+* implement fuzzy search in search controller
+
 ## 2.0.7
 
 * add scrollController for dropdownContent in Select2dot1 properties
