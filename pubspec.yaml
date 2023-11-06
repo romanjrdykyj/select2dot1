@@ -20,7 +20,7 @@ dependencies:
 
 dev_dependencies: 
   dart_code_metrics: ">=4.20.0 <6.0.0"
-  flutter_lints: ^2.0.0
+  flutter_lints: ">=2.0.0 <4.0.0"
   flutter_test: 
     sdk: flutter
   pubspec_dependency_sorter: ">=0.0.2 <2.0.0"
