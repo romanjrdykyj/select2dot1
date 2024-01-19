@@ -15,7 +15,7 @@ Select2dot1 gives you a customizable single/multiple select box with support for
 
 | Desktop Example                             | Mobile Example                                |
 | :-----------------------------------------: | :-------------------------------------------: |
-| ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/desktop_example.webp) | ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/mobile_example.webp) |
+| ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/desktop_example.webp?raw=true) | ![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/mobile_example.webp?raw=true) |
 
 ## Table of Contents
 - [Introduction](#Introduction)
@@ -128,7 +128,7 @@ Select2dot1(
 
 ScrollController is used to control anchor position of dropdown menu. You can pass your own ScrollController to Select2dot1 widget.
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/scroll_controller.gif)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/scroll_controller.gif?raw=true)
 
 ### Fully Customizable
 
@@ -143,7 +143,7 @@ In this section you can see how the components of Select2dot1 widget look like a
 
 #### **Component Pillbox Configuration 1**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_1.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_1.png?raw=true)
 
 1. Pillbox
 2. PillboxTitle
@@ -156,7 +156,7 @@ ________________________________________________________________________________
 
 #### **Component Pillbox Configuration 2**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_2.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_2.png?raw=true)
 
 1. Pillbox
 2. PillboxTitle
@@ -169,7 +169,7 @@ ________________________________________________________________________________
 
 #### **Component Pillbox Configuration 3**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_3.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_3.png?raw=true)
 
 1. Pillbox
 2. PillboxTitle
@@ -182,7 +182,7 @@ ________________________________________________________________________________
 
 #### **Component Pillbox Configuration 4**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_4.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/pillbox_configuration_4.png?raw=true)
 
 1. Pillbox
 2. PillboxTitle
@@ -195,7 +195,7 @@ ________________________________________________________________________________
 
 #### **Component Dropdown Overlay Configuration 1**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_1.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_1.png?raw=true)
 
 1. DropdownOverlay, DropdownContentOverlay
 2. SearchBarOverlay
@@ -207,7 +207,7 @@ ________________________________________________________________________________
 
 #### **Component Dropdown Overlay Configuration 2**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_2.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_2.png?raw=true)
 
 1. DropdownOverlay, DropdownContentOverlay
 2. SearchBarOverlay
@@ -218,7 +218,7 @@ ________________________________________________________________________________
 
 #### **Component Dropdown Overlay Configuration 3**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_3.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/overlay_configuration_3.png?raw=true)
 
 1. DropdownOverlay, DropdownContentOverlay
 2. SearchBarOverlay
@@ -229,7 +229,7 @@ ________________________________________________________________________________
 
 #### **Component Dropdown Modal Configuration 1**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_1.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_1.png?raw=true)
 
 1. showModalBottomSheet, DropdownModal, DropdownContentModal
 2. TitleModal
@@ -243,7 +243,7 @@ ________________________________________________________________________________
 
 #### **Component Dropdown Modal Configuration 2**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_2.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_2.png?raw=true)
 
 1. showModalBottomSheet, DropdownModal, DropdownContentModal
 2. TitleModal
@@ -256,7 +256,7 @@ ________________________________________________________________________________
 
 #### **Component Dropdown Modal Configuration 3**
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_3.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/modal_configuration_3.png?raw=true)
 
 1. showModalBottomSheet, DropdownModal, DropdownContentModal
 2. TitleModal
@@ -636,7 +636,7 @@ static const List<SingleCategoryModel> exampleData3 = [
 ];
 ```
 
-![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/no_group_example.png)
+![](https://github.com/romanjrdykyj/select2dot1/blob/main/img/no_group_example.png?raw=true)
 
 ## License
 
