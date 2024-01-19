@@ -21,7 +21,7 @@ class BasicExample1 extends StatelessWidget {
                 SingleItemCategoryModel(
                   nameSingleItem: 'David Eubanks',
                 ),
-                SingleItemCategoryModel(nameSingleItem: 'Robert Keller')
+                SingleItemCategoryModel(nameSingleItem: 'Robert Keller'),
               ],
             ),
             scrollController: scrollController,

@@ -131,7 +131,7 @@ class CustomSelect2dot1 extends StatelessWidget {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           );

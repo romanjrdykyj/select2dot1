@@ -96,7 +96,7 @@ class _SimpleExampleAppState extends State<SimpleExampleApp> {
                     data: exampleData,
                     isMultiSelect: false,
                     initSelected: const [
-                      SingleItemCategoryModel(nameSingleItem: 'Arkansas')
+                      SingleItemCategoryModel(nameSingleItem: 'Arkansas'),
                     ],
                   ),
                   scrollController: scrollController,
