@@ -1,3 +1,7 @@
+## 2.0.9
+
+* update README (fix loading images)
+
 ## 2.0.8
 
 * search using conatins instead startWith
