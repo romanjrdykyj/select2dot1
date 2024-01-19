@@ -1,3 +1,12 @@
+## 2.0.8
+
+* search using conatins instead startWith
+* bumb packages' verions
+* remove author site from README
+* remove example site from pubspec.yaml and README
+* remove delpoy from CICD
+* refactor
+
 ## 2.0.7
 
 * add scrollController for dropdownContent in Select2dot1 properties

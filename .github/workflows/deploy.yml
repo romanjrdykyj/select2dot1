@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Compile, Build and Deploy
+    name: Compile, Build # and Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -21,12 +21,12 @@ jobs:
       - name: Build
         working-directory: ./example
         run: flutter build web --release
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.TOKEN_SELECT2DOT1 }}
-          publish_dir: ./example/build/web
-          cname: select2dot1.site
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: ${{ github.ref == 'refs/heads/main' }}
+      #   with:
+      #     github_token: ${{ secrets.TOKEN_SELECT2DOT1 }}
+      #     publish_dir: ./example/build/web
+      #     cname: select2dot1.site
 
       

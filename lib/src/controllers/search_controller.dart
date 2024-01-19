@@ -42,7 +42,7 @@ class SearchControllerSelect2dot1 extends ChangeNotifier {
       for (var singleItemCategory in category.singleItemCategoryList) {
         if (singleItemCategory.nameSingleItem
             .toLowerCase()
-            .startsWith(value.toLowerCase())) {
+            .contains(value.toLowerCase())) {
           tempSingleItemCategoryList.add(singleItemCategory);
         }
       }

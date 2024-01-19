@@ -11,10 +11,6 @@
 
 Select2dot1 gives you a customizable single/multiple select box with support for searching, group option, extra info and avatar. Select2dot1 utilizes overlays on (web, desktop) and modal for mobile. Its entirely customizable through settings and builder.
 
-Demo web example: https://select2dot1.site
-
-Author site: https://romanjrdykyj.site
-
 ## Screenshots
 
 | Desktop Example                             | Mobile Example                                |
